@@ -73,13 +73,42 @@ let odds = [1, 2, 3, 4, 5].myFilter(el => {
 
 // Question 4:
 
-Array.prototype.myEvery = function(callback) {
+// Array.prototype.myEvery = function(callback) {
+//   [this].myForEach(el => {
+//     if (callback(this[el], el, this)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   })
+// }
+//
 
+
+// Array.prototype.myEvery = function(callback) {
+//   for (let i = 0; i < this.length; i++) {
+//     if (callback(this[i], i, this)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// }
+
+
+
+function greaterThan10(num) {
+  return num > 10;
 }
+
+let anArr = [1, 12, 13, 14];
+
+// console.log(anArr.myEvery(greaterThan10));
+
 
 // Question 5:
 
-Array.prototype.myReduce = function(callback) {
+Array.prototype.myReduce = function(callback, startVal = 1) {
 
 }
 
