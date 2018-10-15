@@ -84,46 +84,53 @@ Array.prototype.myEvery = function (callbackFunction) {
 // 5)
 
 Array.prototype.myReduce = function (callbackFunction, initValue) {
-  let acc;
-  let currentValue;
+  let startingIndex = 0;
   let totalAcc;
 
   if (initValue !== undefined) {
-    acc = initValue;
-    currentValue = this[0];
+    initValue = this[0];
+    startingIndex++;
   } else {
-    acc = this[0];
-    currentValue = this[1];
+    initValue = this[0];
+    startingIndex++;
   };
 
-  this.myForEach(function (acc, currentValue) {
-    console.log(acc, currentValue);
-    return totalAcc = totalAcc + callbackFunction(acc, currentValue);
-  });
+  for (let i = startingIndex; i < this.length; i++) {
+    initValue = callbackFunction(initValue, this[i]);
+  }
 
-  return totalAcc;
+  return initValue;
 };
 
-let arr = [1, 2, 3, 4, 5];
-
-let sum = arr.myReduce(function (acc, element) {
-  return acc + element;
-});
-
-console.log(sum);
+// let arr = [1, 2, 3, 4, 5];
+//
+// let sum = arr.myReduce(function (acc, element) {
+//   return acc + element;
+// });
+//
+// console.log(sum);
 
 // 6)
 
 Array.prototype.myTranspose = function (callbackFunction) {
+  let grid = [];
+  for (let i = 0; i < this[0].length; i++) {
+    grid[i] = [];
 
+    for (let j = 0; j < this.length; j++) {
+      grid[i][j] = this[j][i];
+      console.log("hi i " + this[i] + " hi j " + this[j]);
+      console.log("boo i " + grid[i] + " yo j " + grid[j]);
+    }
+  }
+  return grid;
 };
 
 // let mtx = [[1, 2], [3, 4], [5, 6]];
 //
-// let newMtx = mtx.myMap(function (element) {
-//   return element[0];
+// let newMtx = mtx.myTranspose(function (element) {
+//   return ;
 // });
-//
 //
 // console.log(newMtx);
 
