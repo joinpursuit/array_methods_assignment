@@ -208,8 +208,9 @@ Use reduce.
 ```js
 const countZeroes = (array) => {
   let zeroCounter = 0;
-  array.forEach((el) => {
-    if(el === 0) {
+  array.reduce((acc, currentEl) => {
+    let acc = 0;
+    if (currentEl === acc) {
       zeroCounter++;
     }
   })
