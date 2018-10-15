@@ -209,7 +209,7 @@ Use reduce.
 const countZeroes = (array) => {
   let zeroCounter = 0;
   array.reduce((acc, currentEl) => {
-    let acc = 0;
+     acc = 0;
     if (currentEl === acc) {
       zeroCounter++;
     }
