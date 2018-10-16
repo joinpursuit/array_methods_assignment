@@ -88,27 +88,29 @@ Array.prototype.myReduce = function (callbackFunction, initValue) {
   let totalAcc;
 
   if (initValue !== undefined) {
-    initValue = this[0];
-    startingIndex++;
+    startingIndex = 0;
+
   } else {
     initValue = this[0];
     startingIndex++;
   };
 
   for (let i = startingIndex; i < this.length; i++) {
+    // console.log(this[i]);
     initValue = callbackFunction(initValue, this[i]);
+    // console.log(initValue);
   }
 
   return initValue;
 };
 
-// let arr = [1, 2, 3, 4, 5];
-//
-// let sum = arr.myReduce(function (acc, element) {
-//   return acc + element;
-// });
-//
-// console.log(sum);
+let arr = [1, 2, 3, 4, 5];
+
+let sum = arr.myReduce(function (acc, element) {
+  return  acc + element;
+}, 15);
+
+console.log(sum)
 
 // 6)
 
