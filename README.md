@@ -1,16 +1,16 @@
 # Exercises
 
-__NOTE:__ DO NOT USE THE BUILT IN METHODS WHEN ASKED TO MAKE THEM! 
+__NOTE:__ DO NOT USE THE BUILT IN METHODS WHEN ASKED TO MAKE THEM!
 
 1. Using Array.prototype add a new method `myForEach` that mimics the behaivor of the built in `forEach`.
 
-2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`. 
+2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
 
-3. Write a 'myFilter` that behave's the same as `filter`. 
+3. Write a 'myFilter` that behave's the same as `filter`.
 
-4. Write a `myEvery`. 
+4. Write a `myEvery`.
 
-5. Write a `myReduce`. It should use the first element in the array if none is given. 
+5. Write a `myReduce`. It should use the first element in the array if none is given.
 
 6. Write a `myTranspose`. This function should transpose a matrix. Exp:
 ```js
@@ -29,23 +29,167 @@ mtx.myTranspose();
 ```
 
 7. Use `myMap` to build a new array where every element is incremented by 10.
-8. Use `myMap` to build a new array where every non-string element is converted to an empty string. 
+8. Use `myMap` to build a new array where every non-string element is converted to an empty string.
 9. Use `myFilter` to get only the even elements in an array.
-10. Use `myEvery` to check if all elements in the array are the same. 
-11. Use `myReduce` to return the sum of every element in an array. 
-12. Use `myMap` to build a new array that doubles each element. Then chain `myReduce` to find the product of all the elements. 
-13. Use `myReduce` to find the largest number in an array. 
+10. Use `myEvery` to check if all elements in the array are the same.
+11. Use `myReduce` to return the sum of every element in an array.
+12. Use `myMap` to build a new array that doubles each element. Then chain `myReduce` to find the product of all the elements.
+13. Use `myReduce` to find the largest number in an array.
 14. Write a function `elementDivisibleBy` with parameters `divisor` and `arr`.
 Use `myFilter` to return a new array of every element of arr that can be evenly divided by divisor.
-14. Write a `myJoin` function. 
+14. Write a `myJoin` function.
 15. Write a `mySlice` function.
 16. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
 Use reduce.
-17. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by it's index. 
+17. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by it's index.
 
-Bonus: Write a `myFlatten`. This should take a multi-dimensional array and return it as one array. 
+Bonus: Write a `myFlatten`. This should take a multi-dimensional array and return it as one array.
 ```js
 let arr = [1, 2, [3, 4, 5, [6, 7, 8]]]
   arr.myFlatten();
   // => [1, 2, 3, 4, 5, 6, 7, 8]
 ```
+//Q1
+let sampleNumArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+Array.prototype.myForEach = function (callback) {
+	for (i = 0; i < this.length; i++) {
+		callback(this[i])
+	}
+}
+
+//for each only produce side effects
+// sampleNumArray.forEach( function (name) {
+// 	console.log (name)
+// })
+
+// reed sample
+// Array.prototype.myForEach = function(callback){
+// 	for (let i = 0; i < this.length; i++){
+// 		callback(this[i])
+// 	}
+// }
+
+//ES6
+// sampleNumArray.myForEach((el) => {
+// console.log (el)
+// })
+
+// //ES5
+// sampleNumArray.myForEach( function (el){
+// 	console.log(el)
+// })
+
+
+
+//Q2
+
+Array.prototype.myMap = function(el) {
+let result = []
+this.myForEach((el) => {
+	result.push(el)
+})
+return result
+}
+
+console.log(sampleNumArray.map(function (aa){
+	return aa*2
+}))
+
+
+// Array.prototype.myMap = function (callback) {
+// let result = []
+// this.myForEach((el) => {
+// 	result.push(callback(el))
+// })
+// return result
+// }
+
+// return result
+
+// console.log(sampleNumArray.map(function (el) {
+// 	return el * 2
+// }))
+
+// console.log(sampleNumArray.myMap(function (el) {
+// 	return el * 2
+// }))
+
+
+//Q3
+Array.prototype.myFilter = function (el) {
+	let output = []
+	if (el){
+		output.push(el)
+	}
+return output}
+
+console.log (sampleNumArray.myFilter(function (el){
+	return el%2 === 0
+}))
+//attempt 1
+// Array.prototype.myFilter = function (callback) {
+// 	let result = []
+// 	this.myForEach((el) => {
+// 		if (el !=== false) { // no idea
+// 			result.push(el)
+// 		}
+// 	})
+// 	return result
+// }
+
+//attempt 2
+// Array.prototype.myFilter = function (callback) {
+// 	let result = []
+// 	for (i = 0; i < this.length; i++) {
+// if(callback[i]){
+// result.push(callback[i])
+// 	}}
+// 	return result
+// }
+// console.log(sampleNumArray.myFilter( function (el) {
+// 	return el === 0
+// 	}))
+
+
+
+
+//NOTES
+// function invokeFunction (callback){
+// 	return callback();
+// }
+
+// function callSayHello() {
+// 	return sayHello
+// }
+// function sayHello() {
+// 	return "Hello"
+// }
+// console.log (invokeFunction(callSayHello))
+
+// let count = 0
+// function incrementCount(){
+// 	count ++
+// }
+
+// incrementCount()
+
+// let arr = [1,2,3,4,4,5]
+
+// arr.reduce(total,num){
+// 	return total + num
+// }
+
+// let check = arr.reduce((acc,currentEL) => {
+// 	return acc + currentEl
+// })
+
+// console.log (check)
+
+// acc = callback(acc,currentEl)
+
+//Q4
+//Q5
+//Q6
+
+//Q7
