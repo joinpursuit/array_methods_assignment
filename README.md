@@ -185,14 +185,19 @@ const mySlice = (arr, arg1, arg2) => {
 
 16. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
 Use reduce.
-///doesnt work i dont know how to make it work with reduce :'(
-const countZeroes = (arr,lookingforzero=0) => {
 
-  arr.reduce((acc,curr) => {
-  let zeroc =  zeroc = acc + (curr===lookingforzero)
-  })
-  return zeroc
-console.log(countZeroes(arr))
+///doesnt work i dont know how to make it work with reduce :'(
+
+  const countZeroes = (arr) => {
+    let newarr = arr.reduce((acc,curr) => {
+      if(curr === 0){
+        return acc = acc + 1
+      } else {
+        return acc
+      }
+    },0)
+    return newarr
+  }
 
 17. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by it's index.
 
