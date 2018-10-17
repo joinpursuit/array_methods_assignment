@@ -14,16 +14,16 @@ let arr = [];
 
 // Question 2:
 
-Array.prototype.myMap = function(callback) {
-  let resultArr = [];
-  [this].myForEach((el) => {
-    resultArr.push(callback(this[el]));
-  });
-};
-
-let mapped = [2, 4, 6].myMap(el => {
-  // console.log(el);
-})
+// Array.prototype.myMap = function(callback) {
+//   let resultArr = [];
+//   [this].myForEach((el) => {
+//     resultArr.push(callback(this[el]));
+//   });
+// };
+//
+// let mapped = [2, 4, 6].myMap(el => {
+//   // console.log(el);
+// })
 
 Array.prototype.myMap = function(callback) {
   let mappedArr = [];
@@ -40,6 +40,7 @@ let mapped = [7, 6, 5, 4].myMap(el => {
 // console.log(mapped);
 
 
+// ** Failing with forEach TToTT ** //
 // Question 3:
 
 // Array.prototype.myFilter = function(callback) {
@@ -77,7 +78,7 @@ let odds = [1, 2, 3, 4, 5].myFilter(el => {
 
 // Array.prototype.myEvery = function(callback) {
 //   [this].myForEach(el => {
-//     if (callback(this[el], el, this)) {
+//     if (callback(this[el])) {
 //       return true;
 //     } else {
 //       return false;
@@ -86,21 +87,26 @@ let odds = [1, 2, 3, 4, 5].myFilter(el => {
 // }
 //
 
+// ** Had it ... then lost it by messing around with it. LOL TT.TT **
 
-// Array.prototype.myEvery = function(callback) {
-//   for (let i = 0; i < this.length; i++) {
-//     this = true;
-//     return (callback(this[i], i)) ? false : true;
-//     // if (callback(this[i])) {
-//     //   return true;
-//     // }
-//   }
-// }
+Array.prototype.myEvery = function(callback) {
+  for (let i = 0; i < this.length; i++) {
+    if (!(callback(this[i]))) {
+      return false;
+    }
+  }
+}
 
+let randNumArr = [22, 33, 43, 20, 55, 67];
 
+const greaterThan10 = (num) => {
+  return num > 10;
+}
 
+let meh = randNumArr.myEvery(greaterThan10);
 
-//
+// console.log(meh);
+
 
 // Question 5:
 
@@ -124,8 +130,28 @@ let reduced = [1, 2, 3, 4].myReduce((el, currEl) => {
 // Question 6:
 
 Array.prototype.myTranspose = function(callback) {
+  let grid = [];
 
+  for (let i = 0; i < this.length; i++) {
+    grid[i] = [];
+    for (let j = 0; j < this.length; j++) {
+      grid[i][j] = callback(this[j][i]);
+    }
+  }
+  return grid;
 }
+
+let mtx = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+let ehh = mtx.myTranspose(el => {
+  return el;
+})
+
+// console.log(ehh);
 
 // Question 7:
 
@@ -135,6 +161,8 @@ let thisMap = [1, 2, 3, 4, 5].myMap(el => {
 // console.log(thisMap);
 
 // Question 8:
+// **Forgot how to convert an el to an empty string ** //
+
 let randArr = [12, 'cat', 'dog', 34, 'ham', '45'];
 
 // let emptyString = randArr.myMap(el => {
@@ -203,6 +231,8 @@ const elementDivisibleBy = (divisor, arr) => {
 }
 // console.log(elementDivisibleBy(4, [4, 12, 11, 33, 2]));
 
+
+// ** Struggling with how to start with the next two ** //
 // Question 14 part. 2:
 // myJoin function
 
