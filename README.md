@@ -2,17 +2,17 @@
 
 __NOTE:__ DO NOT USE THE BUILT IN METHODS WHEN ASKED TO MAKE THEM! 
 
-1. Using Array.prototype add a new method `myForEach` that mimics the behaivor of the built in `forEach`.
+1. Using Array.prototype add a new method `myForEach` that mimics the behavior of the built-in `forEach`.
 
 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`. 
 
-3. Write a 'myFilter` that behave's the same as `filter`. 
+3. Write a `myFilter` that behaves the same as `filter`. 
 
 4. Write a `myEvery`. 
 
 5. Write a `myReduce`. It should use the first element in the array if none is given. 
 
-6. Write a `myTranspose`. This function should transpose a matrix. Exp:
+6. Write a `myTranspose`. This function should transpose a matrix. Ex:
 ```js
 let mtx = [
             [1, 2],
@@ -41,7 +41,7 @@ Use `myFilter` to return a new array of every element of arr that can be evenly 
 15. Write a `mySlice` function.
 16. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
 Use reduce.
-17. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by it's index. 
+17. Write a `numberTimesIdx` that uses `map` and multiplies each number in the array by it's index. 
 
 Bonus: Write a `myFlatten`. This should take a multi-dimensional array and return it as one array. 
 ```js
