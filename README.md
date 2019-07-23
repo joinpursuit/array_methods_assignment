@@ -59,7 +59,7 @@ Input: [1,2,3,4]
 Output: [2,4,6,8]
 ```
 
-9. Write a function that finds the product of every element in an array doubled
+9. Write a function that finds the sum of every element in an array doubled
 
 ```
 Input: [1,2,3,4]
@@ -92,7 +92,12 @@ Output: false
 
 13. Write a function that returns the sum of all odd numbers in an Array
 
+Hint: What is the second argument in `reduce`?
+
 ```
+Input: [2,3,4,5]
+Output: 8
+
 Input: [1,2,3,4,5]
 Output: 9
 ```
