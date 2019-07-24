@@ -146,7 +146,9 @@ console.log("12b) ", posEvenNoZero(arr12b));
 // Output: 9
 // ```
 
-let 
+let arr13 = [1,2,3,4,5];
+let sumOdd = (arr) => arr.reduce((acc, num) => acc + num);
+console.log("13) ", sumOdd(arr13));
 
 // 14. Write a function that returns a new array containing all of the strings in the original array uppercased.
 
@@ -154,6 +156,11 @@ let
 // Input: [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
 // Output: ["CAT", "DOG", "BEAR"]
 // ```
+
+let arr14 = [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"];
+let strUppercase = (arr) => arr.filter(ele => typeof ele === "string").map(ele => ele.toUpperCase());
+console.log("14) ", strUppercase(arr14));
+
 
 // ## Bonus:
 
@@ -174,9 +181,20 @@ let
 
 
 // 1. Using Array.prototype add a new method `myForEach` that mimics the behavior of the built in `forEach`.
-
+Array.prototype.myForEach = function (cb) {
+  for(let i = 0; i < this.length; i++) {
+    return cb(this[i]);
+  }
+}
 // 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
-
+Array.prototype.myMap = function (cb) {
+  let newArr = [];
+  let push = this.myForEach(cb);
+  newArr.push(push);
+  return newArr;
+}
+let myMapLog = [1,2,3,4,5].myMap(num => num);
+console.log(myMapLog);
 // 3. Write a `myFilter` that behaves the same as `filter`.
 
 // 4. Write a `myEvery` that behaves the same as `every`.
