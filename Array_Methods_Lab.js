@@ -292,3 +292,166 @@ let array14 = [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"];
 let newArray14 = upperCased(array14);
 console.log(`The Originial array : `, array14, `\nThe return array is : `, newArray14);
 console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+
+console.log(`#################### BONUCES QUESTIONS ####################`)
+
+/* BONUS 1 :
+Using Array.prototype add a new method myForEach that mimics the behavior of the built in forEach.
+*/
+
+console.log('BONUS QUESTION 1 :');
+
+Array.prototype.myForEach = function(callback) {
+    for (let i = 0; i < this.length; i++){
+        callback(this[i]);
+    }
+}
+
+  let myArray1 = [7, 8, 9];
+  myArray1.myForEach(num => { console.log(num) });
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+/* BONUS 2 :
+Use your myForEach to add myMap to the Array prototype. myMap should behave the same as regular map.
+*/
+
+console.log('BONUS QUESTION 2 :');
+
+Array.prototype.myMap = function(callback) {
+    let newArray = [];
+    for (let i = 0; i < this.length; i++){
+        newArray.push(callback(this[i]));
+    }
+    return newArray;
+}
+
+let newArrayB2 = myArray1.myMap(element => element*2 );
+console.log(`Mapin the array `, myArray1, `to double it : `, newArrayB2);
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+/* BONUS 3 :
+Write a myFilter that behaves the same as filter.
+*/
+
+console.log('BONUS QUESTION 3 :');
+
+Array.prototype.myFilter = function(callback) {
+    let newArray = [];
+    for (let i = 0; i < this.length; i++){
+        if (callback(this[i])){
+            newArray.push(this[i]);
+        }
+    }
+    return newArray;
+}
+
+let myArray3 = [3,4,5,6,7,8,9];
+let newArrayB3 = myArray3.myFilter(element => element%2 ===1);
+console.log(`Filtring the array `, myArray3, `to have odd numbers only : `, newArrayB3);
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+
+/* BONUS 4 :
+Write a myEvery that behaves the same as every.
+*/
+
+console.log('BONUS QUESTION 4 :');
+
+Array.prototype.myEvery = function(callback) {
+    let condition = true;
+    for (let i = 0; i < this.length; i++){
+        if (callback(this[i]) !== condition){
+            condition = false;
+            break;
+        }
+    }
+    return condition;
+}
+
+let myArray4 = [3,5,7,9];
+let resultB4 = myArray4.myEvery(element => element%2 ===1);
+console.log(`Every element in the array `, myArray4, ` is odd : `, resultB4);
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+
+/* BONUS 5 :
+Write a myReduce. It should use the first element in the array if none is given.
+*/
+
+console.log('BONUS QUESTION 5 :');
+
+Array.prototype.myReduce = function(callback, initialValue) {
+    let result = initialValue;
+    for (let i = 0; i < this.length; i++) {
+        if (result !== undefined) {
+            result = callback(result, this[i]);
+        } else {
+            result = this[0];
+        }
+    }
+    return result
+}
+
+let myArray5 = [3,3,5,7,9];
+let resultB5 = myArray5.myReduce((acc, element) => acc + element);
+let resultB5Init = myArray5.myReduce((acc, element) => { return acc + element }, 10);
+console.log(`Sum of all element of the array `, myArray5, ` is : `, resultB5);
+console.log(`Sum of all element of the array `, myArray5, ` with the initial value 10 is : `, resultB5Init);
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+/* BONUS 6 :
+Write a myJoin function.
+*/
+
+console.log('BONUS QUESTION 6 :');
+
+Array.prototype.myJoin = function(separator) {
+    let str = '';
+    if (separator === undefined){
+        separator = ','
+    }
+    for (let i = 0; i < this.length - 1; i++){
+        str += this[i] + separator;
+    }
+    str += this[this.length-1];
+    return str;
+}
+
+let myArray6 = [3,3,5,7,9];
+let resultB6 = myArray6.myJoin();
+
+console.log(`The array `, myArray5, ` joined is : `, resultB6);
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+/* BONUS 7 :
+Write a mySlice function.
+*/
+
+console.log('BONUS QUESTION 7 :');
+
+Array.prototype.mySlice = function(begin, end) {
+    let newArray = [];
+
+    if (end === undefined) {
+        end = this.length;
+    }
+
+    for (let i = begin; i < end; i++){
+        newArray.push(this[i]);
+    }
+    return newArray;
+}
+
+let myArray7 = [3,3,5,7,9];
+let newArrayB7 = myArray7.mySlice(2, 4);
+
+console.log(`The array `, myArray7, ` sliced is : `, newArrayB7);
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
