@@ -398,17 +398,19 @@ console.log(falseArr.myEvery((num) => num > 5))
 
 console.log("Bonus 5._______________________________________");
 
-Array.prototype.myReduce = function (x, total, num) {
-  total = 0;
+Array.prototype.myReduce = function (callback, initialValue) {
+  let result = initialValue;
   for (let i of this) {
-    if (x(i)) {
-      total += i
+    if (result !== undefined) {
+       result = callback(result, i)
+    } else {
+      result = this[0]
     }
   }
-  return total
+  return result
 }
 
-console.log(myArr.myReduce((num) => num % 2 === 0))
+console.log(myArr.myReduce((acc,num) => acc += num));
 
 // 6. Write a `myJoin` function.
 
