@@ -246,10 +246,10 @@ console.log("Bonus #4 ", myEvery);
 Array.prototype.myReduce = function (cb, acc = 0) {
   let accumulator = acc;
   let index = 0;
-  // if (!accumulator) {
-  //   accumulator = this[0];
-  //   index = 1;
-  // }
+  if (!accumulator) {
+    accumulator = this[0];
+    index = 1;
+  }
   for (index; index < this.length; index++) {
     accumulator = cb(accumulator, this[index]);
   }
