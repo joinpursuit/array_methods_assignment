@@ -73,10 +73,7 @@ console.log("5) ", sumOfArr);
 // ```
 
 let arr6 = [1, 2, 6, 3, 4, 5];
-let largestNum = arr6.reduce(
-  (acc, num) => (num > acc ? (acc = num) : acc),
-  -Infinity
-);
+let largestNum = arr6.reduce((acc, num) => (num > acc ? (acc = num) : acc), -Infinity);
 console.log("6) ", largestNum);
 
 // 7. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
@@ -87,8 +84,7 @@ console.log("6) ", largestNum);
 // ```
 
 let arr7 = [1, 0, 0, 2, 0, 3, 0, 0, 0];
-let countZeroes = arr =>
-  arr.reduce((acc, num) => (num === 0 ? (acc += 1) : acc), 0);
+let countZeroes = arr => arr.reduce((acc, num) => (num === 0 ? (acc += 1) : acc), 0);
 console.log("7) ", countZeroes(arr7));
 
 // 8. Write a function that doubles every element in an array.
@@ -120,8 +116,7 @@ console.log("9) ", prodArr(arr9));
 // ```
 
 let arr10 = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-let elementDivisibleBy = (divisor, arr) =>
-  arr.filter(num => num % divisor === 0);
+let elementDivisibleBy = (divisor, arr) => arr.filter(num => num % divisor === 0);
 console.log("10) ", elementDivisibleBy(5, arr10));
 
 // 11. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by its index.
@@ -147,8 +142,7 @@ console.log("11) ", numberTimesIdx);
 
 let arr12a = [2, 4, 6, 8, 12];
 let arr12b = [2, 4, 6, 8, 10];
-let posEvenNoZero = arr =>
-  arr.every(num => num >= 0 && num % 2 === 0 && num % 10 !== 0);
+let posEvenNoZero = arr => arr.every(num => num >= 0 && num % 2 === 0 && num % 10 !== 0);
 console.log("12a) ", posEvenNoZero(arr12a));
 console.log("12b) ", posEvenNoZero(arr12b));
 
