@@ -222,120 +222,144 @@ const filtStr = (strFilter) => {
 
 console.log(filtStr(objInput));
 
-// console.log(`\n\n #### Bonus: #####`);
-// //
-// // You can write your own array methods!
-// //
-// // ```js
-// // Array.prototype.sayHi = function() {
-// //   console.log("Hi")
-// // }
-// // ```
-// //
-// // Now every array that you write has a `sayHi` method that you can call.
-// //
-// // ```js
-//  let myArr = [1,2,3]
-// // myArr.sayHi() //Logs "Hi" to the console
-// // ```
-// //
-// //
-// //1. Using Array.prototype add a new method 'myForEach' that mimics the behavior of the built in 'forEach'.`);
+console.log(`\n\n #### Bonus: #####`);
 //
-// Array.prototype.myForEach = function (arrayCall) {
-//   for (let i of tis.myArr){
-//     arrayCall(i);
+// You can write your own array methods!
+//
+// ```js
+// Array.prototype.sayHi = function() {
+//   console.log("Hi")
+// }
+// ```
+//
+// Now every array that you write has a `sayHi` method that you can call.
+//
+// ```js
+ let myArr = [1,2,3,6,9,10]
+// myArr.sayHi() //Logs "Hi" to the console
+// ```
+//
+//
+console.log(`\n1. Using Array.prototype add a new method 'myForEach' that mimics the behavior of the built in 'forEach'.`);
+
+Array.prototype.myForEach = function (arrayCall) {
+  for (let i of this){
+    arrayCall(i);
+  }
+
+}
+myArr.myForEach(console.log);
+console.log('\n2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.');
+
+Array.prototype.myMap = function (mapCallback) {
+  //console.log(mapArr);
+  let arrMap =[];
+  for (let el of this) {
+    arrMap.push(mapCallback(el));
+  };
+  return arrMap;
+};
+console.log(myArr.myMap(el => el +5));
+
+// let arrMap =[];
+// for (let i =0; i<mapArr.length;i++){
+//   arrMap.push(mapCallback(mapArr[i]));
+// }
+// return arrMap;
+// };
+
+console.log('\n3. Write a `myFilter` that behaves the same as `filter`.');
+
+
+Array.prototype.myFilter = function(callback) {
+  let arrResult =[];
+  for (let el of this){
+    if (callback(el)){
+      arrResult.push(el)
+    }
+  };
+  return arrResult;
+}
+console.log(myArr.myFilter(el => el % 2 ===0));
+
+// for (let i = 0; i <filArr.length; i++){
+//   if (callback(filArr[i])){
+//     arrResult.push(filArr[i])
 //   }
-//
 // }
-// //2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
-//
-// Array.prototype.myMap = function (mapArr,mapCallback) {
-//   //console.log(mapArr);
-//   let arrMap =[];
-//   mapArr.myForEach ( el => {
-//     arrMap.push(mapCallback(el));
-//   });
-//   return arrMap;
-// };
-//
-//
-// // let arrMap =[];
-// // for (let i =0; i<mapArr.length;i++){
-// //   arrMap.push(mapCallback(mapArr[i]));
-// // }
-// // return arrMap;
-// // };
-//
-// // 3. Write a `myFilter` that behaves the same as `filter`.
-//
-//
-// Array.prototype.myFilter = function(filArr,callback) {
-//   let arrResult =[];
-//   filArr.myForEach(el => {
-//     if (callback(filArr[el])){
-//       arrResult.push(filArr[el])
-//     }
-//   });
-//   return arrResult;
+// return arrResult;
+
+console.log(`\n4. Write a 'myEvery' that behaves the same as 'every'.`);
+Array.prototype.myEvery = function (von) {
+  for (let el =0; el < this.length; el++){
+    if (!von(this[el])){
+      return false;
+    } else {
+      return true
+    }
+  };
+}
+console.log(myArr.myEvery(el => el < 2));
+// 5. Write a `myReduce`. It should use the first element in the array if none is given.
+// Array.prototype.myReduce = function (redArr,agreg,initialize) {
+// let aggreg = 0;
+// for(let i of this) {
+//   if(redArr(i)){
+//   agreg += i
+// }
 // }
 //
-// // for (let i = 0; i <filArr.length; i++){
-// //   if (callback(filArr[i])){
-// //     arrResult.push(filArr[i])
-// //   }
-// // }
-// // return arrResult;
-//
-// // 4. Write a `myEvery` that behaves the same as `every`.
-// Array.prototype.myEvery = function (eachArray, arrayCall) {
-//   eachArray.myForEach(el => {
-//     if ( arrayCall(el) === true){
-//       return true;
-//     }
-//     return false;
-//   });
-//
-// }
-//
-// // 5. Write a `myReduce`. It should use the first element in the array if none is given.
-// Array.prototype.myReduce = function (redArr, combiner, initialize) {
-//   let currEl = initialize;
-//   let redTest = redArr.myForEach(el =>{currEl = combiner(currEl, el)});
-//   return redTest;
+// return agreg;
+//   // let currEl = initialize;
+//   // let redTest = redArr.forEach(el =>{currEl = combiner(currEl, el)});
+//   // return redTest;
 //
 // };
+// console.log(myArr.myReduce((el) => el % 3 ===0 ));
+
+// 6. Write a `myJoin` function.
+
+Array.prototype.myJoin =function (joinArr) {
+  let str ='';
+  for (let el =0; el < this.length; el++){
+    joinArr.forEach(el => el += str )
+ }
+}
+
+
+// 7. Write a `mySlice` function.
 //
-// // 6. Write a `myJoin` function.
-// // Array.prototype.myJoin =function (joinArr) {
-// //   let newStr ='';
-// //   joinArr.myForEach(el => el += )
-// // }
-// // 7. Write a `mySlice` function.
-// //
-// // 8. Write a `myTranspose`. This function should transpose a matrix.
-// //
-// // ```js
-// // let mtx = [
-// //             [1, 2],
-// //             [3, 4],
-// //             [5, 6]
-// //           ]
-// //
-// // mtx.myTranspose();
-// //
-// // // => [
-// //         [1, 3, 5],
-// //         [2, 4, 6]
-// //        ]
-// // ```
+// 8. Write a `myTranspose`. This function should transpose a matrix.
+//
+// ```js
+// let mtx = [
+//             [1, 2],
+//             [3, 4],
+//             [5, 6]
+//           ]
+//
+// mtx.myTranspose();
+//
+// // => [
+//         [1, 3, 5],
+//         [2, 4, 6]
+//        ]
+// ```
 // Array.prototype.myTranspose = function (arrTranspose){
+//   for( let i of this){
 //   return arrTranspose[0].map((el,i) => arrTranspose.map(row => row[i]));
+//  }
 // }
-// // 9. Write a `myFlatten`. This should take a multi-dimensional array and return it as one array.
-// //
-// // ```js
-//  let arr = [1, 2, [3, 4, 5, [6, 7, 8]]]
-// //   arr.myFlatten();
-// //   // => [1, 2, 3, 4, 5, 6, 7, 8]
-// // ```
+//
+console.log(`\n9. Write a 'myFlatten'. This should take a multi-dimensional
+  array and return it as one array.`);
+//
+// ```js
+ let flatArr = [1, 2, [3, 4, 5, [6, 7, 8]]]
+//   arr.myFlatten();
+//   // => [1, 2, 3, 4, 5, 6, 7, 8]
+// ```
+Array.prototype.myFlatten = function (){
+  return this.reduce((el,curel) => el+ "," +curel)
+}
+console.log(flatArr.myFlatten());
