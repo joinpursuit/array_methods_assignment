@@ -252,7 +252,7 @@ Array.prototype.myReduce = function (cb, acc = 0) {
 let myReduce = [1, 2, 3, 4, 5].myReduce((acc, num) => num * acc);
 console.log("Bonus #5 ", myReduce);
 // 6. Write a `myJoin` function.
-Array.prototype.myJoin = function (char = "") {
+Array.prototype.myJoin = function (char = ",") {
   let str = "" + this[0];
   for (let i = 1; i < this.length; i++) {
     str += char + this[i];
