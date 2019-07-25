@@ -319,7 +319,6 @@ console.log("Bonus #8 ", myTranspose);
 //   // => [1, 2, 3, 4, 5, 6, 7, 8]
 // ```
 
-// Recursion
 Array.prototype.myFlatten = function () {
   return this.reduce((acc, arr) => {
     return acc.concat(Array.isArray(arr) ? arr.myFlatten() : arr)
