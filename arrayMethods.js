@@ -1,5 +1,4 @@
 // # Exercises
-console.clear();
 // 1. Given an array of numbers, write a function that returns a new array where every element is incremented by 10.
 
 // ```
@@ -244,19 +243,19 @@ Array.prototype.myEvery = function (cb) {
 let myEvery = [1, 2, 3, 4].myEvery(num => (num % 2 === 0 ? num : null));
 console.log("Bonus #4 ", myEvery);
 // 5. Write a `myReduce`. It should use the first element in the array if none is given.
-Array.prototype.myReduce = function (cb, acc) {
+Array.prototype.myReduce = function (cb, acc = 0) {
   let accumulator = acc;
   let index = 0;
-  if (!accumulator) {
-    accumulator = this[0];
-    index = 1;
-  }
+  // if (!accumulator) {
+  //   accumulator = this[0];
+  //   index = 1;
+  // }
   for (index; index < this.length; index++) {
     accumulator = cb(accumulator, this[index]);
   }
   return accumulator;
 };
-let myReduce = [1, 2, 3, 4, 5].myReduce((acc, num) => num + acc);
+let myReduce = [1, 2, 3, 4, 5].myReduce((acc, num) => num * acc);
 console.log("Bonus #5 ", myReduce);
 // 6. Write a `myJoin` function.
 Array.prototype.myJoin = function (char = "") {
@@ -332,37 +331,6 @@ Array.prototype.myFlatten = function () {
     return acc.concat(Array.isArray(arr) ? arr.myFlatten() : arr)
   }, []);
 }
-let myFlatten = [1, 2, [3, 4, 5, [6, 7, 8]]].myFlatten();
+let myFlatten = [1, 2, [3, 4, 5, [6, 7, 8]],[[[9]]]].myFlatten();
 
-// console.log("Bonus #9 ", myFlatten);
-
-
-// Using stack
-
-function flattenWithAStack(arr) {
-  const originalArr = arr;
-  let outputArr = [];
-  let stackArr = [];
-  let stackIndex = [];
-
-  for (let i = 0; i < originalArr.length; i++) {
-
-    if (!Array.isArray(originalArr[i])) {
-      outputArr.push(originalArr[i]);
-    } else {
-      stackArr.push(originalArr[i]);
-      while (originalArr.length > 0 || stackArr.length > 0) {
-        
-      }
-    }
-      
-  }
-
-
-}
-
-let arrStackMe = [1, 2, [3, 4, 5, [6, 7, 8]]];
-
-
-// console.log("Bonus #9 ", myFlatten);
-// 347 833 6506 
+console.log("Bonus #9 ", myFlatten);
