@@ -322,7 +322,7 @@ console.log('BONUS QUESTION 2 :');
 
 Array.prototype.myMap = function(callback) {
     let newArray = [];
-    for (let i = 0; i < this.length; i++){
+    for (let i = 0; i < this.length; i++) {
         newArray.push(callback(this[i]));
     }
     return newArray;
@@ -455,3 +455,43 @@ let newArrayB7 = myArray7.mySlice(2, 4);
 
 console.log(`The array `, myArray7, ` sliced is : `, newArrayB7);
 console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
+/* BONUS 8 :
+Write a myTranspose. This function should transpose a matrix.
+let mtx = [
+            [1, 2],
+            [3, 4],
+            [5, 6]
+          ]
+
+mtx.myTranspose();
+
+// => [
+        [1, 3, 5],
+        [2, 4, 6]
+       ]
+*/
+
+console.log('BONUS QUESTION 8 :');
+
+Array.prototype.myTranspose = function() {
+    let newArray = [];
+
+    for (let i = 0; i < this[0].length; i++) {
+        let arr = []
+        for (let j = 0; j < this.length; j++) {
+            arr.push(this[j][i]); 
+        }
+        newArray.push(arr);
+    }
+    return newArray;
+}
+
+let mtx = [ [1, 2], [3, 4], [5, 6] ];
+let transposedMtx = mtx.myTranspose();
+
+console.log(`The array `, mtx, ` transposed is : `, transposedMtx);
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
+
+
