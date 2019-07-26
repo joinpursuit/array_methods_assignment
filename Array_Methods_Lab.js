@@ -491,7 +491,43 @@ Array.prototype.myTranspose = function() {
 let mtx = [ [1, 2], [3, 4], [5, 6] ];
 let transposedMtx = mtx.myTranspose();
 
-console.log(`The array `, mtx, ` transposed is : `, transposedMtx);
+console.log(`The array `, mtx, `\ntransposed is : `, transposedMtx);
 console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
 
 
+/* BONUS 9 :
+Write a myFlatten. This should take a multi-dimensional array and return it as one array.
+let arr = [1, 2, [3, 4, 5, [6, 7, 8]]]
+  arr.myFlatten();
+  // => [1, 2, 3, 4, 5, 6, 7, 8]
+*/
+
+console.log('BONUS QUESTION 9 :');
+
+Array.prototype.myFlatten = function() {
+    let newArray = [];
+
+    for (let i = 0; i < this.length; i++) {
+        if (typeof this[i] === 'number') {
+            newArray.push(this[i]);
+        } else {
+            for (let j = 0; j < this[i].length; j++) {
+                if (typeof this[i][j] === 'number') {
+                    newArray.push(this[i][j]);
+                } else {
+                    for (let k = 0; k < this[i][j].length; k++) {
+                        newArray.push(this[i][j][k]);
+                    }
+
+                }
+            }
+        }
+    }
+    return newArray;
+};
+
+let myArray9 = [1, 2, [3, 4, 5, [6, 7, 8]]];
+let flattenArray = myArray9.myFlatten();
+
+console.log(`The array `, myArray9, `\nflatten is : `, flattenArray);
+console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
