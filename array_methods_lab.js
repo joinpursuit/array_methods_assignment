@@ -155,8 +155,8 @@ Output: 384
 
 \n----------------------------------------\n\n`);
 
-let qar9 = [1, 2, 3, 4]
-const productOfAllDoubled = (arr) => arr.reduce((i, j) => i * j * 2, 1)
+let qar9 = [2, 1, 3, 4]
+const productOfAllDoubled = (arr) => arr.reduce((i, j) => i * j * 2)
 // let ans9 = qar9.reduce((i, j) => i * j * 2, 1)
 console.log(productOfAllDoubled(qar9));
 
@@ -248,9 +248,9 @@ Output: ["CAT", "DOG", "BEAR"]
 \n----------------------------------------\n\n`);
 
 let qar14 = [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
-const stringsOnlyUpperCase = (arr) => arr.filter(i => typeof i === `string`).map(i => i.toUpperCase())
+const stringsOnlyUpperCased = (arr) => arr.filter(i => typeof i === `string`).map(i => i.toUpperCase())
 // let ans14 = qar14.filter(i => typeof i === `string`).map(i => i.toUpperCase())
-console.log(stringsOnlyUpperCase(qar14));
+console.log(stringsOnlyUpperCased(qar14));
 
 //## Bonus:
 console.log(`\n\n\n\n========================================\n## Bonus:\n===============`);
@@ -280,7 +280,10 @@ Using Array.prototype add a new method 'myForEach' that mimics the behavior of t
 
 \n----------------------------------------\n\n`);
 
-
+Array.prototype.myForEach = function(callBack) {
+  for (let e of this) callBack(e)
+}
+qar1.myForEach(i => console.log(i))
 
 //## Question 2.
 console.log(`\n\n\n\n========================================\n## Question 2.\n===============`);
@@ -289,7 +292,12 @@ Use your 'myForEach' to add 'myMap' to the Array prototype. 'myMap' should behav
 
 \n----------------------------------------\n\n`);
 
-
+Array.prototype.myMap = function (callBack) {
+  let myMap = []
+  for (let e of this) myMap.push(callBack(e))
+  return myMap
+}
+console.log(qar1.myMap(i => i + 10));
 
 //## Question 3.
 console.log(`\n\n\n\n========================================\n## Question 3.\n===============`);
@@ -298,7 +306,12 @@ Write a 'myFilter' that behaves the same as 'filter'.
 
 \n----------------------------------------\n\n`);
 
-
+Array.prototype.myFilter = function(callBack) {
+  let myFilter = []
+  for (let e of this) callBack(e) ? myFilter.push(e) : null;
+  return myFilter
+}
+console.log(qar3.myFilter(i => !(i % 2)));
 
 //## Question 4.
 console.log(`\n\n\n\n========================================\n## Question 4.\n===============`);
@@ -307,16 +320,36 @@ Write a 'myEvery' that behaves the same as 'every'.
 
 \n----------------------------------------\n\n`);
 
-
+Array.prototype.myEvery = function(callBack) {
+  for (let e of this) {
+    if (!(callBack(e))) return false
+  }
+  return true
+}
+console.log(qar4.myEvery(i => i === qar4[0]));
+console.log(qar4_2.myEvery(i => i === qar4_2[0]));
 
 //## Question 5.
 console.log(`\n\n\n\n========================================\n## Question 5.\n===============`);
 console.log(`\n
-Write a 'myReduce'. It should use the first element in the array if none is given.
+Write a 'reduce'. It should use the first element in the array if none is given.
 
 \n----------------------------------------\n\n`);
 
-
+Array.prototype.myReduce = function(callBack, acc = 0) {
+  for (let e of this) acc = callBack(acc, e)
+  return acc
+}
+console.log(qar13.myReduce((i, j) => j % 2 ? i *= j : i, 1));
+console.log(qar5.myReduce((i, j) => i + j));
+console.log(qar6.myReduce((i, j) => i > j ? i : j));
+console.log(qar7.myReduce((i, j) => j === 0 ? i += 1 : i, 0));
+console.log(qar9.myReduce((i, j) => i * j * 2, 1));
+console.log(qar13.reduce((i, j) => j % 2 ? i *= j : i, 1));
+console.log(qar5.reduce((i, j) => i + j));
+console.log(qar6.reduce((i, j) => i > j ? i : j));
+console.log(qar7.reduce((i, j) => j === 0 ? i += 1 : i, 0));
+console.log(qar9.reduce((i, j) => i * j * 2, 1));
 
 //## Question 6.
 console.log(`\n\n\n\n========================================\n## Question 6.\n===============`);
@@ -325,7 +358,13 @@ Write a 'myJoin' function.
 
 \n----------------------------------------\n\n`);
 
+Array.prototype.myJoin = function(link = ``) {
+  let strConcat = `` +  this[0]
+  for (let i = 1; i < this.length; i++) strConcat += (link + this[i])
+  return strConcat
+}
 
+console.log([`My`, `name`, `is`, `Michael`, `Amparo`].myJoin(` `));
 
 //## Question 7.
 console.log(`\n\n\n\n========================================\n## Question 7.\n===============`);
@@ -334,7 +373,20 @@ Write a 'mySlice' function.
 
 \n----------------------------------------\n\n`);
 
+Array.prototype.mySlice = function(i, j = this.length) {
+  let newArr = []
+  for (let s = i; s < j; s++) newArr.push(this[s])
+  return newArr
+}
 
+console.log([`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`].mySlice(0));
+console.log([`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`].mySlice(0,3));
+console.log([`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`].mySlice(5));
+console.log([`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`].mySlice(3,5));
+console.log([`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`].slice(0));
+console.log([`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`].slice(0,3));
+console.log([`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`].slice(5));
+console.log([`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`].slice(3,5));
 
 //## Question 8.
 console.log(`\n\n\n\n========================================\n## Question 8.\n===============`);
@@ -358,7 +410,22 @@ mtx.myTranspose();
 
 \n----------------------------------------\n\n`);
 
+let mtx = [
+           [1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]
+         ]
 
+Array.prototype.myTranspose = function() {
+  let transposed = []
+  for (let index of this[0]) transposed.push([index])
+  for (let i = 0; i < this.length; i++) {
+    for (let j = 1; j < this[i].length; j++) transposed[i].push(this[j][i])
+  }
+  return transposed
+}
+
+console.log(mtx.myTranspose());
 
 //## Question 9.
 console.log(`\n\n\n\n========================================\n## Question 9.\n===============`);
@@ -371,3 +438,10 @@ let arr = [1, 2, [3, 4, 5, [6, 7, 8]]]
 // => [1, 2, 3, 4, 5, 6, 7, 8]
 '''
 \n----------------------------------------\n\n`);
+
+Array.prototype.myFlatten = function() {
+  return this.join(`,`).split(`,`)
+}
+
+let bQar9 = [1, 2, [3, 4, 5, [6, 7, 8]]]
+console.log(bQar9.myFlatten());
