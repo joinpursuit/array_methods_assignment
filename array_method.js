@@ -91,18 +91,22 @@ console.log(largest)
 // Output: 6
 console.log("Question 7")
 let input7 = [1,0,0,2,0,3,0,0,0]
-function countZeroes (arr) {
-  return arr === 0
-for(let i = 0; i < arr.length; i++){
-  if (arr !== 0){
-  }else{
-    return i++
-  }
-}
-}
-let res = input7.filter(countZeroes)
-console.log(res)
-
+// function countZeroes (arr) {
+//   return arr === 0
+// for(let i = 0; i < arr.length; i++){
+//   if (arr !== 0){
+//   }else{
+//     return i++
+//   }
+// }
+// }
+// let res = input7.filter(countZeroes)
+// console.log(res)
+console.log(input7.reduce((prevElem,currElem) => {
+ if(currElem === 0) {
+   prevElem ++
+ } return prevElem
+},0))
 
 // 8. Write a function that doubles every element in an array.
 // Input: [1,2,3,4]
@@ -136,13 +140,17 @@ console.log(doubled)
 console.log("Question 10")
 
  let input9 = [4,5,6,7,8,9,10,11,12,13,14,15]
- let elementDivisibleBy = input9.filter((currentElem, num) => {
-  return currentElem % 5 === 0
+ const elementDivisibleBy = ((array, divisor) => {
+   return array.filter((elem) => {
+     if(elem % divisor === 0 ){
+       return elem
+     }
+   })
 })
 // .reduce((currentElem, divisor) => {
 //   return currentElem % divisor === 0
 // },5)
-console.log(elementDivisibleBy)
+console.log(elementDivisibleBy(input9, 5))
 
  // 11. Write a `numberTimesIdx` that uses `map` and multiples each number
  // in the array by its index.
