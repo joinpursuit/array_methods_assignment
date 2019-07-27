@@ -288,13 +288,15 @@ let arr15 = [2, 3, 4, 5]
 let arr16 = [1, 2, 3, 4, 5]
 
 const sumOfOdd = (arr) => {
-  let oddCheck = arr.reduce((total, currentElem) => {
+  let oddCheck = arr.reduce((total, currentElem, acc) => {
     if (currentElem % 2 === 1) {
-      return currentElem
+      return currentElem + acc
     }
   })
+  return oddCheck
 }
 console.log(sumOfOdd(arr15))
+console.log(sumOfOdd(arr16))
 
 // Hint: What is the second argument in `reduce`?
 //
@@ -307,7 +309,21 @@ console.log(sumOfOdd(arr15))
 // ```
 //
 // 14. Write a function that returns a new array containing all of the strings in the original array uppercased.
-//
+console.log("---------- #14 ----------")
+
+let arr17 = [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
+
+let allCapsStrArr = (arr) => {
+  let result = arr.map((currentElem) => {
+    if (typeof currentElem === "string") {
+      return currentElem.toUpperCase()
+    }
+  })
+  return result
+}
+
+console.log(allCapsStrArr(arr17))
+
 // ```
 // Input: [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
 // Output: ["CAT", "DOG", "BEAR"]
