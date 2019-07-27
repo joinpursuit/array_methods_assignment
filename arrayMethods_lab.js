@@ -143,22 +143,16 @@ console.log(doubledResult);
 // ```
 console.log('----- Question 10 -----');
 let arr10 = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-let x = 2;
-let evenlyDivided = arr10.filter((currentValue) => {
-  if (currentValue % x === 0) {
-    return currentValue;
-  }
-});
-console.log(evenlyDivided);
+let divisor = 3;
+const elementDivisibleBy = (divisor, arr) => {
+  return arr.filter((currentValue) => {
+    if ((currentValue % divisor === 0)) {
+      return currentValue;
+    }
+  });
+};
 
-
-//  console.log('do this the right way');
-//  arr10.filter(elementDivisibleBy = (divisor, arr) => {
-//   if (currentValue % divisor === 0) {
-//     return currentValue;
-//   }
-// });
-
+console.log(elementDivisibleBy(divisor, arr10));
 // 11. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by its index.
 //
 // ```
