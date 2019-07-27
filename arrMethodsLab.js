@@ -324,6 +324,8 @@ let allCapsStrArr = (arr) => {
 
 console.log(allCapsStrArr(arr17))
 
+console.log(" ")
+
 // ```
 // Input: [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
 // Output: ["CAT", "DOG", "BEAR"]
@@ -348,6 +350,26 @@ console.log(allCapsStrArr(arr17))
 //
 //
 // 1. Using Array.prototype add a new method `myForEach` that mimics the behavior of the built in `forEach`.
+console.log("---------- BONUS #1 ----------")
+
+let arr18 = [1, 2, 3, 4]
+
+Array.prototype.myForEach = function(arr, callback) {
+  let output = []
+    for (let i = 0; i < arr.length; i++) {
+      output.push(callback(arr[i]))
+    }
+    return output
+  }
+
+function makeItMoney(el) {
+  console.log("$" + num)
+}
+
+myForEach(arr18, makeItMoney)
+
+console.log(" ")
+
 //
 // 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
 //
