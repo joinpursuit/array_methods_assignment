@@ -295,6 +295,7 @@
 //   console.log("Hi")
 // };
 // myArr.sayHi();
+//====================================================
 // Now every array that you write has a `sayHi` method
 //that you can call.
 //
@@ -303,7 +304,7 @@
 // myArr.sayHi() //Logs "Hi" to the console
 // ask JR
 // ========
-// let array = [ 1, 2, 3];
+// let array = [1, 2, 3];
 //  let num = array.every(elem => {
 //   if (elem = array){
 //      return "Hi"
@@ -312,16 +313,67 @@
 //  })
 //  let newResult = "Hi"
 //  console.log(newResult);
-// 1. Using Array.prototype add a new method `myForEach` that mimics the behavior of the built in `forEach`.
+//=======================================================
+// 1nf the built in `forEach`.
+// let myArr =[1, 2, 3];
+// Array.prototype.myForEach = function( callback){
+//   for (let elem of this){
+// callback(elem);
+//   }
+// };
+// function display(element){
+//   console.log(element)
+// }
+// myArr.myForEach(display);
+//========================================================
+// 2. Use your `myForEach` to add `myMap` to
+//the Array prototype.
+//`myMap` should behave the same as regular `map`.
 //
-// 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
-//
+let myArr = [1, 2, 3];
+Array.prototype.myMap = function (callback) {
+  let outputArr = [];
+  for ( i = 0; i < this.length; i++){
+  outputArr.push(callback(this[i]));
+  }
+  return outputArr;
+};
+const multiplication = (number)=>{
+return number * 3
+}
+console.log(myArr.myMap(multiplication));
+//===================================================
 // 3. Write a `myFilter` that behaves the same as `filter`.
-//
+// let myArr = [1, 2, 3];
+// Array.prototype.myFilter = function (array) {
+//   let filteredArray = [];
+//   for (let value of array) {
+//     if (value % 2 != 0) {
+//       filteredArray.push(value);
+//     }
+//   }
+//   return filteredArray;
+// };
+// console.log(myArr.myFilter(myArr));
+//===================================================
 // 4. Write a `myEvery` that behaves the same as `every`.
+// let myArr = [1, 2, 3];
+// Array.prototype.myEvery = function (array) {
+//   for (let value of array) {
+//     if (value === 0) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// };
+// console.log(myArr.myEvery(myArr));
+//=======================================================================
+// 5. Write a `myReduce`.
+//It should use the first element
+//in the array if none is given.
 //
-// 5. Write a `myReduce`. It should use the first element in the array if none is given.
-//
+
 // 6. Write a `myJoin` function.
 //
 // 7. Write a `mySlice` function.
