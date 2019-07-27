@@ -343,26 +343,25 @@ print(`[${input_b05}]\nOutputting sum of all elements`);
 
 Object.defineProperty(Array.prototype, 'myReduce', {
     value: function(callback, initValue) {
-      // for (let i = 0; i < this.length; i++) {
+      let pmAcc;
       if (initValue === undefined) {
-        let acc = this[0];
+        pmAcc = this[0];
         for (let i = 1; i < this.length; i++) {
-          callback(this[i]);
+          pmAcc = callback(pmAcc, this[i]);
         }
-        return acc;
       } else {
-        let acc = initValue;
+        pmAcc = initValue;
         for (let i = 0; i < this.length; i++) {
-          callback(this[i]);
+          pmAcc = callback(pmAcc, this[i]);
         }
-        return acc;
       }
+      return pmAcc;
     }
 } );
 let resultb05 =
   input_b05.myReduce( function(acc, curr) {
       return acc += curr;
-}, 0);
+} );
 print(resultb05, 1);
 
 
