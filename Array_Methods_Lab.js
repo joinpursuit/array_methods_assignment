@@ -5,9 +5,11 @@ Output: [11,12,13,14,15]
 */
 
 console.log(`Exercise 1 :`);
-
+const increment = (array, increment) => {
+    return array.map(element => element + increment);
+}
 let array1 = [1, 2, 3, 4, 5];
-let newArray1 = array1.map(element => element + 10);
+let newArray1 = increment(array1, 10)
 console.log(`Initial array : `, array1, `\nnew array : `, newArray1);
 console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
 
@@ -19,14 +21,17 @@ Output: ["a", "", "b", "c", ""]
 
 console.log(`Exercise 2 :`);
 
+const replaceNonStrByEmptyStr = (array) => {
+    return array.map(element => {
+                if (typeof element === 'string' && element !== ""){
+                    return element;
+                } else {
+                    return '';
+                }
+            });
+}
 let array2 = ["a", 123, "b", "c", {name: "cat"}];
-let newArray2 = array2.map(element => {
-    if (typeof (element) === 'string'){
-        return element;
-    } else {
-        return '';
-    }
-});
+let newArray2 = replaceNonStrByEmptyStr(array2)
 console.log(`Initial array : `, array2, `\nnew array : `, newArray2);
 console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n`);
 
@@ -504,27 +509,38 @@ let arr = [1, 2, [3, 4, 5, [6, 7, 8]]]
 
 console.log('BONUS QUESTION 9 :');
 
+// Array.prototype.myFlatten = function() {
+//     let newArray = [];
+
+//     for (let i = 0; i < this.length; i++) {
+//         if (typeof this[i] === 'number') {
+//             newArray.push(this[i]);
+//         } else {
+//             for (let j = 0; j < this[i].length; j++) {
+//                 if (typeof this[i][j] === 'number') {
+//                     newArray.push(this[i][j]);
+//                 } else {
+//                     for (let k = 0; k < this[i][j].length; k++) {
+//                         newArray.push(this[i][j][k]);
+//                     }
+
+//                 }
+//             }
+//         }
+//     }
+//     return newArray;
+// };
+
+
 Array.prototype.myFlatten = function() {
-    let newArray = [];
-
-    for (let i = 0; i < this.length; i++) {
-        if (typeof this[i] === 'number') {
-            newArray.push(this[i]);
-        } else {
-            for (let j = 0; j < this[i].length; j++) {
-                if (typeof this[i][j] === 'number') {
-                    newArray.push(this[i][j]);
-                } else {
-                    for (let k = 0; k < this[i][j].length; k++) {
-                        newArray.push(this[i][j][k]);
-                    }
-
-                }
-            }
-        }
+    let str = this.join(',');
+    let newArray = str.split(',');
+    let returnArray = [];
+    for (let element of newArray) {
+        returnArray.push(parseInt(element));
     }
-    return newArray;
-};
+    return returnArray;
+}
 
 let myArray9 = [1, 2, [3, 4, 5, [6, 7, 8]]];
 let flattenArray = myArray9.myFlatten();
