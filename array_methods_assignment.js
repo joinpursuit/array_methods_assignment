@@ -67,22 +67,17 @@ const sameEl = (arr) =>{
 
 console.log(sameEl([1,1,1,1,3]))
 
-
-// 5. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
+// 6. Write a function that doubles every element in an array.
 
 // ```
-// Input: [1,0,0,2,0,3,0,0,0]
-// Output: 6
+// Input: [1,2,3,4]
+// Output: [2,4,6,8]
 // ```
 
-const countZeroes = (arr) => {
-    let appearence = 0;
-    arr.forEach((el)=> {
-        if(el === 0) {
-            appearence += 1
-        }
+const double = (arr) =>{
+    return arr.map((el) => {
+        return el*2
     })
-return appearence 
 }
 
-console.log(countZeroes([1,0,0,2,0,3,0,0,0], 0))
+console.log(double([1,2,3,4]))
