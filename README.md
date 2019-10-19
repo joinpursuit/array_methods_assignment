@@ -28,12 +28,8 @@ evenReturn([1, 2, 3, 4, 5]);
 4. Write a function that checks if all elements in the array are the same.
 
 ```
-let test1 = [1, 1, 1, 1, 1]
-const allSame = (arr) => arr.every(i => i === arr[0])
-console.log(allSame(test1));
-
-let test2 = [1, 1, 1, 1, 2]
-console.log(allSame(test2));
+const allSame = (arr) => arr.every(a => a === arr[0])
+console.log(allSame([1, 1, 1, 1, 10]));
 
 ```
 
