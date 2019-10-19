@@ -29,3 +29,14 @@ const onlyEven = (arr) => {
     return arr.filter((el) => el % 2 === 0)
 }
 console.log(onlyEven([1,2,3,4,5]));
+
+
+// PROBLEM 4 
+
+const allTheSame = (arr) => {
+    return arr.every((el) => {
+        return el === arr[0]
+    })
+}
+
+console.log(allTheSame([1,1,1,1,1]));
