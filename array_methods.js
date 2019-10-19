@@ -20,14 +20,35 @@
 // // Output: ["a", "", "b", "c", ""]
 // ```
 
-const newStr = (arr) => {
-    return arr.map((el) => {
-        if(typeof el !== typeof String){
-            return el = ""
-        }else{
-            return el
-        }
-    })
-}
+// const newStr = (arr) => {
+//     return arr.map((el) => {
+//         if(typeof el !== typeof String){
+//             return el = ""
+//         }else{
+//             return el
+//         }
+//     })
+// }
 
-console.log(newStr([1,2,3,"cat", "dog"]))
+// console.log(newStr([1,2,3,"cat", "dog"]))
+
+// 3. Write a function that returns only the even elements in an array of numbers.
+
+// const evenFunc = (array) => {
+//     return array.filter((el) => {
+//         return el % 2 === 0
+//         }
+//     )
+// }
+// console.log(evenFunc([1,2,3,4,5]));
+
+// 4. Write a function that checks if all elements in the array are the same.
+
+// const sameEl = (array) => {
+//     return array.every((el, i) => {
+//         return el === array[0];
+//     })
+// }
+
+// console.log(sameEl([1,1,1,1,1]));
+
