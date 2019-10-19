@@ -52,3 +52,10 @@ const countZeroes = (arr) => {
 }
 console.log(countZeroes([0,5,0,0,5,0,5,0]))
 
+//QUESTION 6
+const multArr = (arr) => {
+    return arr.map((el) => {
+        return el * 2
+    })
+}
+console.log(multArr([1,2,3,4,5]))
