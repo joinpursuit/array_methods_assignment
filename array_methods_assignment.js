@@ -12,3 +12,22 @@ const incrementByTen = (arr) => {
 }
 
 console.log(incrementByTen([1,2,3,4,5]))
+
+// 2. Given an array, return a new array where every non-string element is converted to an empty string.
+
+// ```
+// Input: ["a", 123, "b", "c", {name: "cat"}]
+// Output: ["a", "", "b", "c", ""]
+// ```
+
+const nonString = (arr) => {
+    return arr.map(el =>{
+        if(typeof el !== "string"){
+            return ""
+        } else{
+            return el
+        }
+    })
+}
+
+console.log(nonString(["a", 123, "b", "c", {name: "cat"}]))
