@@ -36,17 +36,15 @@ console.log(allSame([1, 1, 1, 1, 10]));
 5. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
 
 ```
-const zeroCheck = (arr) => arr.reduce((a, b) => b === 0 ? a += 1 : a, 0)
-console.log(zeroCheck([1, 0, 0, 2, 0, 3, 0, 0, 0,0]));
+
 
 ```
 
 6. Write a function that doubles every element in an array.
 
 ```
-let qar7 = [1, 2, 3, 4]
-const doubleAllElem = (arr) => arr.map(i => i * 2)
-console.log(doubleAllElem(qar7));
+const doubleAllElem = (arr) => arr.map(num => num * 2)
+console.log(doubleAllElem([1, 2, 3, 4]));
 
 ```
 
