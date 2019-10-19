@@ -25,9 +25,24 @@ const allEvens = (arr) => {
 console.log(allEvens([1,2,3,4,5]))
 //4.
 const sameCheck = (arr) => {
-    return arr.every((el,i) => {
+    return arr.every((el) => {
         return arr[0] === el
     })
 }
 console.log(sameCheck([1,1,1,1]))
 //5.
+const countZeros = (arr) =>{
+    return arr.forEach((el) => {
+       let repeats = 0
+        if (el === 0){
+            repeats += 1
+        }return repeats
+    })
+}
+console.log(countZeros([1,0,0,2,0,3,0,0,0]))
+//6. 
+const twoUp = arr => {
+        return arr.map((el) =>el * 2)
+}
+console.log(twoUp([1,2,3,4]))
+//7. 
