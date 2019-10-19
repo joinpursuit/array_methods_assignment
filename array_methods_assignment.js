@@ -183,5 +183,7 @@ Array.prototype.myForEach = function(fn) {
 let arr = [1,2,3];
 
 arr.myForEach((el) => {
-      console.log(el*2)
+      console.log( el*2)
   })
+
+  
