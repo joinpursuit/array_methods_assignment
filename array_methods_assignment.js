@@ -48,3 +48,21 @@ const evenArray = (arr) => {
 }
 
 console.log(evenArray([1,2,3,4,5]))
+
+// 4. Write a function that checks if all elements in the array are the same.
+
+// ```
+// Input: [1,1,1,1,1]
+// Output: true
+
+// Input: [1,1,1,1,2]
+// Output: false
+// ```
+
+const sameEl = (arr) =>{
+    return arr.every((el,ind) =>{
+        return arr[0] === arr[ind]
+    })
+}
+
+console.log(sameEl([1,1,1,1,3]))
