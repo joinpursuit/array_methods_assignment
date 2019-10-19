@@ -28,7 +28,7 @@
 const onlyEven = (arr) => {
     return arr.filter((el) => el % 2 === 0)
 }
-console.log(onlyEven([1,2,3,4,5]));
+// console.log(onlyEven([1,2,3,4,5]));
 
 
 // PROBLEM 4 
@@ -39,4 +39,28 @@ const allTheSame = (arr) => {
     })
 }
 
-console.log(allTheSame([1,1,1,1,1]));
+// console.log(allTheSame([1,1,1,1,1]));
+
+// PROBLEM 5
+
+const countZeroes = (arr) => {
+    let count = 0;
+    arr.forEach((el) => {
+        if(el === 0) {
+            count++
+        }
+    })
+    return count;
+}
+
+// console.log(countZeroes([1,0,0,2,0,3,0,0,0]))
+
+
+// Problem 6
+const doubleEl = (arr) => {
+    return arr.map((el) => {
+        return el *= 2
+    })
+}
+
+// console.log(doubleEl([1,2,3,4]))
