@@ -31,4 +31,11 @@ const evenArray = (arr) =>{
 }
 console.log(evenArray([1, 2, 3, 4, 5, 6, 7, 8]))
 
-
+//Question 4
+const sameFunction = (arr) =>{
+    return arr.every((el) =>{
+        return el === arr[0]
+        
+    })
+}
+console.log(sameFunction([1, 1, 1, 1, 1]))
