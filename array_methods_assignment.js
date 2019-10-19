@@ -132,3 +132,22 @@ const numberTimesIdx = (arr) => {
 }
 
 console.log((numberTimesIdx([6,7,8,9])))
+
+
+// 10. Write a function that returns whether or not every value in an array is a positive even number that doesn't end in 0.
+
+// ```
+// Input: [2,4,6,8,12]
+// Output: true
+
+// Input: [2,4,6,8,10]
+// Output: false
+// ```
+
+const noPosTen = (arr) =>{
+    return arr.every((el)=>{
+        return el > 0 && el %10 !== 0 && el %2 ===0
+    })
+}
+
+console.log(noPosTen([2,4,6,8,12]))
