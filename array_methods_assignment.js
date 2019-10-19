@@ -31,3 +31,20 @@ const nonString = (arr) => {
 }
 
 console.log(nonString(["a", 123, "b", "c", {name: "cat"}]))
+
+
+// 3. Write a function that returns only the even elements in an array of numbers.
+
+// ```
+// Input: [1,2,3,4,5]
+// Output: [2,4]
+
+const evenArray = (arr) => {
+    return arr.filter((el)=> {
+        if(el % 2 === 0) {
+            return el
+        }
+    })
+}
+
+console.log(evenArray([1,2,3,4,5]))
