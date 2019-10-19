@@ -34,8 +34,6 @@ console.log(result(["a", 123, "b", "c", {name: "cat"}]));
 const evenReturn = (arr) => arr.filter(num => !(num % 2))
 evenReturn([1, 2, 3, 4, 5]);
 
-
-
 ___________________________________________________________________________________________________
 
 //Another format
@@ -56,6 +54,15 @@ evenNum([1, 2, 3, 4, 5, 6, 7])
 ```
 const allSame = (arr) => arr.every(el => el === arr[0])
 console.log(allSame([1, 1, 1, 1, 10]));
+___________________________________________________________________________________________________
+
+
+const allSame = (arr) => {
+  return arr.every(el => {
+    return el === arr[0]
+  })
+}
+allSame([1, 1, 1, 1, 1]);
 
 ```
 
@@ -63,6 +70,20 @@ console.log(allSame([1, 1, 1, 1, 10]));
 5. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
 
 ```
+const countZeroes = (arr) => {
+   let count = 0;
+   arr.forEach( (el) => {
+       if (el === 0){
+           count += 1;
+       }
+   })
+   return count;
+}
+countZeroes([1,0,0,2,0,3,0,0,0]);
+
+   
+```
+___________________________________________________________________________________________________
 
 
 ```
@@ -74,6 +95,7 @@ const doubleAllElem = (arr) => arr.map(num => num * 2)
 console.log(doubleAllElem([1, 2, 3, 4]));
 
 ```
+
 
 7. Write a function that whether every tripled number in an array is less than 20.
 
@@ -109,7 +131,7 @@ Output: true
 
 Input: [2,4,6,8,10]
 Output: false
-```
+```w
 
 
 11. Write a function that returns a new array containing all of the strings in the original array uppercased.
