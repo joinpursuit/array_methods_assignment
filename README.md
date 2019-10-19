@@ -10,7 +10,7 @@ Output: [11,12,13,14,15]
 2. Given an array, return a new array where every non-string element is converted to an empty string.
 
 ```
-Input: ["a", 123, "b", "c", {name: "cat"}]
+Input: ["a", 123, "b", "c", { }]
 Output: ["a", "", "b", "c", ""]
 ```
 

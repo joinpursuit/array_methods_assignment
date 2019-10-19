@@ -60,11 +60,44 @@
 
 //Problem 6
 
-const doubleFunction = (arr) => {
-    return arr.map((el) => {
-        return el * 2
-    })
-}
+// const doubleFunction = (arr) => {
+//     return arr.map((el) => {
+//         return el * 2
+//     })
+// }
 
 
-console.log(doubleFunction([1,2,3,4]))
+// console.log(doubleFunction([1,2,3,4]))
+
+//Problem 7
+
+// const lessThanFunction = (arr) => {
+//     return arr.every((el) => {
+// if(el * 3 < 20) {
+//  return true      
+// }
+// })
+// }
+// console.log(lessThanFunction([1,2,4,7]))
+
+//Problem 8
+
+// const elementDivisibleBy = (divisor, arr) => {
+//     return arr.filter((el) => {
+//         if(el % divisor === 0){
+//             return true
+//         }
+//     })
+// }
+// console.log(elementDivisibleBy(5,[4,5,6,7,8,9,10,11,12,13,14,15]))
+
+//Problem 9
+
+// const numberTimesIdx = (arr) => {
+//     return arr.map((el, i) => {
+//         return el * i
+//     })
+// }
+// console.log(numberTimesIdx([6,7,8,9]))
+
+//Problem 10
