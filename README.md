@@ -6,6 +6,14 @@
 const addTenToArrray = (arr) => arr.map(num => num + 10)
 addTenToArrray([1, 2, 3, 4, 5]));
 
+________________________________________________________________________________________________________________________________________________________________________
+
+const addTen = (arr) => {
+ return arr.map((el, i) => {
+   return el + 10
+ })
+}
+
 ```
 
 2. Given an array, return a new array where every non-string element is converted to an empty string.
@@ -21,8 +29,21 @@ console.log(result(["a", 123, "b", "c", {name: "cat"}]));
 3. Write a function that returns only the even elements in an array of numbers.
 
 ```
-const evenReturn = (arr) => arr.filter(i => !(i % 2))
+const evenReturn = (arr) => arr.filter(num => !(num % 2))
 evenReturn([1, 2, 3, 4, 5]);
+
+
+
+___________________________________________________________________________________________________
+
+const evenNum = (arr) => {
+  return arr.filter((el) => {
+    return el % 2 === 0
+  })
+}
+
+evenNum([1, 2, 3, 4, 5, 6, 7])
+
 
 ```
 
