@@ -207,25 +207,69 @@ Array.prototype.myForEach = function(cb){
 
 
 // 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
+Array.prototype.myMap = function(cb){
+    let result = [];
+    for (let i = 0; i < this.length; i++){
+        result.push(this[i]);
+    }
+    return result;
+}
+
 
 
 // 3. Write a `myFilter` that behaves the same as `filter`.
+Array.prototype.myFilter = function(callback){
+    let result = [];
+    for(let i = 0; i < this.length; i++){
+        if(callback(this[i]) === true){
+            result.push(this[i]);
+        }
+    }
+    return result;
+}
+
 
 
 // 4. Write a `myEvery` that behaves the same as `every`.
+Array.prototype.myEvery = function (callback){
+    let bool = true;
+    for(let i = 0; i < this.length; i++){
+        if(!callback(this[i])){
+            bool = false;
+        }
+    }
+    return bool;
+}
 
 
 // 5. Write a `myReduce`. It should use the first element in the array if none is given.
-
+Array.prototype.myReduce = function (cb){
+    
+}
 
 // 6. Write a `myJoin` function.
+Array.prototype.myJoin = function (strChar){
+    let str = "";
+    for (let i = 0; i < this.length; i++){
+        
+    }
+    return str;
+}
+let strArr = ["Hello","My","Name","Is"];
+console.log(strArr.myJoin("*"));
+
+console.log([1,2,3,4].join("-"));
 
 
 // 7. Write a `mySlice` function.
-
+Array.prototype.mySlice = function (cb){
+    
+}
 
 // 8. Write a `myTranspose`. This function should transpose a matrix.
-
+Array.prototype.myTranspose = function (cb){
+    
+}
 
 // ```js
 // let mtx = [
@@ -243,12 +287,16 @@ Array.prototype.myForEach = function(cb){
 // ```
 
 // 9. Write a `myFlatten`. This should take a multi-dimensional array and return it as one array.
+Array.prototype.myFlatten = function (cb){
+    
+}
 
 // ```js
 // let arr = [1, 2, [3, 4, 5, [6, 7, 8]]]
 //   arr.myFlatten();
 //   // => [1, 2, 3, 4, 5, 6, 7, 8]
 // ```
+
 
 // 10. Write a function that returns the sum of every element in an array.
 
@@ -257,14 +305,46 @@ Array.prototype.myForEach = function(cb){
 // Output: 15
 // ```
 
+const everyElem = (arr) => {
+        let sum = 0;
+        arr.myForEach((el) => {
+            sum += el;        
+        })
+        return sum;
+}
+console.log(everyElem([1,2,3,4,5]));
+
+
 // 11. Write a function that finds largest number in an array.
 
 // ```
 // Input: [1,2,6,3,4,5]
 // Output: [6]
 // ```
+const largestNum = (arr) => {
+    let first = arr[0];
+    arr.myForEach((el)=>{
+        if(el > first){
+            first = el;
+        }
+    })
+    return first;
+}
+console.log(largestNum([1,2,6,3,4,5]));
 
 // 12. Write a function that returns the sum of all odd numbers in an Array
+
+const sumOddNum = (arr) => {
+    let sumOdd = 0;
+    arr.myForEach((el)=>{
+        if(el % 2 === 1){
+            sumOdd += el;
+        }
+    })
+    return sumOdd;
+}
+console.log(sumOddNum([2,3,4,5]));
+console.log(sumOddNum([1,2,3,4,5]));
 
 // Hint: What is the second argument in `reduce`?
 
