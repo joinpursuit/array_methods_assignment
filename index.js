@@ -64,3 +64,20 @@ const doubleEl = (arr) => {
 }
 
 // console.log(doubleEl([1,2,3,4]))
+
+
+// PROBLEM 7 
+
+const ifTrippled = (arr) => {
+   return arr.every((el) => {
+       return el * 3 < 20
+    })
+}
+console.log(ifTrippled([1,2,4,7]));
+console.log(ifTrippled([1,2,5]));
+
+// PROBLEM 8
+
+const elemtDivisableBy = (divisor,arr) => {
+    
+}
