@@ -22,7 +22,7 @@
 
 const newStr = (arr) => {
     return arr.map((el) => {
-        if(typeof el !== typeof String){
+        if(typeof el !== typeof " "){
             return el = ""
         }else{
             return el
