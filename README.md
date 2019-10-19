@@ -121,7 +121,6 @@ const elementDivisibleBy = (divisor, arr) => arr.filter(el => !(el % divisor))
 
 ```
 const numberTimesIndex = (arr) => arr.map((el, i) => el * i)
-console.log(numberTimesIndex([1, 2, 3, 4]));
 
 
 ```
