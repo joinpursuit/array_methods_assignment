@@ -173,3 +173,15 @@ const upperCase = (arr) => {
 }
 
 console.log((upperCase([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"])))
+
+Array.prototype.myForEach = function(fn) {
+    for(let i = 0; i < this.length; i++){
+        fn(this[i])
+    }
+  }
+
+let arr = [1,2,3];
+
+arr.myForEach((el) => {
+      console.log(el*2)
+  })
