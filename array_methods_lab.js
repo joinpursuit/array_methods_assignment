@@ -66,14 +66,13 @@ console.log(sameEl([1,1,1,1,2]))
 // Output: 6
 // ```
 const countZeroes = (arr) => {
-    return arr.forEach((el) => {
-        let count = 0
+    let count = 0
+    arr.forEach((el) => {
         if(el === 0){
-            return count += 1
-        } else {
-            return count = 1
-        }
+        count ++ 
+        } 
     }) 
+    return count
 }
 
 console.log(countZeroes([1,0,0,2,0,3,0,0,0]))
