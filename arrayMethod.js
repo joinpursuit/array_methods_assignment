@@ -115,13 +115,13 @@ console.log(posEven([2,4,6,8,12]))
 console.log(posEven([2,4,6,8,10]))
 
 const upperCase = (arr) => {
-   return arr.filter((el) => {
+   let newArr = arr.filter((el) => {
     if(typeof el === "string"){
       return el
     }
     }) 
-    return arr.map((el) => {
-      return (el.toUpperCase()
+    return newArr.map((el) => {
+      return el.toUpperCase()
     })
 }
 
