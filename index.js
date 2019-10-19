@@ -73,8 +73,8 @@ const ifTrippled = (arr) => {
        return el * 3 < 20
     })
 }
-console.log(ifTrippled([1,2,4,7]));
-console.log(ifTrippled([1,2,5]));
+// console.log(ifTrippled([1,2,4,7]));
+// console.log(ifTrippled([1,2,5]));
 
 // PROBLEM 8
 
@@ -83,4 +83,31 @@ const elemtDivisableBy = (divisor,arr) => {
           return el % divisor === 0
      }) 
 }
-console.log(elemtDivisableBy(5,[4,5,6,7,8,9,10,11,12,13,14,15]));
+// console.log(elemtDivisableBy(5,[4,5,6,7,8,9,10,11,12,13,14,15]));
+
+//PROBLEM 9
+
+const numberTimesIdx = (arr) => {
+    return arr.map((el, i) => el * i);
+}
+
+// console.log(numberTimesIdx([7,8,9]))
+
+//PROBLEM 10
+
+const positiveEvenNon0 = (arr) => {
+    return arr.every((el) => {
+        return el > 0 && el % 2 === 0 && el % 10 !== 0;
+    })
+}
+
+// console.log(positiveEvenNon0([2,4,6,8,12]))
+// console.log(positiveEvenNon0([2,4,6,8,10]))
+
+//PROBLEM 11
+const uppercaseString = (arr) => {
+    newArr = arr.filter((el) => typeof el === 'string')
+    return newArr.map((el) => el.toUpperCase())
+}
+
+console.log(uppercaseString([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
