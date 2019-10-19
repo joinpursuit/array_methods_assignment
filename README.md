@@ -3,46 +3,56 @@
 1. Given an array of numbers, write a function that returns a new array where every element is incremented by 10.
 
 ```
-Input: [1,2,3,4,5]
-Output: [11,12,13,14,15]
+let qar1 = [1, 2, 3, 4, 5]
+const addTenToArrray = (arr) => arr.map(num => num + 10)
+console.log(addTenToArrray(qar1));
+
 ```
 
 2. Given an array, return a new array where every non-string element is converted to an empty string.
 
 ```
-Input: ["a", 123, "b", "c", {name: "cat"}]
-Output: ["a", "", "b", "c", ""]
+const result = (arr) => arr.map(a => typeof a === `string` ? a : a = ``)
+console.log(result(["a", 123, "b", "c", {name: "cat"}]));
+
 ```
 
 3. Write a function that returns only the even elements in an array of numbers.
 
 ```
-Input: [1,2,3,4,5]
-Output: [2,4]
+const evenReturn = (arr) => arr.filter(i => !(i % 2))
+evenReturn([1, 2, 3, 4, 5]);
+
 ```
 
 4. Write a function that checks if all elements in the array are the same.
 
 ```
-Input: [1,1,1,1,1]
-Output: true
+let test1 = [1, 1, 1, 1, 1]
+const allSame = (arr) => arr.every(i => i === arr[0])
+console.log(allSame(test1));
 
-Input: [1,1,1,1,2]
-Output: false
+let test2 = [1, 1, 1, 1, 2]
+console.log(allSame(test2));
+
 ```
 
 5. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
 
 ```
-Input: [1,0,0,2,0,3,0,0,0]
-Output: 6
+let qar6 = [1, 0, 0, 2, 0, 3, 0, 0, 0]
+const howMany0s = (arr) => arr.reduce((i, j) => j === 0 ? i += 1 : i, 0)
+console.log(howMany0s(qar6));
+
 ```
 
 6. Write a function that doubles every element in an array.
 
 ```
-Input: [1,2,3,4]
-Output: [2,4,6,8]
+let qar7 = [1, 2, 3, 4]
+const doubleAllElem = (arr) => arr.map(i => i * 2)
+console.log(doubleAllElem(qar7));
+
 ```
 
 7. Write a function that whether every tripled number in an array is less than 20.
@@ -65,8 +75,10 @@ Output: [5,10,15]
 9. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by its index.
 
 ```
-Input: [6,7,8,9]
-Output: [0,7,16,27]
+const numberTimesIndex = (arr) => arr.map((el, i) => el * i)
+console.log(numberTimesIndex([1, 2, 3, 4]));
+
+
 ```
 
 10. Write a function that returns whether or not every value in an array is a positive even number that doesn't end in 0.
