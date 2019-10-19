@@ -35,8 +35,6 @@ const evenReturn = (arr) => arr.filter(num => !(num % 2))
 evenReturn([1, 2, 3, 4, 5]);
 __________________________________________________________________________________________________
 
-//Another format
-
 const evenNum = (arr) => {
   return arr.filter((el) => {
     return el % 2 === 0
