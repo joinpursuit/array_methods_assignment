@@ -66,3 +66,23 @@ const sameEl = (arr) =>{
 }
 
 console.log(sameEl([1,1,1,1,3]))
+
+
+// 5. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
+
+// ```
+// Input: [1,0,0,2,0,3,0,0,0]
+// Output: 6
+// ```
+
+const countZeroes = (arr) => {
+    let appearence = 0;
+    arr.forEach((el)=> {
+        if(el === 0) {
+            appearence += 1
+        }
+    })
+return appearence 
+}
+
+console.log(countZeroes([1,0,0,2,0,3,0,0,0], 0))
