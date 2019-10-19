@@ -19,3 +19,7 @@ const nonString = (arr) => {
     })
 }
 console.log(nonString([1, 2, "talk", 4, "to"]))
+
+//QUESTION 3
+
+
