@@ -81,3 +81,23 @@ const double = (arr) =>{
 }
 
 console.log(double([1,2,3,4]))
+
+
+// 7. Write a function that whether every tripled number in an 
+// array is less than 20.
+
+// ```
+// Input: [1,2,4,7]
+// Output: false (7 * 3 = 21)
+
+// Input: [3,4,5]
+// Output: true
+// ```
+
+const lessTwenty = (arr) => {
+    return arr.every((el)=> {
+        return el * 3 < 20
+    })
+}
+
+console.log((lessTwenty([3,4,5])))
