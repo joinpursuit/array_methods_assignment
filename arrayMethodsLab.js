@@ -22,4 +22,13 @@ console.log(nonString([1, 2, "talk", 4, "to"]))
 
 //QUESTION 3
 
+const evenArray = (arr) =>{
+    return arr.filter((el) =>{
+        if (el % 2 === 0){
+            return true
+        }
+    })
+}
+console.log(evenArray([1, 2, 3, 4, 5, 6, 7, 8]))
+
 
