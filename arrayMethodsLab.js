@@ -39,3 +39,16 @@ const sameFunction = (arr) =>{
     })
 }
 console.log(sameFunction([1, 1, 1, 1, 1]))
+
+//QUESTION 5
+const countZeroes = (arr) => {
+    let count = 0
+    arr.forEach(el => {
+        if(el === 0){
+            count++
+        }   
+    })
+    return count
+}
+console.log(countZeroes([0,5,0,0,5,0,5,0]))
+
