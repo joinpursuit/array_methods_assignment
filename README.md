@@ -3,9 +3,8 @@
 1. Given an array of numbers, write a function that returns a new array where every element is incremented by 10.
 
 ```
-let qar1 = [1, 2, 3, 4, 5]
 const addTenToArrray = (arr) => arr.map(num => num + 10)
-console.log(addTenToArrray(qar1));
+console.log(addTenToArrray([1, 2, 3, 4, 5]));
 
 ```
 
@@ -28,17 +27,17 @@ evenReturn([1, 2, 3, 4, 5]);
 4. Write a function that checks if all elements in the array are the same.
 
 ```
-const allSame = (arr) => arr.every(a => a === arr[0])
+const allSame = (arr) => arr.every(el => el === arr[0])
 console.log(allSame([1, 1, 1, 1, 10]));
 
 ```
 
+
 5. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
 
 ```
-let qar6 = [1, 0, 0, 2, 0, 3, 0, 0, 0]
-const howMany0s = (arr) => arr.reduce((i, j) => j === 0 ? i += 1 : i, 0)
-console.log(howMany0s(qar6));
+const zeroCheck = (arr) => arr.reduce((a, b) => b === 0 ? a += 1 : a, 0)
+console.log(zeroCheck([1, 0, 0, 2, 0, 3, 0, 0, 0,0]));
 
 ```
 
