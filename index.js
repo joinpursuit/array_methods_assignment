@@ -101,3 +101,38 @@
 // console.log(numberTimesIdx([6,7,8,9]))
 
 //Problem 10
+// const evenNumbers = (arr) => {
+//     return arr.every((el) => {
+//         if(el % 2 === 0 && el % 10 !== 0 ){
+//             return true
+//         }
+//     })
+// }
+// console.log(evenNumbers(2,4,6,8,10]))
+
+//Problem 11
+// const upperFunction = (arr) => {
+//     let upperCase = arr.filter((el)=> {
+//         if(typeof(el) === typeof("")) {
+//             return true
+//         }
+//         }).map((el) => {
+//             return el = el.toUpperCase()
+//         })
+//         return upperCase
+// }
+// console.log(upperFunction([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
+
+//BONUS QUESTIONS
+
+//Question 1
+Array.prototype.myForEach = function(arr,cb){
+    for(let i = 0; i < arr.length; i++){
+        cb(arr[i])
+    }
+
+}
+let testArray = [1,2,3,4]
+console.log(testArray.myForEach(testArray, (testArray[i]) => {
+   return testArray[i] * 3
+}))
