@@ -185,3 +185,23 @@ let arr = [1,2,3];
 arr.myForEach((el) => {
       console.log(el*2)
   })
+  
+  Array.prototype.myMap = function(fn) {
+      let newArr = []
+      for(let i = 0; i < this.length; i++) {
+          newArr.push(fn(this[i]))
+        }
+    return newArr
+    }
+    
+    
+    console.log(arr.myMap((el) => {
+        return (el*2)
+      }))
+   
+    
+    
+
+  
+  
+  
