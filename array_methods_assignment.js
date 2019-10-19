@@ -76,7 +76,7 @@ console.log(sameEl([1,1,1,1,3]))
 
 const double = (arr) =>{
     return arr.map((el) => {
-        return el*2
+        return el * 2
     })
 }
 
