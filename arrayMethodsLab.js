@@ -88,3 +88,11 @@ const numberTimesIdx = (arr) => {
 console.log(numberTimesIdx([1, 10, 4, 5, 6]))
 
 //Question 10
+const checker = (arr) => {
+    return arr.every(el => {
+        if(el % 10 !== 0 && el % 2 === 0){
+            return el > 0
+        }
+    })
+}
+console.log(checker([2,4,6,8,10]))
