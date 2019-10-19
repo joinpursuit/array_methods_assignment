@@ -116,3 +116,19 @@ const elementDivisibleBy = (divisor, arr) =>{
 }
 
 console.log(elementDivisibleBy(5, [4,5,6,7,8,9,10,11,12,13,14,15]))
+
+// 9. Write a `numberTimesIdx` that uses `map` and multiples each number 
+// in the array by its index.
+
+// ```
+// Input: [6,7,8,9]
+// Output: [0,7,16,27]
+// ```
+
+const numberTimesIdx = (arr) => {
+    return arr.map((el, i)=> {
+        return el * i
+    })
+}
+
+console.log((numberTimesIdx([6,7,8,9])))
