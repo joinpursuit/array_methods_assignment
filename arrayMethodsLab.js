@@ -59,3 +59,22 @@ const multArr = (arr) => {
     })
 }
 console.log(multArr([1,2,3,4,5]))
+
+// Question 7
+
+const allGreat = (arr, target) => {
+    return arr.every((el) =>{
+       
+        return el*3 < target
+    })
+}
+console.log(allGreat([1, 10, 4, 5, 6], 20))
+
+// Question 8 
+const elementDivisibleBy = (arr, divisor) => {
+    return arr.filter((el) =>{
+       
+        return el % divisor === 0
+    })
+}
+console.log(elementDivisibleBy([4,5,6,7,8,9,10,11,12,13,14,15],5))
