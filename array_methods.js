@@ -16,3 +16,11 @@ const emptyArr = (arr) => {
     })
 }
 console.log(emptyArr(["a", 123, "b", "c", {name: "cat"}]))
+//3.
+const allEvens = (arr) => {
+    return arr.filter((el) => {
+        return el % 2 === 0
+    })
+}
+console.log(allEvens([1,2,3,4,5]))
+//4.
