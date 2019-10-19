@@ -161,7 +161,14 @@ myArr.sayHi() //Logs "Hi" to the console
 
 1. Using Array.prototype add a new method `myForEach` that mimics the behavior of the built in `forEach`.
 
+```
+Array.prototype.myForEach = function(callBack) {
+  for (let e of this) callBack(e)
+}
+array1 = [1, 2, 3, 4, 5]
+array1.myForEach(el => console.log(el))
 
+```
 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
 
 
