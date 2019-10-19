@@ -24,3 +24,10 @@ const allEvens = (arr) => {
 }
 console.log(allEvens([1,2,3,4,5]))
 //4.
+const sameCheck = (arr) => {
+    return arr.every((el,i) => {
+        return arr[0] === el
+    })
+}
+console.log(sameCheck([1,1,1,1]))
+//5.
