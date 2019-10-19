@@ -131,7 +131,7 @@ Output: true
 
 Input: [2,4,6,8,10]
 Output: false
-```w
+```
 
 
 11. Write a function that returns a new array containing all of the strings in the original array uppercased.
