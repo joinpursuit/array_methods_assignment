@@ -151,3 +151,25 @@ const noPosTen = (arr) =>{
 }
 
 console.log(noPosTen([2,4,6,8,12]))
+
+// 11. Write a function that returns a new array containing all of the 
+// strings in the original array uppercased.
+
+// ```
+// Input: [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
+// Output: ["CAT", "DOG", "BEAR"]
+// ```
+
+const upperCase = (arr) => {
+
+    let newArr = arr.filter((el) =>{
+        if(typeof el === "string") {
+            return el
+        }
+    })
+    return newArr.map((el) =>{
+        return el.toUpperCase()
+    })
+}
+
+console.log((upperCase([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"])))
