@@ -79,5 +79,8 @@ console.log(ifTrippled([1,2,5]));
 // PROBLEM 8
 
 const elemtDivisableBy = (divisor,arr) => {
-    
+     return arr.filter((el) => {
+          return el % divisor === 0
+     }) 
 }
+console.log(elemtDivisableBy(5,[4,5,6,7,8,9,10,11,12,13,14,15]));
