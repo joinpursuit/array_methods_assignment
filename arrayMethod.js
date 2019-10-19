@@ -78,18 +78,18 @@ console.log(triple([1,2,4,7]));
 console.log(triple([3,4,5]));
 
 
-//8 
+//8
 
 const elementDivisibleBy = (arr, divisor) => {
   return arr.filter((el) => {
-    if(el % divisor === 0) 
+    if(el % divisor === 0)
     return el
   })
 }
 
-console.log(elementDivisibleBy([4,5,6,7,8,9,10,11,12,13,14,15], 5)) 
+console.log(elementDivisibleBy([4,5,6,7,8,9,10,11,12,13,14,15], 5))
 
-//9 
+//9
 
 const numberTimesIdx = (arr) => {
   return arr.map((el, i) => {
@@ -119,7 +119,7 @@ const upperCase = (arr) => {
     if(typeof el === "string"){
       return el
     }
-    }) 
+    })
     return newArr.map((el) => {
       return el.toUpperCase()
     })
