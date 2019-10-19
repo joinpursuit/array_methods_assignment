@@ -182,10 +182,16 @@ console.log(capsUp([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
 
 
 // 1. Using Array.prototype add a new method `myForEach` that mimics the behavior of the built in `forEach`.
-
-
+Array.prototype.myForEach = function(cb) {
+    for(let i = 0; i > this.length; i++){
+        cb(this[i])
+    }
+}
 // 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
-
+Array.prototype.myMap = function(cb) {
+    let newArr = []
+    return myForEach()
+}
 
 // 3. Write a `myFilter` that behaves the same as `filter`.
 
