@@ -33,8 +33,7 @@ console.log(result(["a", 123, "b", "c", {name: "cat"}]));
 ```
 const evenReturn = (arr) => arr.filter(num => !(num % 2))
 evenReturn([1, 2, 3, 4, 5]);
-
-___________________________________________________________________________________________________
+__________________________________________________________________________________________________
 
 //Another format
 
@@ -79,20 +78,21 @@ const countZeroes = (arr) => {
    })
    return count;
 }
-countZeroes([1,0,0,2,0,3,0,0,0]);
-
    
-```
-___________________________________________________________________________________________________
-
-
 ```
 
 6. Write a function that doubles every element in an array.
 
 ```
 const doubleAllElem = (arr) => arr.map(num => num * 2)
-console.log(doubleAllElem([1, 2, 3, 4]));
+
+___________________________________________________________________________________________________
+
+const doubleNum = (arr) => {
+  return arr.map ((el, i) => {
+    return el * 2
+  })
+}
 
 ```
 
@@ -100,18 +100,21 @@ console.log(doubleAllElem([1, 2, 3, 4]));
 7. Write a function that whether every tripled number in an array is less than 20.
 
 ```
-Input: [1,2,4,7]
-Output: false (7 * 3 = 21)
+const tripleNum = (arr) => {
+   let newArr = arr.map((el) => {
+       return el * 3;
+   })
+   return newArr.every((el)=> el < 20)
+}
 
-Input: [3,4,5]
-Output: true
+
 ```
 
 8. Write a function `elementDivisibleBy` with parameters `divisor` and `arr`.  Return a new array of every element of arr that can be evenly divided by divisor.
 
 ```
-Input: 5, [4,5,6,7,8,9,10,11,12,13,14,15]
-Output: [5,10,15]
+const elementDivisibleBy = (divisor, arr) => arr.filter(el => !(el % divisor))
+
 ```
 
 9. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by its index.
