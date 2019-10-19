@@ -4,15 +4,17 @@
 
 ```
 const addTenToArrray = (arr) => arr.map(num => num + 10)
-console.log(addTenToArrray([1, 2, 3, 4, 5]));
+addTenToArrray([1, 2, 3, 4, 5]));
 
 ```
 
 2. Given an array, return a new array where every non-string element is converted to an empty string.
 
 ```
-const result = (arr) => arr.map(a => typeof a === `string` ? a : a = ``)
+
+const result = (arr) => arr.map(el => typeof el === `string` ? el : el = ``)
 console.log(result(["a", 123, "b", "c", {name: "cat"}]));
+
 
 ```
 
