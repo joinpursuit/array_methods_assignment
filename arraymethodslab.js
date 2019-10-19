@@ -113,3 +113,39 @@ const upperString = (arr) => {
     })
 }
 console.log(upperString([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
+
+
+
+// BONUS EXCERCISES
+// Problem 1
+let arr = [5, 7, 10, 11, -3, "", "dumplings", 0];
+Array.prototype.myForEach = function (cb) {
+    for (let i = 0; i < this.length; i++){
+        cb(this[i])
+     }
+    }
+arr.myForEach((num) => console.log(num * 2))
+
+
+// Problem 2
+Array.prototype.myMap = function (cb) {
+    let newArr = []
+    for (let i = 0; i < this.length; i++){
+        newArr.push(cb(this[i]))
+     }
+     return newArr
+    }
+arr.myMap((el) => console.log(el + 1))
+
+
+// Problem 3
+Array.prototype.myFilter = function (cb) {
+    let newArr = []
+    for (let i = 0; i < this.length; i++) {
+        if (cb(this[i]) === true) {
+            newArr.push(this[i]);
+        }
+    }
+    return newArr
+}
+arr.myFilter((el) => console.log(el > 0))
