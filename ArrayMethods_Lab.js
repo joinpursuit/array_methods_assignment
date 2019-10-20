@@ -89,7 +89,7 @@ const countZeroes = arr => {
     })
     return newArray.length
 }
-console.log(countZeroes([1,0,0,2,0,3,0,0,0]))
+console.log(countZeroes([1,0,0,2,0,3,0,0,0])) //** Check for other solutions
 
 // 6. Write a function that doubles every element in an array.
 
@@ -121,12 +121,20 @@ console.log(tripleTrue([1,2,4,7]))
 // Output: [5,10,15]
 // ```
 
-// 9. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by its index.
+const elementDivisibleBy = (divisor, arr) => arr.filter(el => el % divisor === 0)
+console.log(elementDivisibleBy(5, [4,5,6,7,8,9,10,11,12,13,14,15]))
+
+
+// 9. Write a `numberTimesIdx` that uses `map` and multiplies each number in the array by its index.
 
 // ```
 // Input: [6,7,8,9]
 // Output: [0,7,16,27]
 // ```
+
+const numberTimesIdx = arr => arr.map((el,i) => el * i)
+console.log(numberTimesIdx([6,7,8,9]))
+
 
 // 10. Write a function that returns whether or not every value in an array is a positive even number that doesn't end in 0.
 
@@ -138,6 +146,19 @@ console.log(tripleTrue([1,2,4,7]))
 // Output: false
 // ```
 
+const pos10 = arr => {
+    return arr.every(el => {
+        if (el > 0  && el%10 !== 0){
+        return el
+        }
+    })
+}
+
+const pos10A = arr => arr.every(el => el > 0  && el%10 !== 0)
+
+console.log(pos10([2,4,6,8,9]))
+console.log(pos10A([2,4,6,8,10]))
+
 
 // 11. Write a function that returns a new array containing all of the strings in the original array uppercased.
 
@@ -145,6 +166,15 @@ console.log(tripleTrue([1,2,4,7]))
 // Input: [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
 // Output: ["CAT", "DOG", "BEAR"]
 // ```
+
+newArray = []
+const upperCase = arr => {
+    newArray = arr.filter(el => (typeof el === "string"))
+    return newArray.map( el => el.toUpperCase())
+}
+
+console.log(upperCase([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
+
 
 // ## Bonus:
 
@@ -166,9 +196,23 @@ console.log(tripleTrue([1,2,4,7]))
 
 // 1. Using Array.prototype add a new method `myForEach` that mimics the behavior of the built in `forEach`.
 
+Array.prototype.myForEach = function () {
+    for (let i = 0 ; i < this.length ; i++)
+    console.log(this[i])
+}  
+
 
 // 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
 
+Array.prototype.myMap = function(callback) {
+    let newArray = []
+    for (let i = 0 ; i < this.length ; i++){
+    newArray.push(callback(this[i]))}
+    return newArray
+}
+
+const myFunc = arr => arr.myMap(el => el += 1) 
+console.log(myFunc([1,2,3]))
 
 // 3. Write a `myFilter` that behaves the same as `filter`.
 
@@ -176,7 +220,7 @@ console.log(tripleTrue([1,2,4,7]))
 // 4. Write a `myEvery` that behaves the same as `every`.
 
 
-// 5. Write a `myReduce`. It should use the first element in the array if none is given.
+// SKIP 5. Write a `myReduce`. It should use the first element in the array if none is given.
 
 
 // 6. Write a `myJoin` function.
