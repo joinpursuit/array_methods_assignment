@@ -48,3 +48,7 @@ const countZeroes = (arr) => {
   return zeroes
 }
 console.log(countZeroes([0,3,4,0,1,14,5,0,0]))
+
+// 6. Write a function that doubles every element in an array.
+
+const doubleIt 
