@@ -28,13 +28,26 @@
 // }
 // console.log(evenNum([1,2,3,4,5,6,7,8,9,10]))
 
-const evenNum = (arr) => {
-    return arr.reduce((el, i) => {
-        if(el === arr[i]){
-            return true
+// const evenNum = (arr) => {
+//     return arr.reduce((el, i) => {
+//         if(el === arr[i]){
+//             return true
+//         }else{
+//             return false
+//         }
+//     },)
+// }
+// console.log(evenNum(([5,1,1,1,1,1,])))
+
+
+const allZeroes = (arr) => {
+    return arr.reduce ((acc, el) => {
+        if(el === 0){
+            acc++;
         }else{
-            return false
+            acc = 1
         }
+        return acc
     },)
 }
-console.log(evenNum(([5,1,1,1,1,1,])))
+console.log(allZeroes([0,0,0,0,0,0,0,0]))
