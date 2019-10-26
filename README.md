@@ -24,7 +24,7 @@ Output: [2,4]
 4. Write a function that checks if all elements in the array are the same.
 
 ```
-Input: [1,1,1,1,1]
+Input: ls
 Output: true
 
 Input: [1,1,1,1,2]
