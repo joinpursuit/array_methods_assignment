@@ -60,11 +60,11 @@
 
 //Problem 6
 
-const doubleFunction = (arr) => {
-    return arr.map((el) => {
-        return el * 2
-    })
-}
+// const doubleFunction = (arr) => {
+//     return arr.map((el) => {
+//         return el * 2
+//     })
+// }
 
 
-console.log(doubleFunction([1,2,3,4]))
+// console.log(doubleFunction([1,2,3,4]))
