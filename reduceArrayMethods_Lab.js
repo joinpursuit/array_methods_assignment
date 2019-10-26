@@ -66,5 +66,74 @@ const sameArray = arr => {
 
 console.log(sameArray([1,2,1,1,1]))
 
+console.log('QUESTION 5')
+// Input: [1,0,0,2,0,3,0,0,0]
+// Output: 6
+const countZeroes = arr =>{
+    return arr.reduce((acc,el)=>{
+        if(el ===0 ){
+            acc +=1
+        }
+        return acc
+    }, 0)
+}
+console.log(countZeroes([1,0,0,2,0,3,0,0,0]))
 
+console.log('QUESTION 6')
 
+const doubleArray = arr =>{
+    return arr.reduce((acc, el)=>{
+        acc.push(el * 2)
+        return acc
+    },[])
+}
+console.log(doubleArray([1,2,3,4]))
+
+console.log('QUESTION 7')
+const tripLessThan = arr =>{
+    return arr.reduce((acc,el)=>{
+        if(el *3 <20){
+            acc = true
+            
+        }
+        return acc
+    },false)
+
+}
+
+console.log(tripLessThan([1,2,4,2]))
+
+console.log('QUESTION 8')
+const divisibleFive = (arr, divisor) =>{
+    return arr.reduce((acc, el)=>{
+        if(el % divisor===0){
+            acc.push(el)
+        }
+        return acc
+    },[])
+    
+}
+console.log(divisibleFive([4,5,6,7,8,9,10,11,12,13,14,15],5))
+console.log('QUESTION 9')
+
+const numberTimesIdx = (arr) =>{
+    return arr.reduce((acc,el,i)=>{
+       acc.push(el * i ) 
+       return acc
+    },[])
+
+}
+console.log(numberTimesIdx([6,7,8,9]))
+
+console.log('QUESTION 10')
+
+const positiveEvenNoZero = (arr)=>{
+    return arr.reduce((acc, el)=>{
+        if(el<0 || el%2!==0 || el%10===0){
+            acc = false
+            console.log(acc)
+        }
+        return acc
+    },true)
+}
+console.log(positiveEvenNoZero([2,4,6,8,-12]))
