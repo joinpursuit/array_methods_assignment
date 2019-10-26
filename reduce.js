@@ -55,3 +55,35 @@ const same = (arr) => {
     })
 }
 console.log(same([1,1,1,10]))
+
+// 5. Write a function `countZeroes`, which takes an array of numbers 
+// as its argument and returns the amount of zeroes that occur in it.
+
+const countZeroes = (arr) => {
+    return arr.reduce((count, el) =>  {
+        if(el === 0) {
+            count ++; 
+        }
+        return count
+    }, 0)
+}
+
+console.log(countZeroes([0, 1, 2, 0, 2, 0, 5, 0, 0]))
+
+// 6. Write a function that doubles every element in an array.
+
+const double = (arr) => {
+    return arr.reduce((newArray, el) => {
+    newArray.push(el*2)
+    return newArray
+    }, [])
+}
+console.log(double([2, 3, 4]))
+
+// 7. Write a function that whether every tripled number in an array is less than 20.
+
+const triple = (arr) => {
+    return arr.reduce(() => {
+        
+    })
+}
