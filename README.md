@@ -1,4 +1,4 @@
-# Exercises
+<!-- # Exercises
 
 1. Given an array of numbers, write a function that returns a new array where every element is incremented by 10.
 
@@ -6,6 +6,7 @@
 Input: [1,2,3,4,5]
 Output: [11,12,13,14,15]
 ```
+
 
 2. Given an array, return a new array where every non-string element is converted to an empty string.
 
@@ -176,4 +177,4 @@ Output: 8
 
 Input: [1,2,3,4,5]
 Output: 9
-```
+``` -->
