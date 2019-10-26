@@ -71,7 +71,7 @@ Output: [0,7,16,27]
 
 10. Write a function that returns whether or not every value in an array is a positive even number that doesn't end in 0.
 
-```
+``` 
 Input: [2,4,6,8,12]
 Output: true
 
@@ -111,13 +111,12 @@ myArr.sayHi() //Logs "Hi" to the console
 2. Use your `myForEach` to add `myMap` to the Array prototype. `myMap` should behave the same as regular `map`.
 
 
-3. Write a `myFilter` that behaves the same as `filter`.
-
+ 
 
 4. Write a `myEvery` that behaves the same as `every`.
 
 
-5. Write a `myReduce`. It should use the first element in the array if none is given.
+5. Write
 
 
 6. Write a `myJoin` function.
@@ -177,3 +176,6 @@ Output: 8
 Input: [1,2,3,4,5]
 Output: 9
 ```
+
+
+fdsjgfdslfjdslfj
