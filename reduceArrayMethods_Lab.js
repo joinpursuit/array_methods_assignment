@@ -137,3 +137,16 @@ const positiveEvenNoZero = (arr)=>{
     },true)
 }
 console.log(positiveEvenNoZero([2,4,6,8,-12]))
+console.log('QUESTION 11')
+const allUpperCase = (arr)=>{
+    return arr.reduce((acc,el)=>{
+        if(typeof el=== "string"){
+            acc.push(el.toUpperCase())
+        }
+        return acc
+    },[])
+   
+
+}
+
+console.log(allUpperCase([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
