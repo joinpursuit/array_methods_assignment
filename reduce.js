@@ -38,4 +38,20 @@ const even = (arr) => {
        return newArr
     },[])
 }
-console.log(even([1,2,3,4,5]))
+// console.log(even([1,2,3,4,5]))
+
+
+// 4.
+
+
+const same = (arr) => {
+    return arr.reduce((bool,el) => {
+        if(arr[0] === el){
+            return true
+        } else {
+            return false
+        }
+
+    })
+}
+console.log(same([1,1,1,10]))
