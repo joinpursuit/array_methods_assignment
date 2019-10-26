@@ -26,6 +26,16 @@ const nonString = (arr) => {
     },[])
  }
 //console.log(nonString(['a','b',1]))
-console.log(nonString(["a", 123, "b", "c", {name: "cat"}]))
+// console.log(nonString(["a", 123, "b", "c", {name: "cat"}]))
 
 // 3. 
+
+const even = (arr) => {
+    return arr.reduce((newArr,el) => {
+       if (el % 2 === 0){
+           newArr.push(el)
+        }
+       return newArr
+    },[])
+}
+console.log(even([1,2,3,4,5]))
