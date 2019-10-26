@@ -146,7 +146,7 @@ const allUpperCase = (arr)=>{
         return acc
     },[])
    
-
+  
 }
 
 console.log(allUpperCase([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
