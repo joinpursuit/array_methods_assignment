@@ -57,4 +57,39 @@ const countZeroes = (arr) => {
 
   },0)
 }
-console.log(countZeroes([1,2,3,4,0,0,0,0,6]))
+// console.log(countZeroes([1,2,3,4,0,0,0,0,6]))
+
+// 6. Write a function that doubles every element in an array.*
+
+const double = (arr) => {
+  return arr.reduce((bigMac,el) => {
+    bigMac.push(el * 2) 
+    return bigMac
+  }, [])
+}
+// console.log(double([2,3,4,5]))
+
+// 7. Write a function that whether every tripled number in an array is less than 20.
+
+const allTriple = (arr)=>{
+  return arr.reduce((result,el)=>{
+    if(el * 3 >= 20){
+      result = false 
+    }
+return result 
+  },true)
+}
+// console.log(allTriple([1,2,3,4,7]))
+
+
+// 8. Write a function `elementDivisibleBy` with parameters `divisor` and `arr`.  Return a new array of every element of arr that can be evenly divided by divisor.
+
+const elementDivisibleBy = (arr,divisor) => {
+  return arr.reduce((divisible,el)=>{
+    if (el % divisor === 0 ){
+      divisible.push(el)
+    }
+    return divisible
+  },[])
+}
+console.log(elementDivisibleBy([3,15,12,9,4,2,7],3))
