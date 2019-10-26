@@ -109,7 +109,7 @@ const upperCase = (arr) => {
     return arr.reduce((newarr, el)=>{
         if(typeof(el)==="string"){
             newarr.push(el)
-            newarr.toUpperCase(el)
+            newarr.toUpperCase(el)  
         }return newarr
     }, [])
 }
