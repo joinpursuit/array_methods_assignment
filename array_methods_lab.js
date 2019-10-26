@@ -221,9 +221,9 @@ Array.prototype.myMap = function(cb){
 Array.prototype.myFilter = function(callback){
     let result = [];
     for(let i = 0; i < this.length; i++){
-        if(callback(this[i]) === true){
+        if(callback(this[i])){
             result.push(this[i]);
-        }
+        } 
     }
     return result;
 }
