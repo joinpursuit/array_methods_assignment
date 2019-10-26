@@ -204,7 +204,7 @@ arr.myForEach((el) => {
     Array.prototype.myFilter = function(fn) {
         let newArr = []
         for(let i = 0; i < this.length; i++) {
-            if(fn(this[i]) === true){
+            if(fn(this[i])){
                 newArr.push(this[i])
             }
           }
