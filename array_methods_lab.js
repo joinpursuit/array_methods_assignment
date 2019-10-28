@@ -243,13 +243,11 @@ Array.prototype.myEvery = function (callback){
 
 
 // 5. Write a `myReduce`. It should use the first element in the array if none is given.
-Array.prototype.myReduce = function (cb){
-    let acc = initialValue || undefined;
+Array.prototype.myReduce = function (cb, initialValue){
+    let acc = initialValue 
     for(let i = 0; i < this.length; i++){
         if (acc){
-            acc = callback.call(acc,acc,this[i], i, this);
-        } else{
-            acc = this[i];
+            acc = cb(acc,this[i], i, this);
         }
     }
     return acc;

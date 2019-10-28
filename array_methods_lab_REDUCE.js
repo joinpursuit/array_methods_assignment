@@ -59,15 +59,15 @@ console.log(evenElements([1,2,3,4,5]));
 // Output: false
 // ```
 const arrEveryReduce = (arr) => {
-    return arr.reduce((acc, el) => {
-        if (el === arr[0]){
-            return true;
-        } else {
-            return false;
+    let bool = true;
+    arr.reduce((acc, el) => {
+        if(el !== arr[0]){
+          bool = false;
         }
     })
+    return bool;
 }
-console.log(arrEveryReduce([1,1,1,1,1]));
+console.log(arrEveryReduce([1,1,1,2,1]));
 console.log(arrEveryReduce([1,1,1,1,2]));
 
 // 5. Write a function `countZeroes`, which takes an array of numbers as its argument and returns the amount of zeroes that occur in it.
@@ -161,15 +161,15 @@ console.log(numTimesIdxReduce([6,7,8,9]));
 // Output: false
 // ```
 const positiveEvenReduce = (arr) => {
-    return arr.reduce((acc, el) => {
-        if(el % 2 === 0 && el % 10 !== 0) {
-            return true;
-        } else {
-            return false;
-        }
+    let bool = true;
+    arr.reduce((acc, el) => {
+      if(el % 2 === 0 && el % 10 === 0) {
+          bool = false;
+      }
     })
+    return bool;
 }
-console.log(positiveEvenReduce([2,4,6,8,12]));
+console.log(positiveEvenReduce([2,4,6,10,12]));
 console.log(positiveEvenReduce([2,4,6,8,10]));
 
 
