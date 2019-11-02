@@ -166,10 +166,13 @@ console.log(newFun([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
 // `myForEach` that mimics the behavior of the 
 // built in `forEach`.
 
-Array.prototype.myForEach2 = function() {
-     for(i = 0; i < this.length; i++){
-        console.log("Hi")
+Array.prototype.myForEach = function(fn) {
+     for(let i = 0; i < this.length; i++){
+         fn(this[i]) 
     }
 }
 
-[1,2,3,4].myForEach2()
+let lol =[1,2,3,4]
+lol.myForEach((el) => {
+    console.log(el)
+})
