@@ -13,3 +13,29 @@ const sumOfElements = (arr) => arr.map(el => {
 })
 
 console.log(sumOfElements([1, 2, 3, 4, 5]))
+
+/*
+Given an array, return a new array where every non - string element is converted to an empty string.
+Input: ["a", 123, "b", "c", {
+    name: "cat"
+}]
+Output: ["a", "", "b", "c", ""] */
+
+let inputTwo = ["a", 123, "b", "c", {
+    name: "cat"
+}]
+
+const convertToStr = (arr) => {
+    return arr.map((el) => {
+        if (typeof el === "string") {
+            return el
+        } else {
+            return ""
+        }
+
+    })
+}
+
+console.log(convertToStr(["a", 123, "b", "c", {
+    name: "cat"
+}]))
