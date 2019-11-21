@@ -72,4 +72,36 @@ const getSameElements = (arr) => {
 }
 // every returns a boolean 
 console.log(getSameElements([1, 1, 1, 1, 1]))
-console.log(getSameElements([1, 1, 1, 1, 2]))
+// console.log(getSameElements([1, 1, 1, 1, 2]))
+
+
+/* 
+5.Write a function countZeroes, which takes an array of 
+numbers as its argument and returns the amount of zeroes that occur in it.
+Input: [1, 0, 0, 2, 0, 3, 0, 0, 0]
+Output: 6 */
+// let inputFive = [1, 0, 0, 2, 0, 3, 0, 0, 0]
+
+const countZeroes = (arr) => {
+    let zeroes = 0;
+
+    return arr.reduce((acc, el) => {
+        if (arr.includes(zeroes)) {
+            return acc += el
+        }
+    }, 0)
+}
+
+console.log(countZeroes([1, 0, 0, 2, 0, 3, 0, 0, 0]))
+
+/*
+5. Write a function that doubles every element in an array.
+Input: [1, 2, 3, 4]
+Output: [2, 4, 6, 8] */
+
+const doubleArr = (arr) => {
+    return arr.map(el => {
+        return el * 2
+    })
+}
+console.log(doubleArr([1, 2, 3, 4]))
