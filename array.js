@@ -89,13 +89,13 @@ const countZeroes = (arr) => {
         if (arr.includes(zeroes)) {
             return acc += el
         }
-    }, 0)
+    })
 }
 
 console.log(countZeroes([1, 0, 0, 2, 0, 3, 0, 0, 0]))
 
 /*
-5. Write a function that doubles every element in an array.
+6. Write a function that doubles every element in an array.
 Input: [1, 2, 3, 4]
 Output: [2, 4, 6, 8] */
 
@@ -105,3 +105,20 @@ const doubleArr = (arr) => {
     })
 }
 console.log(doubleArr([1, 2, 3, 4]))
+
+/* 
+7. Write a function that whether every
+ tripled number in an array is less than 20.
+Input: [1,2,4,7]
+Output: false (7 * 3 = 21)
+
+Input: [3,4,5]
+Output: true */
+
+const tripledNum = (arr, target) => {
+    return arr.every((el) => {
+        return ((el * 3) < target)
+    })
+}
+console.log(tripledNum([1, 2, 4, 7], 20))
+console.log(tripledNum([3, 4, 5], 20))
