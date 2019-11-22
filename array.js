@@ -141,3 +141,43 @@ const numberTimesIdx = (arr) => {
     })
 }
 console.log(numberTimesIdx([6, 7, 8, 9]))
+
+/* 
+10. Write a function that returns whether or not every value in an array is a positive even number that doesn't end in 0.
+Input: [2,4,6,8,12]
+Output: true
+
+Input: [2,4,6,8,10]
+Output: false */
+
+const getPositiveZero = (arr) => {
+    return arr.every((el) => {
+        return el % 2 === 0 && el % 10 !== 0
+    })
+}
+
+console.log(getPositiveZero([2, 4, 6, 8, 10]))
+console.log(getPositiveZero([2, 4, 6, 8, 12]))
+
+/* 
+11. 
+Write a function that returns a new array containing
+all of the strings in the original array uppercased.
+Input: [{}, 1, "cat", 3, ["hi"], {
+    name: "dog"
+}, "dog", "bear"]
+Output: ["CAT", "DOG", "BEAR"] */
+
+const getString = (arr) => {
+    return arr.filter((el) => {
+        if (typeof el === "string") {
+            return el
+        }
+    }).map(el => {
+        return el.toUpperCase();
+    })
+}
+
+console.log(getString([{}, 1, "cat", 3, ["hi"], {
+    name: "dog"
+}, "dog", "bear"]))
