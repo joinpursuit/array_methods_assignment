@@ -122,3 +122,14 @@ const tripledNum = (arr, target) => {
 }
 console.log(tripledNum([1, 2, 4, 7], 20))
 console.log(tripledNum([3, 4, 5], 20))
+
+/* Write a function elementDivisibleBy with parameters divisor and arr. Return a new array of every element of arr that can be evenly divided by divisor.
+Input: 5, [4,5,6,7,8,9,10,11,12,13,14,15]
+Output: [5,10,15] */
+
+const elementDivisibleBy = (divisor, arr) => {
+    return arr.filter(el => {
+        return el % divisor === 0
+    })
+}
+console.log(elementDivisibleBy(5, [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]))
