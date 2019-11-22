@@ -142,12 +142,11 @@ const numberTimesIdx = (arr) => {
 }
 console.log(numberTimesIdx([6, 7, 8, 9]))
 
-/* 
-10. Write a function that returns whether or not every value in an array is a positive even number that doesn't end in 0.
-Input: [2,4,6,8,12]
+/* 10. Write a
+function that returns whether or not every value in an array is a positive even number that doesn 't end in 0.
+Input: [2, 4, 6, 8, 12]
 Output: true
-
-Input: [2,4,6,8,10]
+Input: [2, 4, 6, 8, 10]
 Output: false */
 
 const getPositiveZero = (arr) => {
@@ -181,3 +180,20 @@ const getString = (arr) => {
 console.log(getString([{}, 1, "cat", 3, ["hi"], {
     name: "dog"
 }, "dog", "bear"]))
+
+
+/* Bonus: */
+
+/*
+ 10.
+Write a function that returns
+ the sum of every element in an array.
+ Input: [1, 2, 3, 4, 5]
+ Output: 15 */
+
+const getSum = (arr) => {
+    return arr.reduce((acc, el) => {
+        return acc += el
+    })
+}
+console.log(getSum([1, 2, 3, 4, 5]))
