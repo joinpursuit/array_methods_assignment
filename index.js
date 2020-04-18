@@ -52,7 +52,7 @@
 //         if (el === 0) {
 //             return true           
 //         }
-//     }).length
+//     }). 
 //     return zeroes
 // }
 
@@ -126,13 +126,13 @@
 //BONUS QUESTIONS
 
 //Question 1
-Array.prototype.myForEach = function(arr,cb){
-    for(let i = 0; i < arr.length; i++){
-        cb(arr[i])
-    }
+// Array.prototype.myForEach = function(fn){
+//     for(let i = 0; i < this.length; i++){
+//       fn(this[i])
+//     }
 
-}
-let testArray = [1,2,3,4]
-console.log(testArray.myForEach(testArray, (testArray[i]) => {
-   return testArray[i] * 3
-}))
+// }
+// let testArray = [1,2,3,4]
+// testArray.myForEach((el) => {
+//    console.log(el + 1)
+// }
