@@ -70,3 +70,14 @@ const triple = (arr) => {
     })
 }
 console.log(triple([3,4,5]))
+
+//Question 8
+
+const elementDivisibleBy = (divisor, arr) => {
+    return arr.filter((el) => {
+      if (el % divisor === 0) {
+        return el
+      }
+    })
+}
+console.log(elementDivisibleBy(5, [4,5,6,7,8,9,10,11,12,13,14,15]))
