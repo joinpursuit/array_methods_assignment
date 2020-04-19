@@ -39,3 +39,16 @@ const sameElements = (arr) => {
     })
 }
 console.log(sameElements([2,1,1,1,1]))
+
+//Question 5
+
+const countZeroes = (arr) => {
+    let count = 0
+    arr.forEach((el) => {
+        if (el === 0) {
+            count++
+        }
+    })
+    return count
+}
+console.log(countZeroes([1,0,0,2,0,3,0,0,0]))
