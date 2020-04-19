@@ -30,3 +30,12 @@ const onlyEven = (arr) => {
     })
 }
 console.log(onlyEven([1,2,3,4,5]))
+
+//Question 4
+
+const sameElements = (arr) => {
+    return arr.every((el) => {
+      return (arr[0] === el)
+    })
+}
+console.log(sameElements([2,1,1,1,1]))
