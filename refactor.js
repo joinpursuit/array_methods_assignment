@@ -52,3 +52,12 @@ const countZeroes = (arr) => {
     return count
 }
 console.log(countZeroes([1,0,0,2,0,3,0,0,0]))
+
+//Question 6
+
+const doubleEl = (arr) => {
+    return arr.map((el) => {
+      return el * 2
+    })
+}
+console.log(doubleEl([1,2,3,4]))
