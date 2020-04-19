@@ -19,3 +19,14 @@ const convertNonstring = (arr) => {
     })
 }
 console.log(convertNonstring(["a", 123, "b", "c", { }]))
+
+//Question 3
+
+const onlyEven = (arr) => {
+    return arr.filter((el) => {
+      if (el % 2 === 0) {
+        return el
+      }
+    })
+}
+console.log(onlyEven([1,2,3,4,5]))
