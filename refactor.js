@@ -81,3 +81,12 @@ const elementDivisibleBy = (divisor, arr) => {
     })
 }
 console.log(elementDivisibleBy(5, [4,5,6,7,8,9,10,11,12,13,14,15]))
+
+//Question 9
+
+const numberTimesIdx = (arr) => {
+    return arr.map((el, i) => {
+      return i * el
+    })
+}
+console.log(numberTimesIdx([6,7,8,9]))
