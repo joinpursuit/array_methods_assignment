@@ -90,3 +90,12 @@ const numberTimesIdx = (arr) => {
     })
 }
 console.log(numberTimesIdx([6,7,8,9]))
+
+//Question 10
+
+const positiveEven = (arr) => {
+    return arr.every((el) => {
+     return (el > 0 && el % 2 === 0 && el % 10 !== 0)
+    })
+}
+console.log(positiveEven([2,4,6,8,10]))
