@@ -99,3 +99,16 @@ const positiveEven = (arr) => {
     })
 }
 console.log(positiveEven([2,4,6,8,10]))
+
+//Question 11
+
+const uppercaseStrings = (arr) => {
+    return arr.filter((el) => {
+      if (typeof(el) === typeof("")) {
+       return el
+      }
+    }).map((el) => {
+      return el.toUpperCase()
+    })
+}
+console.log(uppercaseStrings([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
