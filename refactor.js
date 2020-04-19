@@ -61,3 +61,12 @@ const doubleEl = (arr) => {
     })
 }
 console.log(doubleEl([1,2,3,4]))
+
+//Question 7
+
+const triple = (arr) => {
+    return arr.every((el) => {
+       return (el * 3 < 20) 
+    })
+}
+console.log(triple([3,4,5]))
