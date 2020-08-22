@@ -29,6 +29,7 @@ const Strings = array2.map(el =>{
         return "";
     }
 })
+//return modified element
 
 console.log('2)', Strings)
 
@@ -42,9 +43,10 @@ console.log('2)', Strings)
 
 let array3 = [1,2,3,4,5]
 
-const filter = array3.filter(filt =>{
-    return filt % 2 !== 1;
+const filter = array3.filter(el =>{
+    return el % 2 === 0;
 })
+//return boolean value
 
 console.log('3)', filter)
 
@@ -63,6 +65,7 @@ let array4 = [1,1,1,1,1,12]
 const CheckSame = array4.every(el =>{
     return el === array4[0];
 })
+//time complexity O(n)
 
 console.log('4)', CheckSame);
 
@@ -112,7 +115,7 @@ console.log('6)',largetstNum)
 let array7 = [1,0,0,2,0,3,0,0,0]
 
 const countZeroes = (array) => {
-    return array.filter(filt => filt === 0).length;
+    return array.filter(el => el === 0).length;
 }
 console.log('7)', countZeroes(array7));
 
@@ -130,6 +133,7 @@ const doubleEl = (array) => {
     })
     return doubled;
 }
+//map callback should return the modified element
 
 console.log('8)',doubleEl(array8));
 
@@ -160,12 +164,12 @@ console.log('9)',SumDouble(array9));
 
 let array10 = [4,5,6,7,8,9,10,1,12,13,14,15]
 
-const elementDivisibleBy = (array) => {
-    let divisor = array.filter(el => el % 5 === 0)
-    return divisor;
+const elementDivisibleBy = (divisor ,array) => {
+    let output = array.filter(el => el % divisor === 0)
+    return output;
 }
 
-console.log('10)',elementDivisibleBy(array10));
+console.log('10)',elementDivisibleBy(5,array10));
 
 // 11. Write a `numberTimesIdx` that uses `map` and multiples each number in the array by its index.
 
@@ -175,9 +179,7 @@ console.log('10)',elementDivisibleBy(array10));
 // ```
 let array11 = [6,7,8,9]
 const numberTimesIdx = (array) =>{
-    let numIdx = array.map((x,i)=>{
-        return x *i;
-    })
+    let numIdx = array.map((x,i)=> x * i )
     return numIdx;
 }
 
@@ -197,13 +199,15 @@ let array12A = [2,4,6,8,12]
 let array12B = [2,4,6,8,10]
 
 const positiveEven = (array) => {
-    let check = array.every((currentEl) => {
-        if (currentEl % 2 === 0 && currentEl % 10 !== 0 ){
-            return true;
-        }else{
-            return false;
-        }
-    })
+    let check = array.every( (currentEl) => (currentEl % 2 === 0 && currentEl % 10 !== 0) 
+    // {
+    //     if (currentEl % 2 === 0 && currentEl % 10 !== 0 ){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // }
+    )
     return check;
 }
 
@@ -226,11 +230,13 @@ let array13A = [2,3,4,5]
 let array13B = [1,2,3,4,5]
 
 const sumOdd = (array) => {
-    let check = array.reduce((total,el,acc) =>{
+    let check = array.reduce((acc,el) =>{
         if(el % 2 === 1){
-            return el + acc;
+            return acc + el;
+        }else{
+            return acc;
         }
-    })
+    },0)
     return check;
 
     
@@ -251,10 +257,11 @@ let array14 = [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
 let stringCap = (array) => {
     let result = array.filter((currEl) =>{
         if (typeof currEl === "string"){
-            return currEl.toUpperCase();
+            return true;
         }
     })
-    return result;
-}
 
+    return result.map(el => el.toUpperCase());
+}
+// filter callback is a known as test callback, where if the callback returns a truthy value the element is kept else the element is skipped 
 console.log('14)', stringCap(array14));
