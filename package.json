@@ -1,0 +1,24 @@
+{
+  "name": "array_methods_assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "bonus": "jest --runInBand bonus/bonus.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joinpursuit/array_methods_assignment.git"
+  },
+  "keywords": [],
+  "author": "Corey Ladovsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joinpursuit/array_methods_assignment/issues"
+  },
+  "homepage": "https://github.com/joinpursuit/array_methods_assignment#readme",
+  "dependencies": {
+    "jest": "^26.5.3"
+  }
+}
