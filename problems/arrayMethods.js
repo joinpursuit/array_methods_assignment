@@ -48,11 +48,14 @@ const stringsOnly = () => {};
 const onlyEvens = () => {};
 
 /**
- * Takes in an array and returns a new array with only the elements that are numbers.
+ * Takes in an array and returns a new array with only the elements
+ *  that are numbers.
  * Must use filter
  * @param {Array} items
  * @returns {number[]} Only number items should remain.
  */
+
+ const numbersOnly = () => {};
 
 /**
  * Takes in an array and checks if all elements in the array are the same.
@@ -123,34 +126,53 @@ const divisibleBy = () => {};
  * has been multiplied by it's index.
  * Exp Input: [6,7,8,9]
  * Output: [0,7,16,27]
- * @param {number[]} nums 
+ * @param {number[]} nums
  * @returns {number[]} Numbers times their index
  */
 
- const numberTimesIdx = () => {};
+const numberTimesIdx = () => {};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
  * in the array is a positive even number that doesn't end it 0.
  * Exp Input: [2,4,6,8,12]
  * Output: true
- * 
+ *
  * Exp Input: [2,4,6,8,10]
  * Output: false
- * 
- * @param {number[]} nums 
- * @returns {boolean} Are all numbers positive, even, and not ending in 0. 
+ *
+ * @param {number[]} nums
+ * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
- const arePostiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = () => {};
 
- /**
-  * Takes in an array of elements. 
-  * Returns a new array containing all of the string elements, but now upper-cased.
-  * Exp Input: [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
-  * Output: ["CAT", "DOG", "BEAR"]
-  * @param {Array} items 
-  * @returns {string[]} All strings upper-cased. 
-  */
+/**
+ * Takes in an array of elements.
+ * Returns a new array containing all of the string elements, but now upper-cased.
+ * Exp Input: [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
+ * Output: ["CAT", "DOG", "BEAR"]
+ * @param {Array} items
+ * @returns {string[]} All strings upper-cased.
+ */
 
-  
+const stringsAndCaps = () => {};
+
+module.exports = {
+  sumArray,
+  zeroCount,
+  plusTen,
+  stringsOnly,
+  onlyEvens,
+  numbersOnly,
+  isAllSame,
+  isAllOdd,
+  targetCount,
+  counterObject,
+  doubled,
+  tripledAndLessThan20,
+  divisibleBy,
+  numberTimesIdx,
+  arePositiveEvenAndNonZeroEnding,
+  stringsAndCaps,
+};
