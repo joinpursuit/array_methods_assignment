@@ -149,11 +149,11 @@ const arePositiveEvenAndNonZeroEnding = () => {};
 
 /**
  * Takes in an array of elements.
- * Returns a new array containing all of the string elements, but now upper-cased.
+ * Returns a new array containing all of the string elements, but now uppercase.
  * Exp Input: [{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]
  * Output: ["CAT", "DOG", "BEAR"]
  * @param {Array} items
- * @returns {string[]} All strings upper-cased.
+ * @returns {string[]} All strings uppercase.
  */
 
 const stringsAndCaps = () => {};
