@@ -2,7 +2,7 @@
 
 
 # Array Methods Lab
-Get comfortable working with objects and iterating through them. [Documentation link](https://joinpursuit.github.io/array_methods_assignment/)
+Get comfortable working with common Array methods. [Documentation link](https://joinpursuit.github.io/array_methods_assignment/)
 
 ## Learning Objectives 
  * Be able use built in array methods in the place of for loops. 
