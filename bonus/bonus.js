@@ -18,6 +18,31 @@ function largestNum() {}
 
 function oddSum() {}
 
+/**
+ * Write a `transpose`. This function should transpose a matrix.
+ * @param {Array[]}
+ * @returns {Array[]}
+ */
+// Exp Input:
+//  let mtx = [
+//             [1, 2],
+//             [3, 4],
+//             [5, 6]
+//           ]
+
+// transpose(mtx);
+
+// Exp Output:
+// // => [
+//         [1, 3, 5],
+//         [2, 4, 6]
+//        ]
+
+ function transpose() {};
+
+
+module.exports = { largestNum, oddSum, transpose };
+
 // You can write your own Array methods!
 
 // ```js
@@ -120,7 +145,8 @@ Array.prototype.myEvery = function () {};
  * @returns {*}
  */
 
-Array.prototype.myReduce = function () {};
+Array.prototype.myReduce = function (callback, initialValue = undefined) {
+};
 
 /**
  * Write a `myJoin` function.
@@ -139,32 +165,12 @@ Array.prototype.myJoin = function () {};
  * @param {number} startIndex - starting index (inclusive)
  * @param {number} [startEndIndex] - ending index (exclusive) and defaults to end of array.
  * @returns {Array}
+ * 
+ * Extra bonus add the negative input ability.
  */
 
 Array.prototype.mySlice = function () {};
 
-/**
- * Write a `myTranspose`. This function should transpose a matrix.
- * @method
- * @name Array#myTranspose
- * @returns {Array[]}
- */
-// Exp Input:
-//  let mtx = [
-//             [1, 2],
-//             [3, 4],
-//             [5, 6]
-//           ]
-
-// mtx.myTranspose();
-
-// Exp Output:
-// // => [
-//         [1, 3, 5],
-//         [2, 4, 6]
-//        ]
-
-Array.prototype.myTranspose = function () {};
 
 /**
  *Write a `myFlatten`. 
