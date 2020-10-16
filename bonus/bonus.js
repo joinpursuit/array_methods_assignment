@@ -2,6 +2,22 @@
 // Don't worry about all the tests that tell you that you must use
 // such and such method. Using reduce will still allow you to pass all the tests.
 
+/**
+ * Takes in an array and returns the largest number.
+ * @param {number[]} nums - array of numbers
+ * @returns {number} Largest number in the array
+ */
+
+function largestNum() {}
+
+/**
+ * Takes in an array and returns the sum of all the odd numbers.
+ * @param {number[]} nums - array of numbers
+ * @returns {number} Sum of all odd numbers.
+ */
+
+function oddSum() {}
+
 // You can write your own Array methods!
 
 // ```js
@@ -116,15 +132,48 @@ Array.prototype.myReduce = function () {};
 
 Array.prototype.myJoin = function () {};
 
-
 /**
  * Write a `mySlice` function.
  * @method
  * @name Array#mySlice
  * @param {number} startIndex - starting index (inclusive)
- * @param {number} [startEndIndex] - ending index (exclusive) and defaults to end of array. 
+ * @param {number} [startEndIndex] - ending index (exclusive) and defaults to end of array.
  * @returns {Array}
  */
 
 Array.prototype.mySlice = function () {};
 
+/**
+ * Write a `myTranspose`. This function should transpose a matrix.
+ * @method
+ * @name Array#myTranspose
+ * @returns {Array[]}
+ */
+// Exp Input:
+//  let mtx = [
+//             [1, 2],
+//             [3, 4],
+//             [5, 6]
+//           ]
+
+// mtx.myTranspose();
+
+// Exp Output:
+// // => [
+//         [1, 3, 5],
+//         [2, 4, 6]
+//        ]
+
+Array.prototype.myTranspose = function () {};
+
+/**
+ *Write a `myFlatten`. 
+ This should take a multi-dimensional array and return it as one array.
+ * @method
+ * @name Array#myFlatten
+ * @returns {Array}
+ * Exp Input: [1, 2, [3, 4, 5, [6, 7, 8]]]
+ * Exp Output: [1, 2, 3, 4, 5, 6, 7, 8]
+ */
+
+Array.prototype.myFlatten = function () {};
