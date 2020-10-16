@@ -39,5 +39,6 @@ Get comfortable working with common Array methods. [Documentation link](https://
 
 ## Resources 
  - [Additional Practice Problems](https://the-winter.github.io/codingjs/ )
+ - [Even More Practice](https://github.com/souiukoto/javascript-test-generator)
  - [W3 Schools Array Iteration](https://www.w3schools.com/js/js_array_iteration.asp)
  - [MDN Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
