@@ -42,7 +42,9 @@ describe("zeroCount", () => {
   });
   test("uses forEach", () => {
     const funcString = zeroCount.toString();
-    expect(funcString.includes("forEach")).toBe(true);
+    expect(
+      funcString.includes("forEach") || funcString.includes("reduce")
+    ).toBe(true);
     expect(funcString.includes("for(")).toBe(false);
     expect(funcString.includes("while")).toBe(false);
   });
@@ -59,6 +61,7 @@ describe("plusTen", () => {
     expect(funcString.includes("map") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("for(")).toBe(false);
@@ -82,6 +85,8 @@ describe("stringsOnly", () => {
     expect(funcString.includes("map") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("for(")).toBe(false);
@@ -100,6 +105,8 @@ describe("onlyEvens", () => {
     expect(funcString.includes("filter") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("unshift")).toBe(false);
@@ -123,6 +130,8 @@ describe("numbersOnly", () => {
     expect(funcString.includes("filter") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("unshift")).toBe(false);
@@ -143,6 +152,8 @@ describe("isAllSame", () => {
     expect(funcString.includes("every") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("unshift")).toBe(false);
@@ -160,6 +171,8 @@ describe("isAllOdd", () => {
     expect(funcString.includes("every") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("unshift")).toBe(false);
@@ -180,6 +193,8 @@ describe("targetCount", () => {
     expect(
       funcString.includes("forEach") || funcString.includes("reduce")
     ).toBe(true);
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("for(")).toBe(false);
     expect(funcString.includes("while")).toBe(false);
   });
@@ -214,6 +229,8 @@ describe("doubled", () => {
     expect(funcString.includes("map") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("for(")).toBe(false);
@@ -231,6 +248,8 @@ describe("tripledAndLessThan20", () => {
     expect(funcString.includes("every") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("unshift")).toBe(false);
@@ -259,6 +278,8 @@ describe("divisibleBy", () => {
     expect(funcString.includes("filter") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("unshift")).toBe(false);
@@ -277,6 +298,8 @@ describe("numberTimesIdx", () => {
     expect(funcString.includes("map") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("for(")).toBe(false);
@@ -296,6 +319,8 @@ describe("arePositiveEvenAndNonZeroEnding", () => {
     expect(funcString.includes("every") || funcString.includes("reduce")).toBe(
       true
     );
+    if (funcString.includes("reduce")) return;
+
     expect(funcString.includes("forEach")).toBe(false);
     expect(funcString.includes("push")).toBe(false);
     expect(funcString.includes("unshift")).toBe(false);
@@ -309,6 +334,6 @@ describe("stringsAndCaps", () => {
     expect(
       stringsAndCaps([{}, 1, "cat", 3, ["hi"], { name: "dog" }, "dog", "bear"])
     ).toEqual(["CAT", "DOG", "BEAR"]);
-    expect(stringsAndCaps(["A", 3, "b"])).toEqual(["A", "B"])
-  })
+    expect(stringsAndCaps(["A", 3, "b"])).toEqual(["A", "B"]);
+  });
 });
