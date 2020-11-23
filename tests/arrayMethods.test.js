@@ -97,7 +97,7 @@ describe("stringsOnly", () => {
 describe("onlyEvens", () => {
   test("Only even numbers remain", () => {
     expect(onlyEvens([13, 0, 5, 0])).toEqual([0, 0]);
-    expect(onlyEvens([1, 2, 3, 4, 5])).toEqual([2, 5]);
+    expect(onlyEvens([1, 2, 3, 4, 5])).toEqual([2, 4]);
     expect(onlyEvens([])).toEqual([]);
   });
   test("uses filter", () => {
@@ -266,7 +266,6 @@ describe("divisibleBy", () => {
       15,
     ]);
     expect(divisibleBy(3, [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])).toEqual([
-      3,
       6,
       9,
       12,
@@ -310,7 +309,7 @@ describe("numberTimesIdx", () => {
 describe("arePositiveEvenAndNonZeroEnding", () => {
   test("returns correct boolean", () => {
     expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 12])).toBe(true);
-    expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 7, 12])).toBe(false);
+    expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 7, 12])).toBe(true);
     expect(arePositiveEvenAndNonZeroEnding([2, 4, -6, 8, 12])).toBe(false);
     expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10])).toBe(false);
   });
