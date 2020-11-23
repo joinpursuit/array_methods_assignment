@@ -213,7 +213,7 @@ describe("Array#myReduce", () => {
 
   it("does not call Array.prototype.reduce", () => {
     myArray = [1, 2, 3, 4];
-    spyOn(myArray, "reduce");
+    jest.spyOn(myArray, "reduce");
 
     myArray.myReduce(spy.sum);
 
@@ -223,7 +223,7 @@ describe("Array#myReduce", () => {
 
 describe("Array#myJoin", () => {
   beforeEach(() => {
-    const a = ["a", "b", "c", "d"];
+    a = ["a", "b", "c", "d"];
   });
 
   it("joins an array if no argument is passed", () => {
@@ -237,7 +237,7 @@ describe("Array#myJoin", () => {
 
 describe("Array#mySlice", () => {
     beforeEach(() => {
-        const a = [1, 2, 3]
+        a = [1, 2, 3]
     })
     test("slices the array from the start index to the end index", () => {
         expect(a.mySlice(1, 2)).toEqual([2])
@@ -256,7 +256,7 @@ describe("Array#mySlice", () => {
     })
 
     test("doesn't call built in slice", () => {
-        spyOn(a, "slice");
+        jest.spyOn(a, "slice");
         a.mySlice(0);
         expect(a.slice).not.toHaveBeenCalled();
     })
