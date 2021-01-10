@@ -128,7 +128,13 @@ const targetCount = () => {};
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
+<<<<<<< HEAD
 const counterObject = () => {};
+=======
+const counterObject = () => { 
+   
+};
+>>>>>>> a152df2d8fbec23eb0b57a0eb00d672aa209e1c8
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
