@@ -253,7 +253,7 @@ const stringsAndCaps = (items) => {
     if(typeof el === "string"){
       return el.toUpperCase();
     }
-  })
+  }).map((el) => el.toUpperCase());
 };
 
 module.exports = {
