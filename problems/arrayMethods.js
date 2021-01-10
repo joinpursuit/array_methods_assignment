@@ -125,7 +125,15 @@ const isAllOdd = (nums) => {
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {
+  let counter = []
+  nums.forEach((el) => {
+    if(el === target) {
+      counter.push(el)
+    }
+  }) 
+  return counter.length
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -134,7 +142,17 @@ const targetCount = () => {};
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
+const counterObject = (items) => {
+  let newObject = {}
+  items.forEach((el) => {
+    if(newObject[el]) {
+      newObject[el] += 1
+    } else {
+      newObject[el] = 1
+    }
+  })
+  return newObject
+};
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
