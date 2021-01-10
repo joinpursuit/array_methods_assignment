@@ -223,7 +223,11 @@ const numberTimesIdx = (nums) => {
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+  return nums.every((num) => {
+    return num % 2 === 0 && num % 10 !== 0 && num > 0 
+  })
+};
 
 /**
  * Takes in an array of elements.
