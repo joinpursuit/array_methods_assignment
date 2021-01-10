@@ -238,7 +238,14 @@ const arePositiveEvenAndNonZeroEnding = (nums) => {
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+  return items.map((item) => {
+    if (typeof item === "string") {
+      return item.toUpperCase()
+    }
+  }).filter((item) => item)
+};
+console.log(stringsAndCaps([{}, 1, "cat", 3, ["hi"], { name: "dog" }, "dog", "bear"]))
 
 module.exports = {
   sumArray,
