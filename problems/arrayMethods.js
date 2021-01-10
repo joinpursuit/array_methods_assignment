@@ -63,11 +63,16 @@ console.log(plusTen([]))
  */
 
 const stringsOnly = (items) => {
-  let  = arr.map ((item) => {
-
+  let output = items.map ((item) => {
+    if (typeof item === number) {
+      return ""
+    } else if (key in value){
+      return ""
+    }
   })
+  return output
 };
-
+console.log(stringsOnly([]))
 /**
  * Takes in an array and returns a new array with only the even elements.
  * Must use filter
