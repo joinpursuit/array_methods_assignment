@@ -127,7 +127,15 @@ const isAllOdd = (nums) => {
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {
+  let counter = 0;
+    nums.forEach((num) => {
+    if (target === num) {
+      counter += 1
+    }
+  })
+  return counter
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
