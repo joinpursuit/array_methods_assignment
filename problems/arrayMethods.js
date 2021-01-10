@@ -160,7 +160,11 @@ const counterObject = (items) => {
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (nums) => {
+  return nums.map((el) => {
+    return el * 2
+  })
+};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
@@ -169,7 +173,11 @@ const doubled = () => {};
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  return nums.every((el) => {
+    return (el * 3) < 20
+  })
+};
 
 /**
  * Takes in a divisor and an array of numbers.
