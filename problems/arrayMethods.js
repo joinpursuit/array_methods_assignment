@@ -60,7 +60,7 @@ const stringsOnly = (items) => {
       return el;
     }
     else {
-      return 
+      return ""
     }
   })
 };
@@ -127,7 +127,15 @@ const isAllOdd = (nums) => {
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => { };
+const targetCount = (nums, target) => {
+  let count = 0
+  nums.forEach ((el) => {
+    if (el === target) {
+      count++
+    }
+  })
+  return count
+ };
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -136,7 +144,18 @@ const targetCount = () => { };
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => { };
+const counterObject = (items) => {
+  let count = {}
+  items.forEach ((el) => {
+    if (count[el]) {
+      count[el]++ 
+    }
+    else {
+      count[el] = 1
+    }
+  })
+  return count
+ };
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
@@ -144,7 +163,11 @@ const counterObject = () => { };
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => { };
+const doubled = (nums) => {
+  return nums.map((el) => {
+    return el * 2
+  })
+ };
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
@@ -153,7 +176,14 @@ const doubled = () => { };
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => { };
+const tripledAndLessThan20 = (nums) => {
+  return nums.every ((el) => {
+    let triple = el * 3
+    if (triple < 20) {
+      return true
+    }
+  })
+ };
 
 /**
  * Takes in a divisor and an array of numbers.
