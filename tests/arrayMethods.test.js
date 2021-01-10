@@ -181,7 +181,7 @@ describe("isAllOdd", () => {
   });
 });
 
-describe.only("targetCount", () => {
+describe("targetCount", () => {
   test("returns the correct number of target occurrences in an arry", () => {
     expect(targetCount([1, 2, 3], 6)).toBe(0);
     expect(targetCount([], 2)).toBe(0);
@@ -200,7 +200,7 @@ describe.only("targetCount", () => {
   });
 });
 
-describe.only("counterObject", () => {
+describe("counterObject", () => {
   test("returns a counter object of all occurrences", () => {
     expect(counterObject([1, 1, 2, 1, 3])).toEqual({ 1: 3, 2: 1, 3: 1 });
     expect(counterObject(["cat", "bird", "dog", "cat"])).toEqual({

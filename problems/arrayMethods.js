@@ -169,7 +169,11 @@ const counterObject = (items) => {
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (array) => {
+  return array.map((el) => {
+    return el * 2
+  })
+};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
@@ -178,7 +182,11 @@ const doubled = () => {};
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (array) => {
+  return array.every((el) => {
+    return (el * 3) < 20;
+  })
+};
 
 /**
  * Takes in a divisor and an array of numbers.
@@ -189,9 +197,9 @@ const tripledAndLessThan20 = () => {};
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = (divisor) => {
-  return divisor.map((num, i) => {
-    return num % i == 0;
+const divisibleBy = (divisor, array) => {
+  return array.filter((el) => {
+    return el % divisor === 0;
   });
 };
 
@@ -223,7 +231,11 @@ const numberTimesIdx = (nums) => {
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (array) => {
+  return array.every((el) => {
+    return (el > 0) && (el % 2 === 0) && (el % 10 !== 0)
+  })
+};
 
 /**
  * Takes in an array of elements.
@@ -234,7 +246,13 @@ const arePositiveEvenAndNonZeroEnding = () => {};
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+  return items.filter((item) => {
+    return typeof item === "string"
+  }).map((el) => {
+    return el.toUpperCase()
+  })
+};
 
 module.exports = {
   sumArray,
