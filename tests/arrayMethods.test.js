@@ -309,7 +309,7 @@ describe("numberTimesIdx", () => {
 describe("arePositiveEvenAndNonZeroEnding", () => {
   test("returns correct boolean", () => {
     expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 12])).toBe(true);
-    expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 7, 12])).toBe(false);
+    expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 7, 12])).toBe(true);
     expect(arePositiveEvenAndNonZeroEnding([2, 4, -6, 8, 12])).toBe(false);
     expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10])).toBe(false);
   });
