@@ -258,7 +258,7 @@ const stringsAndCaps = (items) => {
 //   return items.filter((el) => {return typeof el === "string" }).map(string => {return string.toUpperCase()})
 // };
 
-console.log((stringsAndCaps([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"])))
+//console.log((stringsAndCaps([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"])))
 
 
 module.exports = {
