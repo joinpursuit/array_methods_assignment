@@ -155,7 +155,11 @@ const counterObject = (items) => {
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = (nums) => {};
+const doubled = (nums) => {
+  return nums.map((num) => {
+    return num * 2
+  })
+};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
