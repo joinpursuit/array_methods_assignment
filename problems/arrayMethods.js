@@ -7,9 +7,8 @@
 
 const sumArray = (nums) => {
   let sum = 0
-  nums.forEach(num => sum+=num)
-  return sum
-};
+  nums.forEach(num => sum += num)
+  };
 
 /**
  * Takes in an array of numbers and returns the amount of zeros that occur in it.
@@ -18,11 +17,8 @@ const sumArray = (nums) => {
  * Must use forEach
  */
 
-const zeroCount = (nums) => {
-  let count = 0
-  return
-
-}
+const zeroCount = (nums) => {}
+ 
  
 /**
  * Takes in an array of numbers and returns a new array where each
@@ -32,8 +28,10 @@ const zeroCount = (nums) => {
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = () => {};
 
+const plusTen = (nums) => {
+  return nums.map(num => num + 10)
+};
 /**
  * Takes in an array and returns a new array where every non-string
  * element is converted to an empty string.
@@ -53,7 +51,7 @@ const stringsOnly = () => {};
  * @returns {number[]} Only even valued elements
  */
 
-const onlyEvens = () => {};
+const onlyEvens = (nums) => {};
 
 /**
  * Takes in an array and returns a new array with only the elements
@@ -90,7 +88,8 @@ const isAllOdd = () => {};
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {}
+
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -138,7 +137,7 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
