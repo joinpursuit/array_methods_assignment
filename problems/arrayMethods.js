@@ -60,7 +60,7 @@ const stringsOnly = (items) => {
       return el;
     }
     else {
-      return ""
+      return 
     }
   })
 };
