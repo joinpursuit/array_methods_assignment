@@ -25,7 +25,7 @@ console.log(sumArray([]))
 const zeroCount = (nums) => {
   let count = 0 
   nums.forEach((num) => { 
-   if (num === 0) {
+   if(num === 0) {
      count +=1
    }
   })
@@ -109,15 +109,23 @@ console.log(numbersOnly([]))
  * @returns {boolean} Whether or not all elements are the same.
  */
 
-const isAllSame = () => {};
-
+const isAllSame = (items) => {
+  return items.every((item) => {
+   return item === items[0]
+  })
+};
+console.log(isAllSame([]))
 /**
  * Takes in an array and returns whether or not all elements in the array are odd.
  * @param {number[]} nums
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = () => {};
+const isAllOdd = (nums) => {
+  return nums.every((num) => {
+    return Math.abs(num % 2) == 1
+  })
+};
 
 /**
  * Takes in an array of numbers and a target.
@@ -127,7 +135,15 @@ const isAllOdd = () => {};
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {
+  let count = 0
+  nums.forEach((num) => {
+    if (num === target) {
+      count += 1
+    }
+  })
+return count
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -136,8 +152,15 @@ const targetCount = () => {};
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
-
+const counterObject = (items) => {
+  let objCount = {}
+  items.forEach((item) => {
+    if (objCount[item] = objCount[item]? objCount[item] + 1 : 1) {
+    }
+  })
+  return objCount
+};
+console.log(counterObject([]))
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
  * @param {number[]} nums
