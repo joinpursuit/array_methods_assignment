@@ -38,7 +38,11 @@ const zeroCount = (nums) => {
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = () => {};
+const plusTen = (nums) => { 
+  return nums.map((el) => {
+   return el + 10
+  })
+};
 
 /**
  * Takes in an array and returns a new array where every non-string
