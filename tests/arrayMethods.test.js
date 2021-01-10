@@ -238,7 +238,8 @@ describe("doubled", () => {
   });
 });
 
-describe("tripledAndLessThan20", () => {
+describe
+("tripledAndLessThan20", () => {
   test("correctly identifies if the numbers tripled will be less than 20", () => {
     expect(tripledAndLessThan20([1, 2, 4, 7])).toBe(false);
     expect(tripledAndLessThan20([3, 4, 5])).toBe(true);
@@ -328,7 +329,7 @@ describe("arePositiveEvenAndNonZeroEnding", () => {
   });
 });
 
-describe("stringsAndCaps", () => {
+describe.only("stringsAndCaps", () => {
   test("returns only strings and makes them uppercase", () => {
     expect(
       stringsAndCaps([{}, 1, "cat", 3, ["hi"], { name: "dog" }, "dog", "bear"])
