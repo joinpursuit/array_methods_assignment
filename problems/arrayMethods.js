@@ -20,7 +20,15 @@ const sumArray = (nums) => {
  * Must use forEach
  */
 
-const zeroCount = () => {};
+const zeroCount = (nums) => {
+  let counter = 0;
+  nums.forEach((num) => {
+    if (num === 0) {
+      counter += 1
+    }
+  })
+  return counter
+};
 
 /**
  * Takes in an array of numbers and returns a new array where each
