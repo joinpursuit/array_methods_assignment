@@ -100,7 +100,7 @@ const numbersOnly = (item) => {
 
 const isAllSame = (items) => {
   return items.every((el) => {
-    return el === el;  
+    return el === items[0];  
   });
 };
 
@@ -143,13 +143,14 @@ const targetCount = (nums,target) => {
 
 const counterObject = (items) => {
     let obj = {}
-    let count = 1
     items.forEach((el) => {
-      if (el === el) {
-        obj[el] += count 
+      if (obj[el]) {
+        obj[el] += 1
+      } else {
+        obj[el] = 1
       }
-      return obj[el] = count 
     })
+    return obj 
 };
 console.log(counterObject([1, 1, 2, 1, 3]))
 console.log(counterObject(["cat", "bird", "dog", "cat"]))
@@ -193,7 +194,7 @@ const tripledAndLessThan20 = (nums) => {
 const divisibleBy = (divisor, nums) => {
   console.log(nums)
   return nums.filter((el) => {
-    return el / divisor;
+    return el % divisor === 0;
   })
 };
 
@@ -227,7 +228,7 @@ const numberTimesIdx = (nums) => {
 
 const arePositiveEvenAndNonZeroEnding = (nums) => {
      return nums.every((el) => {
-      return el >= 0 || el % 2 === 0 || el !== 0;
+      return el > 0 && el % 2 === 0 && el % 10; 
      })
 };
 
