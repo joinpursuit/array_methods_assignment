@@ -5,7 +5,15 @@
  * @returns {number} Sum of all numbers
  */
 
-const sumArray = () => {};
+const sumArray = (nums) => {
+  let sum = 0
+  nums.forEach((num) => {
+    nums.push(sum += num)
+    
+  });
+return sum
+};
+console.log(sumArray([]))
 
 /**
  * Takes in an array of numbers and returns the amount of zeros that occur in it.
@@ -14,17 +22,35 @@ const sumArray = () => {};
  * Must use forEach
  */
 
-const zeroCount = () => {};
+const zeroCount = (nums) => {
+  let count = 0 
+  nums.forEach((num) => { 
+   if (num === 0) {
+     count +=1
+   }
+  })
+  return count
+};
+console.log(zeroCount([]))
+
+
+
 
 /**
- * Takes in an array of numbers and returns a new array where each
+ * Takes in an arra y of numbers and returns a new array where each
  * element has been incremented by 10.
  * Must use map.
  * @param {number[]} nums
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = () => {};
+const plusTen = (nums) => {
+  let output = nums.map((el) => {
+    return el + 10
+  })
+  return output
+};
+console.log(plusTen([]))
 
 /**
  * Takes in an array and returns a new array where every non-string
@@ -36,7 +62,11 @@ const plusTen = () => {};
  * @returns {string[]} All strings remain, all non strings are now empty strings.
  */
 
-const stringsOnly = () => {};
+const stringsOnly = (items) => {
+  let  = arr.map ((item) => {
+
+  })
+};
 
 /**
  * Takes in an array and returns a new array with only the even elements.
