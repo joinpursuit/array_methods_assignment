@@ -191,7 +191,11 @@ const tripledAndLessThan20 = (nums) => {
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor, nums) => {
+  return nums.filter((el) => {
+    return el % divisor === 0
+  })
+};
 
 /**
  * Takes in an array and returns a new array where each element
@@ -202,7 +206,13 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  return nums.map((el) => {
+    // let indexCounter = 0
+   return el * nums.indexOf(el)
+    // indexCounter++
+  })
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -217,7 +227,12 @@ const numberTimesIdx = () => {};
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+  return nums.every((el)=>{
+    let evenAndDivTen = el % 2 === 0 && el % 10 !== 0
+   return evenAndDivTen && el > 0
+  })
+ };
 
 /**
  * Takes in an array of elements.
@@ -228,7 +243,11 @@ const arePositiveEvenAndNonZeroEnding = () => {};
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => { 
+items.map((el)=>{
+  return el.toUpperCase()
+})
+};
 
 module.exports = {
   sumArray,
