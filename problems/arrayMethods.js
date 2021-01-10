@@ -6,7 +6,7 @@
  */
 
 const sumArray = (nums) => {
-  //working
+  
 };
 
 /**
