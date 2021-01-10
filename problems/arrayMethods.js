@@ -85,7 +85,11 @@ const onlyEvens = (nums) => {
  * @returns {number[]} Only number items should remain.
  */
 
-const numbersOnly = () => {};
+const numbersOnly = (items) => {
+  return items.filter((item) => {
+    return typeof item === "number"
+  })
+};
 
 /**
  * Takes in an array and checks if all elements in the array are the same.
