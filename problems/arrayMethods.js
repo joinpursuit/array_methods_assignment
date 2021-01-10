@@ -168,7 +168,9 @@ const doubled = (nums) => {
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  return nums.every(el => el * 3 < 20)
+};
 
 /**
  * Takes in a divisor and an array of numbers.
@@ -179,7 +181,10 @@ const tripledAndLessThan20 = () => {};
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor, nums) => {
+  let newArr = nums.filter(num => num % divisor === 0)
+  return newArr
+};
 
 /**
  * Takes in an array and returns a new array where each element
