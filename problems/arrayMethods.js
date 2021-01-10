@@ -93,13 +93,12 @@ const onlyEvens = (nums) => {
  */
 
 const numbersOnly = (items) => {
-  const output = items.filter((el) => {
-    return typeof el === "numbers"
+  const output = items.filter((item) => {
+    return typeof item === "number"
   })
   return output
 };
 console.log(numbersOnly([]))
-
 /**
  * Takes in an array and checks if all elements in the array are the same.
  * Must use every
@@ -107,7 +106,11 @@ console.log(numbersOnly([]))
  * @returns {boolean} Whether or not all elements are the same.
  */
 
-const isAllSame = () => {};
+const isAllSame = (items) => {
+  return items.every((item) => {
+  return item === items[0]
+})
+};
 
 /**
  * Takes in an array and returns whether or not all elements in the array are odd.
@@ -115,7 +118,11 @@ const isAllSame = () => {};
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = () => {};
+const isAllOdd = (nums) => {
+  return nums.every((num) => {
+    return Math.abs(num % 2) == 1;
+  })
+};
 
 /**
  * Takes in an array of numbers and a target.
@@ -125,7 +132,15 @@ const isAllOdd = () => {};
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {
+  let count = 0
+  nums.forEach((num) =>{
+  if (num === target){
+    count +=1
+  }
+})
+return count
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -134,7 +149,13 @@ const targetCount = () => {};
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
+const counterObject = (items) => {
+  let obj = {}
+  items.forEach((item) => {
+    if (obj[item] = obj[item]? obj[item] + 1 : 1)
+  
+return obj
+};
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
