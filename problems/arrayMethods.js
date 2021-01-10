@@ -187,7 +187,13 @@ const tripledAndLessThan20 = (nums) => {
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor, nums) => {
+  return nums.filter((num) => {
+    if (num % divisor === 0) {
+      return num
+    }
+  })
+};
 
 /**
  * Takes in an array and returns a new array where each element
