@@ -8,7 +8,16 @@
  * @returns {number} Largest number in the array
  */
 
-function largestNum() {}
+function largestNum(nums) {
+    let largest = nums.reduce((acc, num) => {
+        if(acc > num) {
+            return acc
+        } else {
+            return num
+        }
+    })
+    return largest
+}
 
 /**
  * Takes in an array and returns the sum of all the odd numbers.
@@ -16,7 +25,13 @@ function largestNum() {}
  * @returns {number} Sum of all odd numbers.
  */
 
-function oddSum() {}
+function oddSum(nums) {
+    return nums.reduce((acc, num) => {
+           return acc + num %2 === 1
+       
+    }, 0)
+  
+}
 
 /**
  * Write a `transpose`. This function should transpose a matrix.
