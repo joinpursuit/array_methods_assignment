@@ -9,14 +9,14 @@
  */
 
 function largestNum(nums) {
-    let largest = nums.reduce((acc, num) => {
-        if(acc > num) {
-            return acc
-        } else {
-            return num
-        }
-    })
-    return largest
+  let largest = nums.reduce((acc, num) => {
+    if (acc > num) {
+      return acc;
+    } else {
+      return num;
+    }
+  });
+  return largest;
 }
 
 /**
@@ -26,11 +26,13 @@ function largestNum(nums) {
  */
 
 function oddSum(nums) {
-    return nums.reduce((acc, num) => {
-           return acc + num %2 === 1
-       
-    }, 0)
-  
+  return nums.reduce((acc, num) => {
+    if (num % 2 === 1) {
+      return acc + num;
+    } else {
+      return acc;
+    }
+  }, 0);
 }
 
 /**
@@ -53,8 +55,10 @@ function oddSum(nums) {
 //         [2, 4, 6]
 //        ]
 
- function transpose() {};
+function transpose(mtx) {
+  
 
+}
 
 module.exports = { largestNum, oddSum, transpose };
 
@@ -160,8 +164,7 @@ Array.prototype.myEvery = function () {};
  * @returns {*}
  */
 
-Array.prototype.myReduce = function (callback, initialValue = undefined) {
-};
+Array.prototype.myReduce = function (callback, initialValue = undefined) {};
 
 /**
  * Write a `myJoin` function.
@@ -180,12 +183,11 @@ Array.prototype.myJoin = function () {};
  * @param {number} startIndex - starting index (inclusive)
  * @param {number} [startEndIndex] - ending index (exclusive) and defaults to end of array.
  * @returns {Array}
- * 
+ *
  * Extra bonus add the negative input ability.
  */
 
 Array.prototype.mySlice = function () {};
-
 
 /**
  *Write a `myFlatten`. 
