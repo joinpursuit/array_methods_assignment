@@ -88,7 +88,7 @@ const onlyEvens = (nums) => {
 const numbersOnly = (items) => {
   return items.filter((el) => {
     return typeof el === "number";
-
+    
   });
 };
 
@@ -99,12 +99,8 @@ const numbersOnly = (items) => {
  * @returns {boolean} Whether or not all elements are the same.
  */
 
-
-
 const isAllSame = (items) => {
-  return items.every((el) => {
-    return el === items[0]
-  })
+
 };
 
 /**
@@ -113,11 +109,7 @@ const isAllSame = (items) => {
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = (nums) => {
-  return nums.every((el) => {
-    return el % 2 === 1
-  })
-};
+const isAllOdd = () => {};
 
 /**
  * Takes in an array of numbers and a target.
@@ -125,17 +117,9 @@ const isAllOdd = (nums) => {
  * @param {number[]} nums
  * @param {number} target
  * @returns {number} Number of target occurrences
- */
+ */ 
 
-const targetCount = (nums, target) => {
-  let count = 0
-  nums.forEach((el) => {
-    if (el === target) {
-      count++
-    }
-  })
-  return count
-};
+const targetCount = () => {};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -144,7 +128,7 @@ const targetCount = (nums, target) => {
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => { };
+const counterObject = () => {};
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
@@ -152,7 +136,7 @@ const counterObject = () => { };
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => { };
+const doubled = () => {};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
@@ -161,7 +145,7 @@ const doubled = () => { };
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => { };
+const tripledAndLessThan20 = () => {};
 
 /**
  * Takes in a divisor and an array of numbers.
@@ -172,7 +156,7 @@ const tripledAndLessThan20 = () => { };
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => { };
+const divisibleBy = () => {};
 
 /**
  * Takes in an array and returns a new array where each element
@@ -183,7 +167,7 @@ const divisibleBy = () => { };
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => { };
+const numberTimesIdx = () => {};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -198,7 +182,7 @@ const numberTimesIdx = () => { };
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => { };
+const arePositiveEvenAndNonZeroEnding = () => {};
 
 /**
  * Takes in an array of elements.
@@ -209,7 +193,7 @@ const arePositiveEvenAndNonZeroEnding = () => { };
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => { };
+const stringsAndCaps = () => {};
 
 module.exports = {
   sumArray,
