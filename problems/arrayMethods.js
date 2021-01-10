@@ -9,8 +9,8 @@ const sumArray = (nums) => {
   let sum = 0;
   nums.forEach((num) => {
     sum += num;
-  })
-  return sum
+  });
+  return sum;
 };
 
 /**
@@ -21,13 +21,13 @@ const sumArray = (nums) => {
  */
 
 const zeroCount = (nums) => {
-  let count = 0
+  let count = 0;
   nums.forEach((el) => {
-    if(el === 0) {
-      count ++
+    if (el === 0) {
+      count++;
     }
-  })
-  return count
+  });
+  return count;
 };
 
 /**
@@ -40,9 +40,9 @@ const zeroCount = (nums) => {
 
 const plusTen = (nums) => {
   let newArr = nums.map((el) => {
-    return el + 10
-  })
-  return newArr
+    return el + 10;
+  });
+  return newArr;
 };
 
 /**
@@ -56,14 +56,14 @@ const plusTen = (nums) => {
  */
 
 const stringsOnly = (items) => {
-  let newArr =  items.map((el) => {
-    if (typeof el === 'string') {
-      return el
+  let newArr = items.map((el) => {
+    if (typeof el === "string") {
+      return el;
     } else {
-      return '';
+      return "";
     }
   });
-    return newArr
+  return newArr;
 };
 
 /**
@@ -75,9 +75,9 @@ const stringsOnly = (items) => {
 
 const onlyEvens = (nums) => {
   let output = nums.filter((el) => {
-    return el % 2 === 0
-  })
-  return output
+    return el % 2 === 0;
+  });
+  return output;
 };
 
 /**
@@ -90,9 +90,9 @@ const onlyEvens = (nums) => {
 
 const numbersOnly = (items) => {
   let output = items.filter((el) => {
-    return typeof el === "number"
-  })
-  return output
+    return typeof el === "number";
+  });
+  return output;
 };
 
 /**
@@ -103,9 +103,9 @@ const numbersOnly = (items) => {
  */
 
 const isAllSame = (items) => {
-  return items.every((el,i) => {
-    return items[0] === el
-  })
+  return items.every((el, i) => {
+    return items[0] === el;
+  });
 };
 
 /**
@@ -116,8 +116,8 @@ const isAllSame = (items) => {
 
 const isAllOdd = (nums) => {
   return nums.every((num) => {
-    return num % 2 === 1
-  })
+    return num % 2 === 1;
+  });
 };
 
 /**
@@ -129,13 +129,13 @@ const isAllOdd = (nums) => {
  */
 
 const targetCount = (nums, target) => {
-  let count = 0
+  let count = 0;
   nums.forEach((el) => {
-    if(el === target) {
-      count ++
+    if (el === target) {
+      count++;
     }
-  })
-  return count
+  });
+  return count;
 };
 
 /**
@@ -146,7 +146,7 @@ const targetCount = (nums, target) => {
  */
 
 const counterObject = (items) => {
-  let counter = {}
+  let counter = {};
   items.forEach((el) => {
     if (counter[el]) {
       counter[el] += 1;
@@ -165,9 +165,9 @@ const counterObject = (items) => {
 
 const doubled = (nums) => {
   let output = nums.map((el) => {
-   return el * 2
-  })
-  return output
+    return el * 2;
+  });
+  return output;
 };
 
 /**
@@ -179,9 +179,9 @@ const doubled = (nums) => {
 
 const tripledAndLessThan20 = (nums) => {
   let output = nums.every((el) => {
-    return (el * 3) < 20
+    return el * 3 < 20;
   });
-  return output
+  return output;
 };
 
 /**
@@ -195,9 +195,9 @@ const tripledAndLessThan20 = (nums) => {
 
 const divisibleBy = (divisor, nums) => {
   let Arr = nums.filter((el) => {
-    return el % divisor === 0
-  })
-  return Arr
+    return el % divisor === 0;
+  });
+  return Arr;
 };
 
 /**
@@ -211,8 +211,8 @@ const divisibleBy = (divisor, nums) => {
 
 const numberTimesIdx = (nums) => {
   return nums.map((el, i) => {
-    return el * i
-  })
+    return el * i;
+  });
 };
 
 /**
@@ -244,12 +244,12 @@ const arePositiveEvenAndNonZeroEnding = (nums) => {
  */
 
 const stringsAndCaps = (items) => {
-  return items.filter((word) => {
-    return typeof word === "string";
-  }).map((word) => word.toUpperCase());
-  
-  }
- 
+  return items
+    .filter((word) => {
+      return typeof word === "string";
+    })
+    .map((word) => word.toUpperCase());
+};
 
 module.exports = {
   sumArray,
