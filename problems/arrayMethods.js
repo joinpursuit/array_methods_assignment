@@ -6,11 +6,11 @@
  */
 
 const sumArray = (nums) => {
-  let sum = 0
+  let sum = 0;
   nums.forEach((el) => {
-  sum += el
-});
-  return sum 
+    sum += el;
+  });
+  return sum;
 };
 
 /**
@@ -21,9 +21,13 @@ const sumArray = (nums) => {
  */
 
 const zeroCount = (nums) => {
-   nums.forEach((el) => {
-  
+  let amount = 0;
+  nums.forEach((el) => {
+    if (el === 0) {
+      amount += 1;
+    }
   });
+  return amount;
 };
 
 /**
@@ -34,7 +38,11 @@ const zeroCount = (nums) => {
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = () => {};
+const plusTen = (nums) => {
+  return nums.map((el) => {
+    el += 10;
+  });
+};
 
 /**
  * Takes in an array and returns a new array where every non-string
