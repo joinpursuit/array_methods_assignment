@@ -5,7 +5,7 @@
  * @returns {number} Sum of all numbers
  */
 
-const sumArray = () => {};
+const sumArray = (nums) => {};
 
 /**
  * Takes in an array of numbers and returns the amount of zeros that occur in it.
