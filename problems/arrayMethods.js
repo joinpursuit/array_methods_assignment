@@ -98,7 +98,11 @@ const numbersOnly = (items) => {
  * @returns {boolean} Whether or not all elements are the same.
  */
 
-const isAllSame = () => {};
+const isAllSame = (items) => {
+  return items.every((el) => {
+    //return el ===
+  })
+};
 
 /**
  * Takes in an array and returns whether or not all elements in the array are odd.
@@ -106,7 +110,11 @@ const isAllSame = () => {};
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = () => {};
+const isAllOdd = (nums) => {
+  return nums.every((el) => {
+    return el % 2 !== 0
+  })
+};
 
 /**
  * Takes in an array of numbers and a target.
