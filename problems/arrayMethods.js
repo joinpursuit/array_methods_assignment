@@ -64,9 +64,9 @@ console.log(plusTen([]))
 
 const stringsOnly = (items) => {
   let output = items.map ((item) => {
-    if (typeof item === number) {
-      return ""
-    } else if (key in value){
+    if (typeof item === "string") {
+      return item
+    } else {
       return ""
     }
   })
@@ -80,8 +80,13 @@ console.log(stringsOnly([]))
  * @returns {number[]} Only even valued elements
  */
 
-const onlyEvens = () => {};
-
+const onlyEvens = (nums) => {
+let output = nums.filter((num) => {
+  return num % 2 === 0
+})
+return output
+};
+console.log(onlyEvens([]))
 /**
  * Takes in an array and returns a new array with only the elements
  *  that are numbers.
@@ -90,8 +95,13 @@ const onlyEvens = () => {};
  * @returns {number[]} Only number items should remain.
  */
 
-const numbersOnly = () => {};
-
+const numbersOnly = (items) => {
+  const output = items.filter((item) => {
+    return typeof item === "number"
+  })
+  return output
+};
+console.log(numbersOnly([]))
 /**
  * Takes in an array and checks if all elements in the array are the same.
  * Must use every
