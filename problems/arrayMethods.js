@@ -43,8 +43,7 @@ const zeroCount = (nums) => {
   return el += 10;
 });
 }; */
-const plusTen = nums => nums.map((el) => el += 10)
-
+const plusTen = (nums) => nums.map((el) => (el += 10));
 
 /**
  * Takes in an array and returns a new array where every non-string
@@ -58,12 +57,12 @@ const plusTen = nums => nums.map((el) => el += 10)
 
 const stringsOnly = (items) => {
   return items.map((el) => {
-      if (typeof el !== "string") {
-        return el = "";
-      } else {
-        return el;
-      }
-    });
+    if (typeof el !== "string") {
+      return (el = "");
+    } else {
+      return el;
+    }
+  });
 };
 
 /**
@@ -78,7 +77,7 @@ const stringsOnly = (items) => {
 //     return (!(el % 2))
 //   })
 // };
-const onlyEvens = nums => nums.filter((el) => (!(el % 2)))
+const onlyEvens = (nums) => nums.filter((el) => !(el % 2));
 /**
  * Takes in an array and returns a new array with only the elements
  *  that are numbers.
@@ -92,7 +91,7 @@ const onlyEvens = nums => nums.filter((el) => (!(el % 2)))
 //     return (typeof el === "number")
 //   })
 // };
-const numbersOnly = (items) => items.filter((el) => typeof el === "number")
+const numbersOnly = (items) => items.filter((el) => typeof el === "number");
 /**
  * Takes in an array and checks if all elements in the array are the same.
  * Must use every
@@ -102,10 +101,10 @@ const numbersOnly = (items) => items.filter((el) => typeof el === "number")
 
 const isAllSame = (items) => {
   return items.every((el) => {
-    for(let i = 0; i < items.length; i++){
-      return el === items[i]
+    for (let i = 0; i < items.length; i++) {
+      return el === items[i];
     }
-  })
+  });
 };
 
 /**
@@ -114,7 +113,11 @@ const isAllSame = (items) => {
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = () => {};
+const isAllOdd = (nums) => {
+  return nums.every((el) => {
+    return el % 2;
+  });
+};
 
 /**
  * Takes in an array of numbers and a target.
@@ -124,7 +127,15 @@ const isAllOdd = () => {};
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {
+  let count = 0;
+  nums.forEach((el) => {
+    if (el === target) {
+      count++;
+    }
+  });
+  return count;
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -133,7 +144,35 @@ const targetCount = () => {};
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
+const counterObject = (items) => {
+  let objCounter = {};
+  let count = 0;
+  items.forEach((el) => {
+    if (el) {
+      objCounter[el]++;
+    } else {
+      objCounter[el] = 1;
+    }
+    objCounter[el] = count;
+  });
+  return objCounter;
+  // cat: 3 ==> push el: count into the object ==>
+  //object[el] = count
+};const counterObject = (items) => {
+  let objCounter = {};
+  let count = 0;
+  items.forEach((el) => {
+    if (el) {
+      objCounter[el]++;
+    } else {
+      objCounter[el] = 1;
+    }
+    objCounter[el] = count;
+  });
+  return objCounter;
+  // cat: 3 ==> push el: count into the object ==>
+  //object[el] = count
+};
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
