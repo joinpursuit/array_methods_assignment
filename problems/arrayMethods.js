@@ -153,15 +153,17 @@ const counterObject = (items) => {
   return obj
 };
 
-["cat", "dog", "cat"]
-
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
  * @param {number[]} nums
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (nums) => {
+  return nums.map((num)=>{
+    return num * 2
+  })
+};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
