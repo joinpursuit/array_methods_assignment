@@ -172,7 +172,11 @@ const doubled = (nums) => {
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  return nums.every((num)=> {
+   return (num * 3) < 20 
+  })
+};
 
 /**
  * Takes in a divisor and an array of numbers.
