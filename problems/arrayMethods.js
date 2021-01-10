@@ -167,7 +167,14 @@ console.log(counterObject([]))
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (nums) => {
+  let output = []
+  let doubled = 2 
+  nums.map((num) => {
+    output.push(doubled * num)
+  })
+  return output
+};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
@@ -176,7 +183,15 @@ const doubled = () => {};
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  return nums.every((num) => {
+    if (num * 3 <= 20) {
+      return true
+    } else {
+      return false
+    }
+  })
+};
 
 /**
  * Takes in a divisor and an array of numbers.
@@ -187,7 +202,12 @@ const tripledAndLessThan20 = () => {};
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor, nums) => {
+  let output = nums.filter((num) => {
+    return num % divisor === 0
+  })
+  return output
+};
 
 /**
  * Takes in an array and returns a new array where each element
@@ -198,7 +218,12 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  let output = nums.map((num, i) => {
+    return num * i
+  })
+  return output
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -213,7 +238,12 @@ const numberTimesIdx = () => {};
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+
+return nums.every((num) => {
+  return (num % 2 === 0) && (num > 0) && (num % 10 !==0)
+})
+};
 
 /**
  * Takes in an array of elements.
@@ -224,7 +254,13 @@ const arePositiveEvenAndNonZeroEnding = () => {};
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+  return items.filter((el) => {
+    return (typeof el === "string")
+  }).map((item) => {
+    return item.toUpperCase();
+  })
+};
 
 module.exports = {
   sumArray,
