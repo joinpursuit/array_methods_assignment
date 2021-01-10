@@ -136,7 +136,18 @@ const targetCount = (nums, target) => {
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
+const counterObject = (items) => {
+  let occCount = {}
+  for(let i = 0; i < items.length; i++) {
+    const el = items[i]
+    if(occCount[el]) {
+      occCount[el] += 1
+    } else {
+      occCount[el] = 1
+    }
+  }
+  return occCount
+};
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
@@ -144,7 +155,7 @@ const counterObject = () => {};
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (nums) => {};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
