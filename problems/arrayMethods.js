@@ -70,7 +70,11 @@ const stringsOnly = (items) => {
  * @returns {number[]} Only even valued elements
  */
 
-const onlyEvens = () => {};
+const onlyEvens = (nums) => {
+  return nums.filter((el) => {
+    return el % 2 === 0
+  })
+};
 
 /**
  * Takes in an array and returns a new array with only the elements
@@ -80,7 +84,11 @@ const onlyEvens = () => {};
  * @returns {number[]} Only number items should remain.
  */
 
-const numbersOnly = () => {};
+const numbersOnly = (items) => {
+  return items.filter((el) => {
+    return typeof el === "number"
+  })
+};
 
 /**
  * Takes in an array and checks if all elements in the array are the same.
