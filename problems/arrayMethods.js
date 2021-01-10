@@ -54,7 +54,15 @@ const plusTen = (nums) => {
  * @returns {string[]} All strings remain, all non strings are now empty strings.
  */
 
-const stringsOnly = () => {};
+const stringsOnly = (items) => {
+  return items.map((item)=> {
+     if (typeof item === "string"){
+       return item
+     } else{
+       return ""
+     }
+  })
+};
 
 /**
  * Takes in an array and returns a new array with only the even elements.
