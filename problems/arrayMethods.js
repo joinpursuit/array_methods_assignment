@@ -71,7 +71,11 @@ const stringsOnly = (items) => {
  * @returns {number[]} Only even valued elements
  */
 
-const onlyEvens = () => {};
+const onlyEvens = (nums) => {
+  return nums.filter((el) => {
+    return el % 2 === 0
+  })
+};
 
 /**
  * Takes in an array and returns a new array with only the elements
