@@ -204,7 +204,11 @@ const divisibleBy = (divisor, nums) => {
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  return nums.map((num, i) => {
+    return num * i
+  })
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
