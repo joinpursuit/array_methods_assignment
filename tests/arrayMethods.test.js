@@ -18,7 +18,7 @@ const {
   stringsAndCaps,
 } = require("../problems/arrayMethods.js");
 
-describe("sumArray", () => {
+describe.only("sumArray", () => {
   test("sums an array of numbers", () => {
     expect(sumArray([1, 2, 3])).toBe(6);
     expect(sumArray([])).toBe(0);
@@ -181,7 +181,7 @@ describe("isAllOdd", () => {
   });
 });
 
-describe("targetCount", () => {
+describe.only("targetCount", () => {
   test("returns the correct number of target occurrences in an arry", () => {
     expect(targetCount([1, 2, 3], 6)).toBe(0);
     expect(targetCount([], 2)).toBe(0);
@@ -200,7 +200,7 @@ describe("targetCount", () => {
   });
 });
 
-describe("counterObject", () => {
+describe.only("counterObject", () => {
   test("returns a counter object of all occurrences", () => {
     expect(counterObject([1, 1, 2, 1, 3])).toEqual({ 1: 3, 2: 1, 3: 1 });
     expect(counterObject(["cat", "bird", "dog", "cat"])).toEqual({
@@ -309,7 +309,7 @@ describe("numberTimesIdx", () => {
 describe("arePositiveEvenAndNonZeroEnding", () => {
   test("returns correct boolean", () => {
     expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 12])).toBe(true);
-    expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 7, 12])).toBe(true);
+    expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 7, 12])).toBe(false);
     expect(arePositiveEvenAndNonZeroEnding([2, 4, -6, 8, 12])).toBe(false);
     expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10])).toBe(false);
   });
