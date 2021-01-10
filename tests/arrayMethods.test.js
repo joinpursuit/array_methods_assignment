@@ -18,7 +18,7 @@ const {
   stringsAndCaps,
 } = require("../problems/arrayMethods.js");
 
-describe.only("sumArray", () => {
+describe("sumArray", () => {
   test("sums an array of numbers", () => {
     expect(sumArray([1, 2, 3])).toBe(6);
     expect(sumArray([])).toBe(0);
