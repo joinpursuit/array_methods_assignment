@@ -188,7 +188,11 @@ const tripledAndLessThan20 = (nums) => {
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor, nums) => {
+  return nums.filter((el) => {
+    return el % divisor === 0
+  })
+};
 
 /**
  * Takes in an array and returns a new array where each element
@@ -199,7 +203,11 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  return nums.map((el, i) => {
+    return el * i
+  })
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
