@@ -100,12 +100,9 @@ const numbersOnly = (items) => {
 
 const isAllSame = (items) => {
   return items.every((item) => {
-    return item[i]
+    return items[0] === item
   })
 };
-
-// console.log(isAllSame(["cat", "dog"]))
-// console.log(isAllSame([1, 1]))
 
 /**
  * Takes in an array and returns whether or not all elements in the array are odd.
@@ -144,7 +141,19 @@ const targetCount = (nums, target) => {
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
+const counterObject = (items) => {
+  let obj = {}
+  items.forEach((item) => {
+    if (obj[item]){
+      obj[item] += 1
+    }else{
+      obj[item] =1
+    }
+  })
+  return obj
+};
+
+["cat", "dog", "cat"]
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
