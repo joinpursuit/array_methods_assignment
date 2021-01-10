@@ -247,6 +247,7 @@ const stringsAndCaps = (items) => {
   return items.filter((word) => {
     return typeof word === "string";
   }).map((word) => word.toUpperCase());
+  
   }
  
 
