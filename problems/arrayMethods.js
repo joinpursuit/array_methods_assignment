@@ -38,11 +38,13 @@ const zeroCount = (nums) => {
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = (nums) => {
+/* const plusTen = (nums) => {
   return nums.map((el) => {
-    el += 10;
-  });
-};
+  return el += 10;
+});
+}; */
+const plusTen = nums => nums.map((el) => el += 10)
+
 
 /**
  * Takes in an array and returns a new array where every non-string
@@ -54,7 +56,15 @@ const plusTen = (nums) => {
  * @returns {string[]} All strings remain, all non strings are now empty strings.
  */
 
-const stringsOnly = () => {};
+const stringsOnly = (items) => {
+  return items.map((el) => {
+      if (typeof el !== "string") {
+        return el = "";
+      } else {
+        return el;
+      }
+    });
+};
 
 /**
  * Takes in an array and returns a new array with only the even elements.
