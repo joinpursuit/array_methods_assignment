@@ -230,7 +230,7 @@ const numberTimesIdx = (nums) => {
 
 const arePositiveEvenAndNonZeroEnding = (nums) => {
   return nums.every((el) => {
-    if (el > 0 && el % 10 !== 0) {
+    if (el >= 0 && el % 2 === 0 && el % 10 !== 0) {
       return true;
     }
   })
