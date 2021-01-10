@@ -14,7 +14,16 @@ const sumArray = () => {};
  * Must use forEach
  */
 
-const zeroCount = () => {};
+const zeroCount = (nums) => {
+ let count = 0;
+ nums.forEach((el) => {
+   if (el === 0){
+     count +=1;
+   }
+ })
+ return count
+};
+console.log(zeroCount([]))
 
 /**
  * Takes in an array of numbers and returns a new array where each
