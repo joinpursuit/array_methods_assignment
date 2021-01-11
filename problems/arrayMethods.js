@@ -143,24 +143,22 @@ const targetCount = (nums, target) => {
  * @param {Array} items
  * @returns {Object} A mapping of elements to their occurrence count.
  */
-};const counterObject = (items) => {
+ const counterObject = (items) => {
   let objCounter = {};
-  let count = 0;
   for (let i = 0; i < items.length; i++){
   let el = items[i]
-    if (el) {
+    if(objCounter[el]) {
       objCounter[el]++;
     } else {
       objCounter[el] = 1;
     }
-    objCounter[el] = count;
-
-    }
   }
-  return objCounter;
+    return objCounter;
+  }
+ 
   // cat: 3 ==> push el: count into the object ==>
   //object[el] = count
-};
+
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
@@ -169,7 +167,7 @@ const targetCount = (nums, target) => {
  */
 
 const doubled = (nums) => {
-  return nums.forEach((el) => {
+  return nums.map((el) => {
     return el *= 2
   })
 };
@@ -181,7 +179,14 @@ const doubled = (nums) => {
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  let result = nums.map((el) => {
+   return el *= 3
+  })
+    return result.every((el) => {
+    return (el < 20)
+  })
+};
 
 /**
  * Takes in a divisor and an array of numbers.
@@ -192,14 +197,7 @@ const tripledAndLessThan20 = () => {};
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = (divisor, nums) => {
-  let output = []
-  let divisor = i
-  nums.forEach((el, i) => {
-    output.push(el % 2)
-  })
-  return output; 
-};
+const divisibleBy = (divisor, nums) => {}
 
 /**
  * Takes in an array and returns a new array where each element
