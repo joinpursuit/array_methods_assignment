@@ -240,14 +240,13 @@ const numberTimesIdx = (nums) => {
 
 const arePositiveEvenAndNonZeroEnding = (nums) => {
   //is it positive? ==> >0
-  //does it end in zero? ==> num % 10 === 0
+  //does NOT want it end in zero? ==> num % 10 !== 0
   //is it even? ==> num % 2 === 0
   //need answer in boolean ==> .every
-  let truthyValues = nums.filter((number) => {
-    return number > 0 && number % 2 === 0 && number % 10 === 0
-  })
-  return truthyValues.every((el) => {
-    return el === el
+  //.filter to extract the conditions and store in an array // don't want to filter, just wants to evaluate 
+  //loop through the new array to check each value for truthyness
+  return nums.every((number) => {
+    return number > 0 && number % 2 === 0 && number % 10 !== 0
   })
 };
 
