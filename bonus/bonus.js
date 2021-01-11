@@ -2,13 +2,24 @@
 // Don't worry about all the tests that tell you that you must use
 // such and such method. Using reduce will still allow you to pass all the tests.
 
+const arrayMethods = require("../problems/arrayMethods");
+
 /**
  * Takes in an array and returns the largest number.
  * @param {number[]} nums - array of numbers
  * @returns {number} Largest number in the array
  */
 
-function largestNum() {}
+function largestNum(nums) {
+  let largest = nums.reduce((acc, num) => {
+    if (acc > num) {
+      return acc;
+    } else {
+      return num;
+    }
+  });
+  return largest;
+}
 
 /**
  * Takes in an array and returns the sum of all the odd numbers.
@@ -16,7 +27,15 @@ function largestNum() {}
  * @returns {number} Sum of all odd numbers.
  */
 
-function oddSum() {}
+function oddSum(nums) {
+  return nums.reduce((acc, num) => {
+    if (num % 2 === 1) {
+      return acc + num;
+    } else {
+      return acc;
+    }
+  }, 0);
+}
 
 /**
  * Write a `transpose`. This function should transpose a matrix.
@@ -33,13 +52,15 @@ function oddSum() {}
 // transpose(mtx);
 
 // Exp Output:
-// // => [
-//         [1, 3, 5],
-//         [2, 4, 6]
+// // => [  
+//         [1, 3, 5],                 
+//         [2, 4, 6]                  
 //        ]
 
- function transpose() {};
-
+function transpose(matrix) {
+  let [row] = matrix;
+  return row.map((el, i) => matrix.map((row) => row[i]));
+}
 
 module.exports = { largestNum, oddSum, transpose };
 
@@ -74,13 +95,25 @@ module.exports = { largestNum, oddSum, transpose };
  * @param {number} index - index of array element
  *
  *
+ *
  * @method
  * @name Array#myForEach
  * @param {cb} callback - function to be called with each element
  * @returns {undefined}
  */
-Array.prototype.myForEach = function (callback) {};
+Array.prototype.myForEach = function (callback) {
+  let arr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      arr.push(arr[i]);
+    }
+    return arr
+  }
+};
 
+function callback(element, index) {
+    return element, index
+}
 /**
  * Use your `myForEach` to add `myMap` to the Array prototype.
  *  `myMap` should behave the same as regular `map`.
@@ -145,8 +178,7 @@ Array.prototype.myEvery = function () {};
  * @returns {*}
  */
 
-Array.prototype.myReduce = function (callback, initialValue = undefined) {
-};
+Array.prototype.myReduce = function (callback, initialValue = undefined) {};
 
 /**
  * Write a `myJoin` function.
@@ -165,12 +197,11 @@ Array.prototype.myJoin = function () {};
  * @param {number} startIndex - starting index (inclusive)
  * @param {number} [startEndIndex] - ending index (exclusive) and defaults to end of array.
  * @returns {Array}
- * 
+ *
  * Extra bonus add the negative input ability.
  */
 
 Array.prototype.mySlice = function () {};
-
 
 /**
  *Write a `myFlatten`. 
