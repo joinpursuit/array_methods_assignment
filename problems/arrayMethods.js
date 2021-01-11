@@ -8,7 +8,7 @@
 const sumArray = (nums) => {
   let sum = 0;
   nums.forEach((num) => {
-    return (sum += num);
+    sum += num;
   });
   return sum;
 };
@@ -146,7 +146,7 @@ const targetCount = (nums, target) => {
 
 const counterObject = (items) => {
   let newObj = {};
-  items.map((item) => {
+  items.forEach((item) => {
     if(newObj[item]){
       newObj[item] += 1
 
