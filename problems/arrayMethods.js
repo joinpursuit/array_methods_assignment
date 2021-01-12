@@ -147,9 +147,9 @@ const counterObject = (items) => {
   let object = {};
   items.forEach((el) => {
     if (object[el]) {
-      return (object[el] += 1);
+      object[el] += 1;
     } else {
-      return (object[el] = 1);
+      object[el] = 1;
     }
   });
   return object;
@@ -162,11 +162,9 @@ const counterObject = (items) => {
  */
 
 const doubled = (nums) => {
-  let output = [];
-  nums.map((el) => {
-    output.push(el * 2);
+   return nums.map((el) => {
+    return el * 2;
   });
-  return output;
 };
 
 /**
