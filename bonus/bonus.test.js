@@ -3,7 +3,7 @@ const { largestNum, oddSum, transpose } = require("./bonus.js");
 const { describe, test, expect, beforeEach } = require("@jest/globals");
 const { spyOn } = require("jest-mock");
 
-describe("largestNum", () => {
+describe.only("largestNum", () => {
   test("returns the largest number in an array", () => {
     expect(largestNum([1, 2, 3])).toBe(3);
     expect(largestNum([3, 2, 1])).toBe(3);
@@ -11,7 +11,7 @@ describe("largestNum", () => {
   });
 });
 
-describe("oddSum", () => {
+describe.only("oddSum", () => {
   test("returns the sum of all odd numbers", () => {
     expect(oddSum([1, 2, 3])).toBe(4);
     expect(oddSum([2, 4])).toBe(0);

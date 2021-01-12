@@ -8,7 +8,10 @@
  * @returns {number} Largest number in the array
  */
 
-function largestNum() {}
+function largestNum (nums) {
+  console.log(nums.sort((a, b) => b - a))
+  return nums[0]
+}
 
 /**
  * Takes in an array and returns the sum of all the odd numbers.
@@ -16,7 +19,15 @@ function largestNum() {}
  * @returns {number} Sum of all odd numbers.
  */
 
-function oddSum() {}
+function oddSum (nums) {
+  let sum = 0
+  let newarray = nums.filter(num => num % 2 !== 0)
+
+  newarray.forEach(num => {
+    sum += num
+  })
+  return sum
+}
 
 /**
  * Write a `transpose`. This function should transpose a matrix.
@@ -24,24 +35,25 @@ function oddSum() {}
  * @returns {Array[]}
  */
 // Exp Input:
-//  let mtx = [
-//             [1, 2],
-//             [3, 4],
-//             [5, 6]
+//  let mtx = [     //elem      j    
+//                  [1, 2],     0        
+//                  [3, 4],     1   
+//                  [5, 6]      2
 //           ]
 
 // transpose(mtx);
 
 // Exp Output:
-// // => [
+// // => [i 0, 1, 2  
 //         [1, 3, 5],
 //         [2, 4, 6]
 //        ]
 
- function transpose() {};
+function transpose () {
 
+}
 
-module.exports = { largestNum, oddSum, transpose };
+module.exports = { largestNum, oddSum, transpose }
 
 // You can write your own Array methods!
 
@@ -79,7 +91,7 @@ module.exports = { largestNum, oddSum, transpose };
  * @param {cb} callback - function to be called with each element
  * @returns {undefined}
  */
-Array.prototype.myForEach = function (callback) {};
+Array.prototype.myForEach = function (callback) {}
 
 /**
  * Use your `myForEach` to add `myMap` to the Array prototype.
@@ -95,7 +107,7 @@ Array.prototype.myForEach = function (callback) {};
  * @returns {Array}
  */
 
-Array.prototype.myMap = function () {};
+Array.prototype.myMap = function () {}
 
 /**
  * Write a `myFilter` that behaves the same as `filter`.
@@ -110,7 +122,7 @@ Array.prototype.myMap = function () {};
  * @returns {Array}
  */
 
-Array.prototype.myFilter = function () {};
+Array.prototype.myFilter = function () {}
 
 /**
  * Write a `myEvery` that behaves the same as `every`.
@@ -125,7 +137,7 @@ Array.prototype.myFilter = function () {};
  * @returns {boolean}
  */
 
-Array.prototype.myEvery = function () {};
+Array.prototype.myEvery = function () {}
 
 /**
  * Write a `myReduce`.
@@ -145,8 +157,7 @@ Array.prototype.myEvery = function () {};
  * @returns {*}
  */
 
-Array.prototype.myReduce = function (callback, initialValue = undefined) {
-};
+Array.prototype.myReduce = function (callback, initialValue = undefined) {}
 
 /**
  * Write a `myJoin` function.
@@ -156,7 +167,7 @@ Array.prototype.myReduce = function (callback, initialValue = undefined) {
  * @returns {string}
  */
 
-Array.prototype.myJoin = function () {};
+Array.prototype.myJoin = function () {}
 
 /**
  * Write a `mySlice` function.
@@ -165,12 +176,11 @@ Array.prototype.myJoin = function () {};
  * @param {number} startIndex - starting index (inclusive)
  * @param {number} [startEndIndex] - ending index (exclusive) and defaults to end of array.
  * @returns {Array}
- * 
+ *
  * Extra bonus add the negative input ability.
  */
 
-Array.prototype.mySlice = function () {};
-
+Array.prototype.mySlice = function () {}
 
 /**
  *Write a `myFlatten`. 
@@ -182,4 +192,4 @@ Array.prototype.mySlice = function () {};
  * Exp Output: [1, 2, 3, 4, 5, 6, 7, 8]
  */
 
-Array.prototype.myFlatten = function () {};
+Array.prototype.myFlatten = function () {}
