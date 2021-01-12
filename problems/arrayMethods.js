@@ -242,8 +242,15 @@ return answer
  */
 
 const stringsAndCaps = (items) => {
-return items.filter((item) => typeof item === 'string').map((item) => item.toUpperCase())
-}
+let arr = items.map((item) => {
+  return typeof item === 'string' ? item.toUpperCase() : null
+})
+arr = arr.filter((item) => {
+ return typeof item === 'string'
+})
+  return arr
+// return items.filter((item) => typeof item === 'string').map((item) => item.toUpperCase())
+};
 
 module.exports = {
   sumArray,
