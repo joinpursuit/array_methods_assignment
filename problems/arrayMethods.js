@@ -5,7 +5,13 @@
  * @returns {number} Sum of all numbers
  */
 
-const sumArray = () => {};
+const sumArray = (nums) => {
+  let sum = 0
+  nums.forEach((nums)=> {
+    sum += nums
+  })
+  return sum
+};
 
 /**
  * Takes in an array of numbers and returns the amount of zeros that occur in it.
@@ -14,8 +20,19 @@ const sumArray = () => {};
  * Must use forEach
  */
 
-const zeroCount = () => {};
+const zeroCount = (nums) => {
+  let arr = 0
+  nums.forEach((el)=> {
+    if(el.toString().includes('0')){
+  
+      arr += 1
+      
+    }
+  })
+  return arr
+};
 
+ console.log(zeroCount([7, 0, 12, 4, 0]))
 /**
  * Takes in an array of numbers and returns a new array where each
  * element has been incremented by 10.
@@ -24,7 +41,14 @@ const zeroCount = () => {};
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = () => {};
+const plusTen = (nums) => {
+  let newarr = nums.map((el) => 
+  {
+      return el + 10
+  })
+
+  return newarr
+};
 
 /**
  * Takes in an array and returns a new array where every non-string
@@ -36,7 +60,18 @@ const plusTen = () => {};
  * @returns {string[]} All strings remain, all non strings are now empty strings.
  */
 
-const stringsOnly = () => {};
+const stringsOnly = (items) => {
+  let newarr = items.map((el) => {
+    if(typeof el !== typeof "cat"){
+      return  ""
+    }else{
+      return el
+    }
+    
+  })
+  return newarr
+  
+};
 
 /**
  * Takes in an array and returns a new array with only the even elements.
@@ -45,7 +80,14 @@ const stringsOnly = () => {};
  * @returns {number[]} Only even valued elements
  */
 
-const onlyEvens = () => {};
+const onlyEvens = (nums) => {
+  let newarr = nums.filter((el) =>{
+    if (el % 2 === 0){
+      return true
+    }
+  })
+  return newarr
+};
 
 /**
  * Takes in an array and returns a new array with only the elements
@@ -55,7 +97,13 @@ const onlyEvens = () => {};
  * @returns {number[]} Only number items should remain.
  */
 
-const numbersOnly = () => {};
+const numbersOnly = (items) => {
+  let newarr = items.filter((e) =>{
+    if(typeof e === typeof 0)
+    return true
+  })
+  return newarr
+};
 
 /**
  * Takes in an array and checks if all elements in the array are the same.
@@ -64,7 +112,15 @@ const numbersOnly = () => {};
  * @returns {boolean} Whether or not all elements are the same.
  */
 
-const isAllSame = () => {};
+const isAllSame = (items) => {
+  let newarr = items.every((e) => {
+    if(typeof e === typeof e){
+      return true
+    }
+    
+  })
+  return newarr
+};
 
 /**
  * Takes in an array and returns whether or not all elements in the array are odd.
