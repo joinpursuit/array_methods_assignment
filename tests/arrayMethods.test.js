@@ -181,7 +181,7 @@ describe("isAllOdd", () => {
   });
 });
 
-describe("targetCount", () => {
+describe.only("targetCount", () => {
   test("returns the correct number of target occurrences in an arry", () => {
     expect(targetCount([1, 2, 3], 6)).toBe(0);
     expect(targetCount([], 2)).toBe(0);
