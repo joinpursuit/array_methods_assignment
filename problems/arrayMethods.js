@@ -93,12 +93,10 @@ const onlyEvens = (nums) => {
  */
 
 const numbersOnly = (items) => {
-  
    let numOnly = items.filter((element)=>{
-    if(typeof element === typeof 0)
-    return element
-  })
-  return numOnly
+    return typeof element === typeof 0
+   })
+   return numOnly
 };
 
 /**
@@ -224,8 +222,8 @@ const divisibleBy = (divisor, nums) => {
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = (nums, i) => {
-  let index = nums.map((el)=>{
+const numberTimesIdx = (nums) => {
+  let index = nums.map((el, i)=>{
     return el * i
   })
   return index
@@ -262,16 +260,15 @@ const arePositiveEvenAndNonZeroEnding = (nums) => {
  */
 
 const stringsAndCaps = (items) => {
-
   let string = items.filter((element)=>{
     if(typeof element === typeof ' '){
       return element
     }
   })
-  string.forEach((element=>{
-    element.toUpperCase()
-  }))
-  
+  let bigger = string.map((num)=>{
+    return num.toUpperCase()
+  })
+  return bigger
 
 };
 
