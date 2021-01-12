@@ -59,7 +59,7 @@ const stringsOnly = (items) => {
     if (typeof el === "string") {
       return el;
     } else {
-      return (el = "");
+      return  "";
     }
   });
 };
@@ -145,7 +145,7 @@ const targetCount = (nums, target) => {
 
 const counterObject = (items) => {
   let object = {};
-  items.map((el) => {
+  items.forEach((el) => {
     if (object[el]) {
       return (object[el] += 1);
     } else {
@@ -163,7 +163,7 @@ const counterObject = (items) => {
 
 const doubled = (nums) => {
   let output = [];
-  nums.forEach((el) => {
+  nums.map((el) => {
     output.push(el * 2);
   });
   return output;
