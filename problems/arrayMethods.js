@@ -58,7 +58,7 @@ const stringsOnly = (items) => {
   return items.map((item)=> {
      if (typeof item === "string"){
        return item
-     } else{
+     } else {
        return ""
      }
   })
@@ -189,9 +189,7 @@ const tripledAndLessThan20 = (nums) => {
 
 const divisibleBy = (divisor, nums) => {
   return nums.filter((num) => {
-    if (num % divisor === 0) {
-      return num
-    }
+    return num % divisor === 0
   })
 };
 
@@ -245,7 +243,7 @@ const stringsAndCaps = (items) => {
     }
   }).filter((item) => item)
 };
-console.log(stringsAndCaps([{}, 1, "cat", 3, ["hi"], { name: "dog" }, "dog", "bear"]))
+
 
 module.exports = {
   sumArray,
