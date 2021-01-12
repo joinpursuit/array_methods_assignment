@@ -160,13 +160,16 @@ const counterObject = (items) => {
   let counterObj = {}
   items.forEach((item) => {
     if (counterObj[item]) {
-      counterObj[item] = counterObj[item] + 1
-    } else{
-      counterObj[item] = 1
-    }
+      return counterObj[item] = counterObj[item] + 1
+    } 
+    return counterObj[item] = 1
   })
   return counterObj
 };
+
+// array = ["hi","there",6,7,"hi"]
+// let results = {"hi": 2, "there": 1, 6: 1, 7:1}
+
 
 
 /**
@@ -208,7 +211,9 @@ const tripledAndLessThan20 = (nums) => {
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor, nums) => {
+  return nums.filter (num => num % divisor === 0)
+};
 
 /**
  * Takes in an array and returns a new array where each element
@@ -219,7 +224,13 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  let newArray = nums.map ((num,i) => {
+    let multiplied = num * i
+    return multiplied
+  })
+  return newArray
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -234,7 +245,12 @@ const numberTimesIdx = () => {};
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+  let results = nums.every((num) =>{
+    return num % 2 === 0 && num % 10 !== 0 && num > 0
+  })
+  return results 
+};
 
 /**
  * Takes in an array of elements.
@@ -245,7 +261,10 @@ const arePositiveEvenAndNonZeroEnding = () => {};
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+  let newArray = items.filter((item)=> typeof item === "string")
+    return newArray.map (upper => upper.toUpperCase())
+};
 
 module.exports = {
   sumArray,
