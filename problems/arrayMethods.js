@@ -256,6 +256,7 @@ const stringsAndCaps = (items) => {
   arr = arr.filter((el) => { 
     return el !== null  
   })
+  // arr = arr.filter(el => el)
   return arr
 };
 module.exports = {
