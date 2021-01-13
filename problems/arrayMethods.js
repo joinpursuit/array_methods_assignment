@@ -195,8 +195,8 @@ const doubled = (nums) => {
 const tripledAndLessThan20 = (nums) => {
   return nums.every((elem) => elem < 20 && elem * 3 < 20);
 };
-console.log(tripledAndLessThan20([1, 2, 4, 7]));
-console.log(tripledAndLessThan20([3, 4, 5]));
+// console.log(tripledAndLessThan20([1, 2, 4, 7]));
+// console.log(tripledAndLessThan20([3, 4, 5]));
 /**
  * Takes in a divisor and an array of numbers.
  * Return a new array of every element that can be evenly divided
@@ -207,9 +207,10 @@ console.log(tripledAndLessThan20([3, 4, 5]));
  */
 
 const divisibleBy = (divisor, nums) => {
-  return nums.map((num, divisor) =>{num / divisor})
+  return nums.filter((num) => num % divisor === 0)
 };
-console.log(divisibleBy)
+console.log(divisibleBy(3, [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]))
+console.log(divisibleBy(5, [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]))
 /**
  * Takes in an array and returns a new array where each element
  * has been multiplied by it's index.
@@ -219,8 +220,12 @@ console.log(divisibleBy)
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
-
+const numberTimesIdx = (nums) => {
+  let mult = nums.map((num, i)=> {return num *i })
+  return mult 
+};
+// console.log(numberTimesIdx([6, 7, 8, 9]))
+// console.log((numberTimesIdx([1, 2, 3])))
 /**
  * Takes in an array of numbers and returns whether or not every value
  * in the array is a positive even number that doesn't end it 0.
@@ -234,8 +239,16 @@ const numberTimesIdx = () => {};
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
-
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+  return nums.every((num)=>(num > 0) && !(num % 10 === 0)&& (num % 2 == 0))}
+  // let req = nums.every((num)=>(num/(-num) === -1) && !(num % 10 === 0
+  // ))
+//   let req = nums.every((num)=>(num > 0) && !(num % 10 === 0))
+//   return req
+// };
+// console.log(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10]))// false 
+// console.log(arePositiveEvenAndNonZeroEnding([2,4,6,8,12]))//true
+// console.log(arePositiveEvenAndNonZeroEnding([2, 4, -6, 8, 12]))//false
 /**
  * Takes in an array of elements.
  * Returns a new array containing all of the string elements, but now uppercase.
