@@ -182,7 +182,7 @@ const doubled = (nums) => {
 
 const tripledAndLessThan20 = (nums) => {
   let arr = nums.every((el) =>{
-    return el *3 <20
+    return el * 3 < 20
     
   })
   return arr
