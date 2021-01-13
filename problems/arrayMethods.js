@@ -215,7 +215,7 @@ const divisibleBy = (divisor, nums) => {
 			return filterArr.push(el);
 		}
 		return filterArr;
-	})); // cannot get it to return the element
+	})); // cannot get it to return the element, it returns the values of the divisor
 }; */
 
 /**
@@ -268,13 +268,16 @@ const arePositiveEvenAndNonZeroEnding = (nums) => {
  */
 
 const stringsAndCaps = (items) => {
-	return items.filter((word) => {
+	let caps = items.map((word) => {
 		if (typeof word === "string") {
 			return word.toUpperCase();
 		}
 	});
+	return caps.filter((capWord) => {
+		return typeof capWord === "string";
+	});
 };
-//.map gave us the correct words to uppercase
+//.map gave us the correct words to uppercase plus undefined // ==> need to filer out the words now
 //.filter gave us correct words but lowercase
 
 module.exports = {
