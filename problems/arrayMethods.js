@@ -235,12 +235,12 @@ console.log(numberTimesIdx([6, 7, 8, 9]))
  */
 
 const arePositiveEvenAndNonZeroEnding = (nums) => {
-  let arr = nums.every((num) => {
+  let array = nums.every((num) => {
     if (num % 10 !== 0 && num % 2 === 0 && num > 0) {
       return true;
     }
   });
-  return arr;
+  return array;
 };
 console.log(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10]))
 
