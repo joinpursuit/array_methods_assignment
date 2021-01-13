@@ -94,7 +94,7 @@ describe("stringsOnly", () => {
   });
 });
 
-describe("onlyEvens", () => {
+describe ("onlyEvens", () => {
   test("Only even numbers remain", () => {
     expect(onlyEvens([13, 0, 5, 0])).toEqual([0, 0]);
     expect(onlyEvens([1, 2, 3, 4, 5])).toEqual([2, 4]);
@@ -181,7 +181,7 @@ describe("isAllOdd", () => {
   });
 });
 
-describe("targetCount", () => {
+describe.only("targetCount", () => {
   test("returns the correct number of target occurrences in an arry", () => {
     expect(targetCount([1, 2, 3], 6)).toBe(0);
     expect(targetCount([], 2)).toBe(0);
