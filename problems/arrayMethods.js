@@ -5,7 +5,14 @@
  * @returns {number} Sum of all numbers
  */
 
-const sumArray = () => {};
+const sumArray = (nums) => {
+  let sum = 0
+  nums.forEach((num) => {
+    sum += num
+  })
+  return sum
+};
+  // console.log(sumArray([2,2,2,2]))
 
 /**
  * Takes in an array of numbers and returns the amount of zeros that occur in it.
@@ -14,7 +21,16 @@ const sumArray = () => {};
  * Must use forEach
  */
 
-const zeroCount = () => {};
+const zeroCount = (nums) => {
+  let num = 0
+  nums.forEach((elem) => {
+    if(elem === 0) {
+      num++
+    }
+  })
+  return num
+};
+// console.log(zeroCount([1,2,0,3,0]))
 
 /**
  * Takes in an array of numbers and returns a new array where each
@@ -24,7 +40,12 @@ const zeroCount = () => {};
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = () => {};
+const plusTen = (nums) => {
+  let newNum = nums.map((num) => {
+    return num+10
+  })
+  return newNum
+};
 
 /**
  * Takes in an array and returns a new array where every non-string
@@ -36,7 +57,16 @@ const plusTen = () => {};
  * @returns {string[]} All strings remain, all non strings are now empty strings.
  */
 
-const stringsOnly = () => {};
+const stringsOnly = (items) => {
+  let array = items.map((elem) => {
+    if (typeof elem === 'string') {
+      return elem
+    } else {
+      return ''
+    }
+  })
+  return array
+};
 
 /**
  * Takes in an array and returns a new array with only the even elements.
@@ -45,7 +75,14 @@ const stringsOnly = () => {};
  * @returns {number[]} Only even valued elements
  */
 
-const onlyEvens = () => {};
+const onlyEvens = (nums) => {
+  let array = nums.filter((num) => {
+   if(num % 2 === 0) {
+     return true
+   }
+  })
+  return array
+};
 
 /**
  * Takes in an array and returns a new array with only the elements
@@ -55,7 +92,9 @@ const onlyEvens = () => {};
  * @returns {number[]} Only number items should remain.
  */
 
-const numbersOnly = () => {};
+const numbersOnly = (items) => {
+  return items.filter((elem)=> typeof elem === 'number')
+};
 
 /**
  * Takes in an array and checks if all elements in the array are the same.
@@ -64,7 +103,12 @@ const numbersOnly = () => {};
  * @returns {boolean} Whether or not all elements are the same.
  */
 
-const isAllSame = () => {};
+const isAllSame = (items) => {
+  let isSame =items.every((elem) => {
+   return elem === items[0] 
+  })
+  return isSame
+};
 
 /**
  * Takes in an array and returns whether or not all elements in the array are odd.
@@ -72,7 +116,12 @@ const isAllSame = () => {};
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = () => {};
+const isAllOdd = (nums) => {
+  let array =nums.every((elem) => {
+    return elem % 2 === 1
+  })
+  return array
+};
 
 /**
  * Takes in an array of numbers and a target.
@@ -82,7 +131,15 @@ const isAllOdd = () => {};
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {
+let newNum = 0
+nums.forEach((elem) => {
+  if(elem === target) {
+    newNum ++
+  }
+})
+return newNum
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -90,8 +147,23 @@ const targetCount = () => {};
  * @param {Array} items
  * @returns {Object} A mapping of elements to their occurrence count.
  */
+// let ourItems=['shoe', 'shirt', 'pants', 'shirt']
+// // let ourItems = {shoe: 1,shirt: 2,pants: 1}
+// let ourItems = {}
+// ourItems.shoe= 1
+// ourItems.shirt=1
+// outItems.shirt= ourItems.shirt +1
 
-const counterObject = () => {};
+const counterObject = (items) => {
+let counter= {}
+items.forEach((elem) => {
+  if(counter[elem]) {
+  return counter[elem] = counter[elem] + 1
+  }
+  counter[elem]= 1
+})
+return counter
+};
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
@@ -99,7 +171,12 @@ const counterObject = () => {};
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (nums) => {
+  let newArray = nums.map((elem) => {
+    return elem * 2
+  })
+  return newArray
+};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
@@ -108,7 +185,12 @@ const doubled = () => {};
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  let array = nums.every((elem) => {
+    return elem * 3 < 20
+  })
+  return array
+};
 
 /**
  * Takes in a divisor and an array of numbers.
