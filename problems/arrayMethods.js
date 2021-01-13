@@ -6,11 +6,11 @@
  */
 
 const sumArray = (nums) => {
-  let sum = 0;
-  nums.forEach((el) => {
-    sum += el;
-  });
-  return sum;
+	let sum = 0;
+	nums.forEach((el) => {
+		sum += el;
+	});
+	return sum;
 };
 
 /**
@@ -21,13 +21,13 @@ const sumArray = (nums) => {
  */
 
 const zeroCount = (nums) => {
-  let amount = 0;
-  nums.forEach((el) => {
-    if (el === 0) {
-      amount += 1;
-    }
-  });
-  return amount;
+	let amount = 0;
+	nums.forEach((el) => {
+		if (el === 0) {
+			amount += 1;
+		}
+	});
+	return amount;
 };
 
 /**
@@ -56,13 +56,13 @@ const plusTen = (nums) => nums.map((el) => (el += 10));
  */
 
 const stringsOnly = (items) => {
-  return items.map((el) => {
-    if (typeof el !== "string") {
-      return (el = "");
-    } else {
-      return el;
-    }
-  });
+	return items.map((el) => {
+		if (typeof el !== "string") {
+			return (el = "");
+		} else {
+			return el;
+		}
+	});
 };
 
 /**
@@ -100,11 +100,11 @@ const numbersOnly = (items) => items.filter((el) => typeof el === "number");
  */
 
 const isAllSame = (items) => {
-  return items.every((el) => {
-    for (let i = 0; i < items.length; i++) {
-      return el === items[i];
-    }
-  });
+	return items.every((el) => {
+		for (let i = 0; i < items.length; i++) {
+			return el === items[i];
+		}
+	});
 };
 
 /**
@@ -114,9 +114,9 @@ const isAllSame = (items) => {
  */
 
 const isAllOdd = (nums) => {
-  return nums.every((el) => {
-    return el % 2;
-  });
+	return nums.every((el) => {
+		return el % 2;
+	});
 };
 
 /**
@@ -128,13 +128,13 @@ const isAllOdd = (nums) => {
  */
 
 const targetCount = (nums, target) => {
-  let count = 0;
-  nums.forEach((el) => {
-    if (el === target) {
-      count++;
-    }
-  });
-  return count;
+	let count = 0;
+	nums.forEach((el) => {
+		if (el === target) {
+			count++;
+		}
+	});
+	return count;
 };
 
 /**
@@ -144,16 +144,16 @@ const targetCount = (nums, target) => {
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 const counterObject = (items) => {
-  let objCounter = {};
-  for (let i = 0; i < items.length; i++) {
-    let el = items[i];
-    if (objCounter[el]) {
-      objCounter[el]++;
-    } else {
-      objCounter[el] = 1;
-    }
-  }
-  return objCounter;
+	let objCounter = {};
+	for (let i = 0; i < items.length; i++) {
+		let el = items[i];
+		if (objCounter[el]) {
+			objCounter[el]++;
+		} else {
+			objCounter[el] = 1;
+		}
+	}
+	return objCounter;
 };
 
 // cat: 3 ==> push el: count into the object ==>
@@ -166,9 +166,9 @@ const counterObject = (items) => {
  */
 
 const doubled = (nums) => {
-  return nums.map((el) => {
-    return (el *= 2);
-  });
+	return nums.map((el) => {
+		return (el *= 2);
+	});
 };
 
 /**
@@ -179,12 +179,12 @@ const doubled = (nums) => {
  */
 
 const tripledAndLessThan20 = (nums) => {
-  let result = nums.map((el) => {
-    return (el *= 3);
-  });
-  return result.every((el) => {
-    return el < 20;
-  });
+	let result = nums.map((el) => {
+		return (el *= 3);
+	});
+	return result.every((el) => {
+		return el < 20;
+	});
 };
 
 /**
@@ -197,18 +197,26 @@ const tripledAndLessThan20 = (nums) => {
  */
 
 const divisibleBy = (divisor, nums) => {
-  /* let filterArr = [];
-  let output = nums.map((el) => {
-    return (el % divisor);
-  })
-  
-  return filterArr = output.filter((el) => {
-    if (el - Math.floor(el) === 0) {
-      return filterArr.push(el);
-    }
-    return(filterArr);
-  }) */ // cannot get it to return the element 
+	return nums.filter((number) => {
+		//loop the array and get multiples of 5
+		return number % divisor === 0;
+	});
 };
+
+/* DOES NOT WORK
+const divisibleBy = (divisor, nums) => {
+	let filterArr = [];
+	let output = nums.map((el) => {
+		return el % divisor;
+	});
+
+	return (filterArr = output.filter((el) => {
+		if (el - Math.floor(el) === 0) {
+			return filterArr.push(el);
+		}
+		return filterArr;
+	})); // cannot get it to return the element
+}; */
 
 /**
  * Takes in an array and returns a new array where each element
@@ -220,9 +228,9 @@ const divisibleBy = (divisor, nums) => {
  */
 
 const numberTimesIdx = (nums) => {
-  return nums.map((el, i) => {
-    return el * i;
-  });
+	return nums.map((el, i) => {
+		return el * i;
+	});
 };
 
 /**
@@ -239,15 +247,15 @@ const numberTimesIdx = (nums) => {
  */
 
 const arePositiveEvenAndNonZeroEnding = (nums) => {
-  //is it positive? ==> >0
-  //does NOT want it end in zero? ==> num % 10 !== 0
-  //is it even? ==> num % 2 === 0
-  //need answer in boolean ==> .every
-  //.filter to extract the conditions and store in an array // don't want to filter, just wants to evaluate 
-  //loop through the new array to check each value for truthyness
-  return nums.every((number) => {
-    return number > 0 && number % 2 === 0 && number % 10 !== 0
-  })
+	//is it positive? ==> >0
+	//does NOT want it end in zero? ==> num % 10 !== 0
+	//is it even? ==> num % 2 === 0
+	//need answer in boolean ==> .every
+	//.filter to extract the conditions and store in an array // don't want to filter, just wants to evaluate
+	//loop through the new array to check each value for truthyness
+	return nums.every((number) => {
+		return number > 0 && number % 2 === 0 && number % 10 !== 0;
+	});
 };
 
 /**
@@ -260,30 +268,30 @@ const arePositiveEvenAndNonZeroEnding = (nums) => {
  */
 
 const stringsAndCaps = (items) => {
- /* return items.filter((word) => {
-    if (typeof word === "string") {
-      return word.toUpperCase()
-    }
-  }) */
+	return items.filter((word) => {
+		if (typeof word === "string") {
+			return word.toUpperCase();
+		}
+	});
 };
 //.map gave us the correct words to uppercase
 //.filter gave us correct words but lowercase
 
 module.exports = {
-  sumArray,
-  zeroCount,
-  plusTen,
-  stringsOnly,
-  onlyEvens,
-  numbersOnly,
-  isAllSame,
-  isAllOdd,
-  targetCount,
-  counterObject,
-  doubled,
-  tripledAndLessThan20,
-  divisibleBy,
-  numberTimesIdx,
-  arePositiveEvenAndNonZeroEnding,
-  stringsAndCaps,
+	sumArray,
+	zeroCount,
+	plusTen,
+	stringsOnly,
+	onlyEvens,
+	numbersOnly,
+	isAllSame,
+	isAllOdd,
+	targetCount,
+	counterObject,
+	doubled,
+	tripledAndLessThan20,
+	divisibleBy,
+	numberTimesIdx,
+	arePositiveEvenAndNonZeroEnding,
+	stringsAndCaps,
 };
