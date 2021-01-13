@@ -5,7 +5,13 @@
  * @returns {number} Sum of all numbers
  */
 
-const sumArray = () => {};
+const sumArray = (nums) => {
+  let sum = 0;
+  nums.forEach((num) => {
+    sum += num
+  })
+  return sum
+};
 
 /**
  * Takes in an array of numbers and returns the amount of zeros that occur in it.
@@ -14,7 +20,15 @@ const sumArray = () => {};
  * Must use forEach
  */
 
-const zeroCount = () => {};
+const zeroCount = (nums) => {
+  let sum = 0
+  nums.forEach((num) => {
+    if (num === 0) {
+      sum++
+    }
+  })
+  return sum
+};
 
 /**
  * Takes in an array of numbers and returns a new array where each
@@ -24,7 +38,12 @@ const zeroCount = () => {};
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = () => {};
+const plusTen = (nums) => {
+  let arr = nums.map((e) => {
+    return e + 10
+  })
+  return arr
+};
 
 /**
  * Takes in an array and returns a new array where every non-string
@@ -36,7 +55,16 @@ const plusTen = () => {};
  * @returns {string[]} All strings remain, all non strings are now empty strings.
  */
 
-const stringsOnly = () => {};
+const stringsOnly = (items) => {
+  let stringHolder = items.map((e) => {
+    if (typeof(e) === 'string') {
+      return e
+    } else {
+      return ''
+    }
+  })
+  return stringHolder;
+};
 
 /**
  * Takes in an array and returns a new array with only the even elements.
@@ -45,7 +73,12 @@ const stringsOnly = () => {};
  * @returns {number[]} Only even valued elements
  */
 
-const onlyEvens = () => {};
+const onlyEvens = (nums) => {
+  let even = nums.filter((e) => {
+    return e % 2 === 0
+  })
+  return even 
+};
 
 /**
  * Takes in an array and returns a new array with only the elements
@@ -55,7 +88,12 @@ const onlyEvens = () => {};
  * @returns {number[]} Only number items should remain.
  */
 
-const numbersOnly = () => {};
+const numbersOnly = (items) => {
+  let numbers = items.filter((e) => {
+    return (typeof(e) === 'number')
+  })
+  return numbers
+};
 
 /**
  * Takes in an array and checks if all elements in the array are the same.
@@ -64,7 +102,13 @@ const numbersOnly = () => {};
  * @returns {boolean} Whether or not all elements are the same.
  */
 
-const isAllSame = () => {};
+const isAllSame = (items) => {
+  let similar = items.every((item) => {
+    return item === items[0]
+  })
+  return similar
+};
+
 
 /**
  * Takes in an array and returns whether or not all elements in the array are odd.
@@ -72,7 +116,12 @@ const isAllSame = () => {};
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = () => {};
+const isAllOdd = (nums) => {
+  let odd = nums.every((num) => {
+    return num % 2 === 1
+  })
+  return odd
+};
 
 /**
  * Takes in an array of numbers and a target.
@@ -82,7 +131,15 @@ const isAllOdd = () => {};
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {
+  let count = 0;
+  nums.forEach((num) => {
+    if (num === target) {
+      count++
+    }
+  })
+  return count
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -91,7 +148,14 @@ const targetCount = () => {};
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
+const counterObject = (items) => {
+  let newObj = {};
+  items.forEach((e) => {
+    if (newObj[e] += 1) {ap
+    } else (newObj[e] = 1)
+  });
+  return newObj
+}
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
