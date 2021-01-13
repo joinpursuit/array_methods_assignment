@@ -32,7 +32,7 @@ const zeroCount = (nums) => {
   return arr
 };
 
- console.log(zeroCount([7, 0, 12, 4, 0]))
+
 /**
  * Takes in an array of numbers and returns a new array where each
  * element has been incremented by 10.
@@ -231,11 +231,10 @@ const divisibleBy = (divisor, nums) => {
  */
 
 const numberTimesIdx = (nums) => {
-  let newarr = nums.map((e) => {
-    e * nums[0]
-  })
-  return newarr
-};
+ return nums.map((num, i) => num * i)
+}
+
+
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -250,7 +249,13 @@ const numberTimesIdx = (nums) => {
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+  let newarr = nums.every((e) => {
+    if( e %2 ===0 && e % 10 !==0 && e > 0)
+    return true
+  })
+  return newarr
+};
 
 /**
  * Takes in an array of elements.
@@ -261,7 +266,10 @@ const arePositiveEvenAndNonZeroEnding = () => {};
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+  let newString = items.filter(e =>typeof e === "string") 
+  return newString.map(e => e.toUpperCase() )
+};
 
 module.exports = {
   sumArray,
