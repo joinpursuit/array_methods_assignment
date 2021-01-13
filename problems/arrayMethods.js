@@ -180,7 +180,13 @@ const counterObject = (items) => {
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = (nums) => {};
+const doubled = (nums) => {
+  let newarr = nums.map((e) => {
+     return e *2
+  })
+  return newarr
+  
+};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
