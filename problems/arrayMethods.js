@@ -114,7 +114,7 @@ const numbersOnly = (items) => {
 
 const isAllSame = (items) => {
   let newarr = items.every((e) => {
-    if(typeof e === typeof e){
+    if( e === items[0]){
       return true
     }
     
@@ -128,7 +128,14 @@ const isAllSame = (items) => {
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = () => {};
+const isAllOdd = (nums) => {
+  let newarr = nums.every((e) => {
+    if(e % 2 ===1){
+      return true
+    }
+  })
+  return newarr
+};
 
 /**
  * Takes in an array of numbers and a target.
@@ -138,7 +145,16 @@ const isAllOdd = () => {};
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+const targetCount = (nums, target) => {
+  let newarr = 0
+   nums.forEach((e) =>{
+    if(e === target){
+      newarr ++
+    }
+    
+  })
+  return newarr
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -147,7 +163,16 @@ const targetCount = () => {};
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
+const counterObject = (items) => {
+  let newCounts = {}
+  items.forEach((e) => {
+    if(newCounts[e]){
+     return newCounts[e] = newCounts[e] + 1 
+    }
+    newCounts[e] = 1
+  })
+  return newCounts
+};
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
@@ -155,7 +180,7 @@ const counterObject = () => {};
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (nums) => {};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
