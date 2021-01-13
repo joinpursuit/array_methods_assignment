@@ -195,7 +195,13 @@ const doubled = (nums) => {
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  let newarr = nums.every((e) => {
+    if([e * 3] < 20)
+    return true
+  })
+  return newarr
+};
 
 /**
  * Takes in a divisor and an array of numbers.
@@ -206,7 +212,14 @@ const tripledAndLessThan20 = () => {};
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor, nums) => {
+  let newarr = nums.filter((e) => {
+    if(e % divisor ===0){
+      return e
+    }
+  })
+  return newarr
+};
 
 /**
  * Takes in an array and returns a new array where each element
@@ -217,7 +230,12 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  let newarr = nums.map((e) => {
+    e * nums[0]
+  })
+  return newarr
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
