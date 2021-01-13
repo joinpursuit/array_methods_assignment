@@ -8,7 +8,9 @@
  * @returns {number} Largest number in the array
  */
 
-function largestNum() {}
+function largestNum(nums) {
+    return nums.reduce((largest, n) => largest > n ? largest : n)
+}
 
 /**
  * Takes in an array and returns the sum of all the odd numbers.
@@ -16,7 +18,9 @@ function largestNum() {}
  * @returns {number} Sum of all odd numbers.
  */
 
-function oddSum() {}
+function oddSum(nums) {
+    return nums.reduce((sum, n) => n % 2 === 1 ? sum += n : sum, 0)
+}
 
 /**
  * Write a `transpose`. This function should transpose a matrix.
@@ -38,7 +42,16 @@ function oddSum() {}
 //         [2, 4, 6]
 //        ]
 
- function transpose() {};
+function transpose(mtx) {
+    let arr = []
+    for(let i = 0; i < mtx[0].length; i++){
+        arr.push([])
+        for(let j = 0; j < mtx.length; j++){
+            arr[i].push(mtx[j][i])
+        }
+    }
+    return arr
+};
 
 
 module.exports = { largestNum, oddSum, transpose };
