@@ -212,13 +212,14 @@ const doubled = (nums) => {
  */
 
 const tripledAndLessThan20 = (nums) => {
-  let newArr = nums.filter((num) => {
+  let newArr = nums.every((num) => {
     if(num * 3 < 20) {
-      n
+     // num++
       return true
-    // } else {
+    } 
+    // else {
     //   return false
-    }
+    // }
   })
 return newArr
 };
@@ -232,7 +233,12 @@ return newArr
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor,nums) => {
+  let newArr = nums.filter((num) => {
+    return num % divisor === 0
+  })
+  return newArr
+};
 
 /**
  * Takes in an array and returns a new array where each element
@@ -243,7 +249,12 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  let newArr = nums.map((num,i) => {
+   return num * i
+  })
+  return newArr
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -259,7 +270,10 @@ const numberTimesIdx = () => {};
  */
 
 const arePositiveEvenAndNonZeroEnding = (nums) => {
-  
+  let output = nums.every((num) => {
+    return num % 2 === 0 && num % 10 !== 0 && num > 0
+  })
+  return output
 };
 
 /**
@@ -271,7 +285,9 @@ const arePositiveEvenAndNonZeroEnding = (nums) => {
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+return items.filter((el) => typeof el === "string").map((el1) => el1.toUpperCase())
+};
 
 module.exports = {
   sumArray,
