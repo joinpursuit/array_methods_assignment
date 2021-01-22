@@ -242,7 +242,7 @@ const arePositiveEvenAndNonZeroEnding = (nums) => {
   });
   return array;
 };
-console.log(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10]))
+//console.log(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10]))
 
 /**
  * Takes in an array of elements.

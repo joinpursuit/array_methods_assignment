@@ -18,7 +18,7 @@ const {
   stringsAndCaps,
 } = require("../problems/arrayMethods.js");
 
-describe("sumArray", () => {
+describe.only("sumArray", () => {
   test("sums an array of numbers", () => {
     expect(sumArray([1, 2, 3])).toBe(6);
     expect(sumArray([])).toBe(0);
@@ -34,7 +34,7 @@ describe("sumArray", () => {
   });
 });
 
-describe("zeroCount", () => {
+describe.only("zeroCount", () => {
   test("returns the correct number of zeros in an arry", () => {
     expect(zeroCount([1, 2, 3])).toBe(0);
     expect(zeroCount([])).toBe(0);
@@ -50,7 +50,7 @@ describe("zeroCount", () => {
   });
 });
 
-describe("plusTen", () => {
+describe.only("plusTen", () => {
   test("adds ten to every element in array", () => {
     expect(plusTen([1, 2, 3])).toEqual([11, 12, 13]);
     expect(plusTen([])).toEqual([]);
@@ -69,7 +69,7 @@ describe("plusTen", () => {
   });
 });
 
-describe("stringsOnly", () => {
+describe.only("stringsOnly", () => {
   test("Only strings left in array. All non strings are converted to empty strings", () => {
     expect(stringsOnly(["a", 123, "b", "c", { name: "cat" }])).toEqual([
       "a",
@@ -94,7 +94,7 @@ describe("stringsOnly", () => {
   });
 });
 
-describe("onlyEvens", () => {
+describe.only("onlyEvens", () => {
   test("Only even numbers remain", () => {
     expect(onlyEvens([13, 0, 5, 0])).toEqual([0, 0]);
     expect(onlyEvens([1, 2, 3, 4, 5])).toEqual([2, 4]);
@@ -114,7 +114,7 @@ describe("onlyEvens", () => {
     expect(funcString.includes("while")).toBe(false);
   });
 });
-describe("numbersOnly", () => {
+describe.only("numbersOnly", () => {
   test("Only numbers remain", () => {
     expect(numbersOnly(["cat", 0, { hi: "corey" }, [], 2, -3])).toEqual([
       0,
@@ -139,7 +139,7 @@ describe("numbersOnly", () => {
     expect(funcString.includes("while")).toBe(false);
   });
 });
-describe("isAllSame", () => {
+describe.only("isAllSame", () => {
   test("determines if all elements are identical", () => {
     expect(isAllSame(["cat", "cat", "cat", "cat"])).toBe(true);
     expect(isAllSame(["cat", "dog"])).toEqual(false);
@@ -161,7 +161,7 @@ describe("isAllSame", () => {
     expect(funcString.includes("while")).toBe(false);
   });
 });
-describe("isAllOdd", () => {
+describe.only("isAllOdd", () => {
   test("determines if all elements are odd", () => {
     expect(isAllOdd([1, 3, 5, 7])).toEqual(true);
     expect(isAllOdd([0, 1, 3, 2])).toEqual(false);
@@ -181,7 +181,7 @@ describe("isAllOdd", () => {
   });
 });
 
-describe("targetCount", () => {
+describe.only("targetCount", () => {
   test("returns the correct number of target occurrences in an arry", () => {
     expect(targetCount([1, 2, 3], 6)).toBe(0);
     expect(targetCount([], 2)).toBe(0);
@@ -200,7 +200,7 @@ describe("targetCount", () => {
   });
 });
 
-describe("counterObject", () => {
+describe.only("counterObject", () => {
   test("returns a counter object of all occurrences", () => {
     expect(counterObject([1, 1, 2, 1, 3])).toEqual({ 1: 3, 2: 1, 3: 1 });
     expect(counterObject(["cat", "bird", "dog", "cat"])).toEqual({
@@ -219,7 +219,7 @@ describe("counterObject", () => {
   });
 });
 
-describe("doubled", () => {
+describe.only("doubled", () => {
   test("doubles all elements in an array", () => {
     expect(doubled([1, 2, 3])).toEqual([2, 4, 6]);
     expect(doubled([20])).toEqual([40]);
@@ -238,7 +238,7 @@ describe("doubled", () => {
   });
 });
 
-describe("tripledAndLessThan20", () => {
+describe.only("tripledAndLessThan20", () => {
   test("correctly identifies if the numbers tripled will be less than 20", () => {
     expect(tripledAndLessThan20([1, 2, 4, 7])).toBe(false);
     expect(tripledAndLessThan20([3, 4, 5])).toBe(true);
@@ -258,7 +258,7 @@ describe("tripledAndLessThan20", () => {
   });
 });
 
-describe("divisibleBy", () => {
+describe.only("divisibleBy", () => {
   test("returns all the numbers that divisor evenly goes into", () => {
     expect(divisibleBy(5, [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])).toEqual([
       5,
@@ -287,7 +287,7 @@ describe("divisibleBy", () => {
   });
 });
 
-describe("numberTimesIdx", () => {
+describe.only("numberTimesIdx", () => {
   test("returns a new array with each element multiplied by it's index", () => {
     expect(numberTimesIdx([6, 7, 8, 9])).toEqual([0, 7, 16, 27]);
     expect(numberTimesIdx([1, 2, 3])).toEqual([0, 2, 6]);
@@ -306,10 +306,10 @@ describe("numberTimesIdx", () => {
   });
 });
 
-describe("arePositiveEvenAndNonZeroEnding", () => {
+describe.only("arePositiveEvenAndNonZeroEnding", () => {
   test("returns correct boolean", () => {
     expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 12])).toBe(true);
-    expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 7, 12])).toBe(true);
+    expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 7, 12])).toBe(false);
     expect(arePositiveEvenAndNonZeroEnding([2, 4, -6, 8, 12])).toBe(false);
     expect(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10])).toBe(false);
   });
@@ -328,7 +328,7 @@ describe("arePositiveEvenAndNonZeroEnding", () => {
   });
 });
 
-describe("stringsAndCaps", () => {
+describe.only("stringsAndCaps", () => {
   test("returns only strings and makes them uppercase", () => {
     expect(
       stringsAndCaps([{}, 1, "cat", 3, ["hi"], { name: "dog" }, "dog", "bear"])
