@@ -193,8 +193,8 @@ const tripledAndLessThan20 = (nums) => {
 
 const divisibleBy = (divisor, nums) => {
   return nums.filter((el) => {
-    return el % divisor === 0
-  })
+    return el % divisor === 0;
+  });
 };
 
 /**
@@ -209,9 +209,9 @@ const divisibleBy = (divisor, nums) => {
 const numberTimesIdx = (nums) => {
   return nums.map((el) => {
     // let indexCounter = 0
-   return el * nums.indexOf(el)
+    return el * nums.indexOf(el);
     // indexCounter++
-  })
+  });
 };
 
 /**
@@ -228,11 +228,11 @@ const numberTimesIdx = (nums) => {
  */
 
 const arePositiveEvenAndNonZeroEnding = (nums) => {
-  return nums.every((el)=>{
-    let evenAndDivTen = el % 2 === 0 && el % 10 !== 0
-   return evenAndDivTen && el > 0
-  })
- };
+  return nums.every((el) => {
+    let evenAndDivTen = el % 2 === 0 && el % 10 !== 0;
+    return evenAndDivTen && el > 0;
+  });
+};
 
 /**
  * Takes in an array of elements.
@@ -243,10 +243,15 @@ const arePositiveEvenAndNonZeroEnding = (nums) => {
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = (items) => { 
-items.map((el)=>{
-  return el.toUpperCase()
-})
+const stringsAndCaps = (items) => {
+  let newArr = [];
+  items.forEach((el) => {
+    if (typeof el === "string") {
+      newArr.push(el.toUpperCase());
+    }
+    // console.log(newArr);
+  });
+  return newArr;
 };
 
 module.exports = {
