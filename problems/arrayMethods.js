@@ -195,7 +195,12 @@ const divisibleBy = (divisor, nums) => {
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  let newArr = nums.map((el, i) => {
+    return el * i
+  })
+  return newArr
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -210,7 +215,11 @@ const numberTimesIdx = () => {};
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+  return nums.every(num => {
+   return num > 0 && num % 2 === 0 && num % 10 !== 0
+  })
+};
 
 /**
  * Takes in an array of elements.
@@ -221,7 +230,13 @@ const arePositiveEvenAndNonZeroEnding = () => {};
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+  
+  let strs = items.filter(el => {
+    return typeof el === "string"
+  }).map(el => el.toUpperCase())
+  return strs
+};
 
 module.exports = {
   sumArray,
