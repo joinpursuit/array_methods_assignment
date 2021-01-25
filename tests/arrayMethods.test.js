@@ -34,7 +34,7 @@ describe("sumArray", () => {
   });
 });
 
-describe("zeroCount", () => {
+describe.only("zeroCount", () => {
   test("returns the correct number of zeros in an arry", () => {
     expect(zeroCount([1, 2, 3])).toBe(0);
     expect(zeroCount([])).toBe(0);
