@@ -29,7 +29,6 @@ const zeroCount = (nums) => {
   nums.forEach ((num) => {
     if (num === 0) {
       sumOfZeros += 1
-      // sumOfZeros ++
     }
     })
     return sumOfZeros
@@ -191,10 +190,11 @@ const doubled = (nums) => {
  */
 
 const tripledAndLessThan20 = (nums) => {
-  nums.every((num) => {
-
-    })
-};
+    let lessThan20 = nums.every((num) => {
+     return num * 3 < 20
+  })
+  return lessThan20
+}
 
 /**
  * Takes in a divisor and an array of numbers.
