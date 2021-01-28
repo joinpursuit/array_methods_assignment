@@ -8,7 +8,7 @@
 const sumArray = (nums) => {
   let sum = 0
   if (nums.length === 0) {
-    return sum 
+    return sum
 
   } else {
     sum = nums.reduce((acc, el) => {
@@ -30,18 +30,17 @@ const sumArray = (nums) => {
 const zeroCount = (nums) => {
   let count = 0
   if (nums.length === 0) {
-    return count 
-
-  }else{
-  nums.reduce((acc,el) => {
-    if (el === 0) {
-      count++
-    }
-  })
-}
+    return count
+  } else {
+    nums.reduce((acc, el) => {
+      if (el === 0) {
+        count++
+      }
+    })
+  }
   return count
 };
-console.log(zeroCount([13, 0, 5, 0]))
+//console.log(zeroCount([13, 0, 5, 0]))
 /**
  * Takes in an array of numbers and returns a new array where each
  * element has been incremented by 10.
