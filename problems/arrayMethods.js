@@ -7,13 +7,19 @@
 
 const sumArray = (nums) => {
   let sum = 0
-  nums.forEach((el) => {
-    sum += el
+  if (nums.length === 0) {
+    return sum 
 
-  })
-  return sum
+  } else {
+    sum = nums.reduce((acc, el) => {
+      return acc + el
+
+    })
+    return sum
+  }
+
 };
-//console.log(sumArray([1,2,3]))
+//console.log(sumArray([]))
 /**
  * Takes in an array of numbers and returns the amount of zeros that occur in it.
  * @param {numbers[]} nums
@@ -23,14 +29,19 @@ const sumArray = (nums) => {
 
 const zeroCount = (nums) => {
   let count = 0
-  nums.forEach((el) => {
+  if (nums.length === 0) {
+    return count 
+
+  }else{
+  nums.reduce((acc,el) => {
     if (el === 0) {
       count++
     }
   })
+}
   return count
 };
-
+console.log(zeroCount([13, 0, 5, 0]))
 /**
  * Takes in an array of numbers and returns a new array where each
  * element has been incremented by 10.
@@ -253,8 +264,8 @@ const stringsAndCaps = (items) => {
   let arr = items.map((el) => {
     return typeof el === 'string' ? el.toUpperCase() : null
   })
-  arr = arr.filter((el) => { 
-    return el !== null  
+  arr = arr.filter((el) => {
+    return el !== null
   })
   // arr = arr.filter(el => el)
   return arr
