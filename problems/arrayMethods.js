@@ -197,7 +197,23 @@ console.log(targetCount([], [2]))
  */
 
 const counterObject = (items) => {
-  
+  // take in a group of items (array)
+  // we want to know how many of each item there are
+  // create an empty object
+  let newObject = {}
+  // iterate through the array of items
+  // we store these items and amounts in key/value pairs inside the object
+  // first iteration stores each key into the object with a value of 0
+  items.forEach((item) => {
+    if (newObject[item] === undefined) {
+      newObject[item] = 1
+    } //{1:3, 2:1, 3:1}
+    else {
+      newObject[item] ++
+    }
+  })
+
+  return newObject
 };
 
 console.log(counterObject([1, 1, 2, 1, 3]))
@@ -208,8 +224,22 @@ console.log(counterObject([1, 1, 2, 1, 3]))
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (nums) => {
+  // function multiplyByTwo(num) {      //this block of code creates a seperate function that doubles the
+  //   return num * 2                   //item plugged into the parameter. 
+  // }                                  //The code then uses this function to plug into nums.map. This strategy
+                                        //might be used to apply the double function to different maps?
+  // let doubleNum = nums.map(multiplyByTwo)
 
+  // return doubleNum
+
+  let doubleNum = nums.map((num) => {   //this block of code creates one function with map, and applies
+    return num * 2                      //the function to every item in nums
+  })
+  return doubleNum
+};
+
+console.log(doubled([1, 2, 3, 4, 5]))
 /**
  * Takes in an array and returns whether every number is less than 20 even after
  * being tripled.
@@ -217,7 +247,15 @@ const doubled = () => {};
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  let tripleLess20 = nums.every((num) => {
+    return (num * 3) < 20
+  })
+  return tripleLess20
+};
+
+console.log(tripledAndLessThan20([1, 10, 5, 8, 6, 3, 19]))
+console.log(tripledAndLessThan20([1, 5, 3, 6]))
 
 /**
  * Takes in a divisor and an array of numbers.
@@ -228,7 +266,15 @@ const tripledAndLessThan20 = () => {};
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor, nums) => {
+  let divide = nums.filter((num) => {
+    return num % divisor === 0
+  })
+  return divide
+};
+
+console.log(divisibleBy(2, [1, 2, 3, 4, 5]))
+console.log(divisibleBy(2, [2, 4, 6, 8, 10]))
 
 /**
  * Takes in an array and returns a new array where each element
@@ -239,7 +285,13 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  let index = 0;
+  
+  return nums.map((num) => num * index++)          // Is there another way of doing this? 
+};                                                 // (besides traditional function definition)
+
+console.log(numberTimesIdx([6,7,8,9]))
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -254,7 +306,17 @@ const numberTimesIdx = () => {};
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+  return nums.every((num) => {
+    return num % 10 !== 0 && num % 2 === 0 && num >= 0  // is there another way to determine if all positive
+  })
+  
+};
+
+console.log(arePositiveEvenAndNonZeroEnding([10]))
+console.log(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8]))
+console.log(arePositiveEvenAndNonZeroEnding([2, 4, -6, 6, 8]))
+console.log(arePositiveEvenAndNonZeroEnding([2, 4, 6, 8, 10]))
 
 /**
  * Takes in an array of elements.
@@ -265,7 +327,17 @@ const arePositiveEvenAndNonZeroEnding = () => {};
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+  let newArr = items.filter((item) => {
+    return typeof(item) === typeof("string")
+  })
+  let capsArr = newArr.map((item) => {
+    return item.toUpperCase()
+  })
+  return capsArr
+};
+
+console.log(stringsAndCaps([{}, 1, "cat", 3, ["hi"], {name: "dog"}, "dog", "bear"]))
 
 module.exports = {
   sumArray,
