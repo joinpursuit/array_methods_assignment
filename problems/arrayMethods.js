@@ -5,7 +5,13 @@
  * @returns {number} Sum of all numbers
  */
 
-const sumArray = () => {};
+const sumArray = (nums) => {
+  let sum = 0
+  nums.forEach((num) => {
+sum += num
+  })
+  return sum
+};
 
 /**
  * Takes in an array of numbers and returns the amount of zeros that occur in it.
@@ -14,8 +20,16 @@ const sumArray = () => {};
  * Must use forEach
  */
 
-const zeroCount = () => {};
-
+const zeroCount = (nums) => {
+  let numOfZero = 0
+  nums.forEach((num) => {
+    if(num === 0) {
+      numOfZero = numOfZero + 1
+    }
+  })
+  return numOfZero
+};
+console.log(zeroCount([1,2,0,5,3,0]))
 /**
  * Takes in an array of numbers and returns a new array where each
  * element has been incremented by 10.
@@ -24,7 +38,14 @@ const zeroCount = () => {};
  * @returns {number[]} Array with each previous number plus 10.
  */
 
-const plusTen = () => {};
+const plusTen = (nums) => {
+  //let nums = [];
+  let multipleOfTen = nums.map((el) => {
+    return el + 10;
+  });
+  return multipleOfTen
+}
+
 
 /**
  * Takes in an array and returns a new array where every non-string
@@ -36,7 +57,20 @@ const plusTen = () => {};
  * @returns {string[]} All strings remain, all non strings are now empty strings.
  */
 
-const stringsOnly = () => {};
+const stringsOnly = (items) => {
+  let newArr = items.map((el) => {
+    if(typeof el === "string") {
+      return el
+    } else {
+      return ""
+    }
+  })
+  return newArr
+};
+// typeof needs to be lower case
+// el is returned when is string
+// if not ""
+// string = "string" - or "number"
 
 /**
  * Takes in an array and returns a new array with only the even elements.
@@ -45,7 +79,14 @@ const stringsOnly = () => {};
  * @returns {number[]} Only even valued elements
  */
 
-const onlyEvens = () => {};
+const onlyEvens = (nums) => {
+let even = nums.filter((num) => {
+  if((num % 2) === 0) {
+    return true 
+  } 
+})
+return even
+};
 
 /**
  * Takes in an array and returns a new array with only the elements
@@ -55,7 +96,16 @@ const onlyEvens = () => {};
  * @returns {number[]} Only number items should remain.
  */
 
-const numbersOnly = () => {};
+const numbersOnly = (items) => {
+  let newArr = items.filter((num) => {
+    if(typeof num === "number") {
+      return true
+    }else {
+      return false
+    }
+  })
+  return newArr
+};
 
 /**
  * Takes in an array and checks if all elements in the array are the same.
@@ -64,7 +114,14 @@ const numbersOnly = () => {};
  * @returns {boolean} Whether or not all elements are the same.
  */
 
-const isAllSame = () => {};
+const isAllSame = (items) => {
+  let all = items.every((el) => {
+    if (el === items[0]) {
+      return true
+    }
+  })
+  return all
+};
 
 /**
  * Takes in an array and returns whether or not all elements in the array are odd.
@@ -72,7 +129,14 @@ const isAllSame = () => {};
  * @returns {boolean} All odd?
  */
 
-const isAllOdd = () => {};
+const isAllOdd = (nums) => {
+  let odd = nums.every((el) => {
+    if(el % 2 === 1) {
+      return true
+    }
+  }) 
+  return odd
+};
 
 /**
  * Takes in an array of numbers and a target.
@@ -82,7 +146,27 @@ const isAllOdd = () => {};
  * @returns {number} Number of target occurrences
  */
 
-const targetCount = () => {};
+
+// let sum = 0
+// nums.forEach((num) => {
+// sum += num
+// })
+// return sum
+
+const targetCount = (nums,target) => {
+// let targetOccurrences = []
+// nums.forEach((el) => {
+//   targetOccurrences += 1)
+let occ = 0
+nums.forEach((el) => {
+  if(el === target) {
+    if(el ===target){
+      occ += 1
+    }
+  }
+})
+return occ
+};
 
 /**
  * Takes in an array of elements and returns an Object that contains
@@ -91,7 +175,21 @@ const targetCount = () => {};
  * @returns {Object} A mapping of elements to their occurrence count.
  */
 
-const counterObject = () => {};
+const counterObject = (items) => {
+//[1.4.5.6,5,5,1,1]
+//{1:3 , 4:1, 5:3, 6:1}
+ let mapOfEl= {}
+ items.forEach((el) => {
+   if( mapOfEl[el] ) {
+     mapOfEl[el] += 1
+   } else {
+     mapOfEl[el] = 1
+   }
+ })
+
+return mapOfEl
+
+};
 
 /**
  * Takes in an array of numbers and returns a new array with each element doubled.
@@ -99,7 +197,12 @@ const counterObject = () => {};
  * @returns {number[]} Each element has been doubled
  */
 
-const doubled = () => {};
+const doubled = (nums) => {
+  let double = nums.map((el) => {
+    return el * 2
+  })
+  return double
+};
 
 /**
  * Takes in an array and returns whether every number is less than 20 even after
@@ -108,7 +211,18 @@ const doubled = () => {};
  * @returns {boolean} Each number times 3 less than 20 ?
  */
 
-const tripledAndLessThan20 = () => {};
+const tripledAndLessThan20 = (nums) => {
+  let newArr = nums.every((num) => {
+    if(num * 3 < 20) {
+     // num++
+      return true
+    } 
+    // else {
+    //   return false
+    // }
+  })
+return newArr
+};
 
 /**
  * Takes in a divisor and an array of numbers.
@@ -119,7 +233,12 @@ const tripledAndLessThan20 = () => {};
  * @returns {number[]} Numbers evenly divided by divisor.
  */
 
-const divisibleBy = () => {};
+const divisibleBy = (divisor,nums) => {
+  let newArr = nums.filter((num) => {
+    return num % divisor === 0
+  })
+  return newArr
+};
 
 /**
  * Takes in an array and returns a new array where each element
@@ -130,7 +249,12 @@ const divisibleBy = () => {};
  * @returns {number[]} Numbers times their index
  */
 
-const numberTimesIdx = () => {};
+const numberTimesIdx = (nums) => {
+  let newArr = nums.map((num,i) => {
+   return num * i
+  })
+  return newArr
+};
 
 /**
  * Takes in an array of numbers and returns whether or not every value
@@ -145,7 +269,12 @@ const numberTimesIdx = () => {};
  * @returns {boolean} Are all numbers positive, even, and not ending in 0.
  */
 
-const arePositiveEvenAndNonZeroEnding = () => {};
+const arePositiveEvenAndNonZeroEnding = (nums) => {
+  let output = nums.every((num) => {
+    return num % 2 === 0 && num % 10 !== 0 && num > 0
+  })
+  return output
+};
 
 /**
  * Takes in an array of elements.
@@ -156,7 +285,9 @@ const arePositiveEvenAndNonZeroEnding = () => {};
  * @returns {string[]} All strings uppercase.
  */
 
-const stringsAndCaps = () => {};
+const stringsAndCaps = (items) => {
+return items.filter((el) => typeof el === "string").map((el1) => el1.toUpperCase())
+};
 
 module.exports = {
   sumArray,
