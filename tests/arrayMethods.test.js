@@ -117,9 +117,7 @@ describe("onlyEvens", () => {
 describe("numbersOnly", () => {
   test("Only numbers remain", () => {
     expect(numbersOnly(["cat", 0, { hi: "corey" }, [], 2, -3])).toEqual([
-      0,
-      2,
-      -3,
+      0, 2, -3,
     ]);
     expect(numbersOnly(["cat", "dog"])).toEqual([]);
     expect(numbersOnly([1, 2])).toEqual([1, 2]);
@@ -238,8 +236,7 @@ describe("doubled", () => {
   });
 });
 
-describe
-("tripledAndLessThan20", () => {
+describe("tripledAndLessThan20", () => {
   test("correctly identifies if the numbers tripled will be less than 20", () => {
     expect(tripledAndLessThan20([1, 2, 4, 7])).toBe(false);
     expect(tripledAndLessThan20([3, 4, 5])).toBe(true);
@@ -262,15 +259,10 @@ describe
 describe("divisibleBy", () => {
   test("returns all the numbers that divisor evenly goes into", () => {
     expect(divisibleBy(5, [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])).toEqual([
-      5,
-      10,
-      15,
+      5, 10, 15,
     ]);
     expect(divisibleBy(3, [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])).toEqual([
-      6,
-      9,
-      12,
-      15,
+      6, 9, 12, 15,
     ]);
   });
   test("uses filter", () => {
@@ -329,7 +321,7 @@ describe("arePositiveEvenAndNonZeroEnding", () => {
   });
 });
 
-describe.only("stringsAndCaps", () => {
+describe("stringsAndCaps", () => {
   test("returns only strings and makes them uppercase", () => {
     expect(
       stringsAndCaps([{}, 1, "cat", 3, ["hi"], { name: "dog" }, "dog", "bear"])
